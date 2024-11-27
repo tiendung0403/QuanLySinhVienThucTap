@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeControl));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_GV = new System.Windows.Forms.Button();
             this.lab_SoluongGV = new System.Windows.Forms.Label();
             this.lab_SoLuongSV = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lab_SoLuongCTY = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.lab_SoLuongDTAI = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_GV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,22 +63,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Quản Lí Sinh Viên Đi Thực Tập";
             // 
-            // btn_GV
-            // 
-            this.btn_GV.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn_GV.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_GV.ForeColor = System.Drawing.Color.White;
-            this.btn_GV.Image = ((System.Drawing.Image)(resources.GetObject("btn_GV.Image")));
-            this.btn_GV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_GV.Location = new System.Drawing.Point(182, 173);
-            this.btn_GV.Name = "btn_GV";
-            this.btn_GV.Size = new System.Drawing.Size(396, 179);
-            this.btn_GV.TabIndex = 2;
-            this.btn_GV.Text = "   GIẢNG VIÊN : ";
-            this.btn_GV.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_GV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btn_GV.UseVisualStyleBackColor = false;
-            // 
             // lab_SoluongGV
             // 
             this.lab_SoluongGV.AutoSize = true;
@@ -104,22 +87,6 @@
             this.lab_SoLuongSV.TabIndex = 8;
             this.lab_SoLuongSV.Text = "0";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(182, 493);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(396, 179);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "   SINH VIÊN : ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // lab_SoLuongCTY
             // 
             this.lab_SoLuongCTY.AutoSize = true;
@@ -131,22 +98,6 @@
             this.lab_SoLuongCTY.Size = new System.Drawing.Size(28, 32);
             this.lab_SoLuongCTY.TabIndex = 10;
             this.lab_SoLuongCTY.Text = "0";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(712, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(396, 179);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "   CÔNG TY : ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // lab_SoLuongDTAI
             // 
@@ -165,7 +116,7 @@
             this.button3.BackColor = System.Drawing.Color.DarkGreen;
             this.button3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_project_100;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.Location = new System.Drawing.Point(712, 493);
             this.button3.Name = "button3";
@@ -175,6 +126,54 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_company_100;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(712, 173);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(396, 179);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "   CÔNG TY : ";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_human_100;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(182, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(396, 179);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "   SINH VIÊN : ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btn_GV
+            // 
+            this.btn_GV.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn_GV.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_GV.ForeColor = System.Drawing.Color.White;
+            this.btn_GV.Image = global::WindowsFormsApp1.Properties.Resources.icons8_human_100;
+            this.btn_GV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_GV.Location = new System.Drawing.Point(182, 173);
+            this.btn_GV.Name = "btn_GV";
+            this.btn_GV.Size = new System.Drawing.Size(396, 179);
+            this.btn_GV.TabIndex = 2;
+            this.btn_GV.Text = "   GIẢNG VIÊN : ";
+            this.btn_GV.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_GV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btn_GV.UseVisualStyleBackColor = false;
             // 
             // HomeControl
             // 

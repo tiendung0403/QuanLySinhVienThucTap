@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_QuanLySinhVien));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.Panel_InforUser = new System.Windows.Forms.Panel();
             this.txtChucVu = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.Label();
@@ -39,19 +39,20 @@
             this.panel_listMenu = new System.Windows.Forms.Panel();
             this.panelmenubtns = new System.Windows.Forms.Panel();
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sidepartTime = new System.Windows.Forms.Timer(this.components);
+            this.homeControl = new WindowsFormsApp1.HomeControl();
             this.btn_Project = new System.Windows.Forms.Button();
             this.btn_Company = new System.Windows.Forms.Button();
             this.btn_Teacher = new System.Windows.Forms.Button();
             this.btn_Student = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sidepartTime = new System.Windows.Forms.Timer(this.components);
-            this.homeControl = new WindowsFormsApp1.HomeControl();
             this.panel1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.Panel_InforUser.SuspendLayout();
             this.panel_listMenu.SuspendLayout();
             this.panelmenubtns.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.homeControl);
+            this.panel1.Controls.Add(this.panelContainer);
             this.panel1.Controls.Add(this.Panel_InforUser);
             this.panel1.Controls.Add(this.panel_listMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,6 +71,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1392, 785);
             this.panel1.TabIndex = 0;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.homeControl);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(300, 112);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1092, 673);
+            this.panelContainer.TabIndex = 2;
             // 
             // Panel_InforUser
             // 
@@ -165,101 +175,6 @@
             this.sidepanel.Size = new System.Drawing.Size(5, 60);
             this.sidepanel.TabIndex = 2;
             // 
-            // btn_Project
-            // 
-            this.btn_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_Project.FlatAppearance.BorderSize = 0;
-            this.btn_Project.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Project.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Project.ForeColor = System.Drawing.Color.White;
-            this.btn_Project.Image = ((System.Drawing.Image)(resources.GetObject("btn_Project.Image")));
-            this.btn_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Project.Location = new System.Drawing.Point(9, 240);
-            this.btn_Project.Name = "btn_Project";
-            this.btn_Project.Size = new System.Drawing.Size(291, 60);
-            this.btn_Project.TabIndex = 4;
-            this.btn_Project.Text = "      Đề tài";
-            this.btn_Project.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Project.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Project.UseVisualStyleBackColor = false;
-            this.btn_Project.Click += new System.EventHandler(this.btn_Project_Click);
-            // 
-            // btn_Company
-            // 
-            this.btn_Company.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_Company.FlatAppearance.BorderSize = 0;
-            this.btn_Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Company.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Company.ForeColor = System.Drawing.Color.White;
-            this.btn_Company.Image = ((System.Drawing.Image)(resources.GetObject("btn_Company.Image")));
-            this.btn_Company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Company.Location = new System.Drawing.Point(9, 180);
-            this.btn_Company.Name = "btn_Company";
-            this.btn_Company.Size = new System.Drawing.Size(291, 60);
-            this.btn_Company.TabIndex = 3;
-            this.btn_Company.Text = "      Công ty";
-            this.btn_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Company.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Company.UseVisualStyleBackColor = false;
-            this.btn_Company.Click += new System.EventHandler(this.btn_Company_Click);
-            // 
-            // btn_Teacher
-            // 
-            this.btn_Teacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_Teacher.FlatAppearance.BorderSize = 0;
-            this.btn_Teacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Teacher.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Teacher.ForeColor = System.Drawing.Color.White;
-            this.btn_Teacher.Image = ((System.Drawing.Image)(resources.GetObject("btn_Teacher.Image")));
-            this.btn_Teacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Teacher.Location = new System.Drawing.Point(9, 120);
-            this.btn_Teacher.Name = "btn_Teacher";
-            this.btn_Teacher.Size = new System.Drawing.Size(291, 60);
-            this.btn_Teacher.TabIndex = 2;
-            this.btn_Teacher.Text = "      Giảng viên";
-            this.btn_Teacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Teacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Teacher.UseVisualStyleBackColor = false;
-            this.btn_Teacher.Click += new System.EventHandler(this.btn_Teacher_Click);
-            // 
-            // btn_Student
-            // 
-            this.btn_Student.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_Student.FlatAppearance.BorderSize = 0;
-            this.btn_Student.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Student.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Student.ForeColor = System.Drawing.Color.White;
-            this.btn_Student.Image = ((System.Drawing.Image)(resources.GetObject("btn_Student.Image")));
-            this.btn_Student.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Student.Location = new System.Drawing.Point(9, 60);
-            this.btn_Student.Name = "btn_Student";
-            this.btn_Student.Size = new System.Drawing.Size(291, 60);
-            this.btn_Student.TabIndex = 1;
-            this.btn_Student.Text = "      Sinh viên";
-            this.btn_Student.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Student.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Student.UseVisualStyleBackColor = false;
-            this.btn_Student.Click += new System.EventHandler(this.btn_student_Click);
-            // 
-            // btn_Home
-            // 
-            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_Home.FlatAppearance.BorderSize = 0;
-            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Home.ForeColor = System.Drawing.Color.White;
-            this.btn_Home.Image = ((System.Drawing.Image)(resources.GetObject("btn_Home.Image")));
-            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Home.Location = new System.Drawing.Point(9, 0);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(291, 60);
-            this.btn_Home.TabIndex = 0;
-            this.btn_Home.Text = "      Trang chủ";
-            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Home.UseVisualStyleBackColor = false;
-            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Navy;
@@ -273,17 +188,6 @@
             this.panel4.Size = new System.Drawing.Size(300, 182);
             this.panel4.TabIndex = 4;
             // 
-            // btn_Menu
-            // 
-            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.Location = new System.Drawing.Point(-1, 0);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(48, 48);
-            this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btn_Menu.TabIndex = 2;
-            this.btn_Menu.TabStop = false;
-            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -294,17 +198,6 @@
             this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "thực tập";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(135, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -326,10 +219,127 @@
             // 
             this.homeControl.BackColor = System.Drawing.Color.Linen;
             this.homeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeControl.Location = new System.Drawing.Point(300, 112);
+            this.homeControl.Location = new System.Drawing.Point(0, 0);
             this.homeControl.Name = "homeControl";
             this.homeControl.Size = new System.Drawing.Size(1092, 673);
-            this.homeControl.TabIndex = 3;
+            this.homeControl.TabIndex = 0;
+            // 
+            // btn_Project
+            // 
+            this.btn_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Project.FlatAppearance.BorderSize = 0;
+            this.btn_Project.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Project.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Project.ForeColor = System.Drawing.Color.White;
+            this.btn_Project.Image = global::WindowsFormsApp1.Properties.Resources.icons8_projects_32;
+            this.btn_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Project.Location = new System.Drawing.Point(9, 240);
+            this.btn_Project.Name = "btn_Project";
+            this.btn_Project.Size = new System.Drawing.Size(291, 60);
+            this.btn_Project.TabIndex = 4;
+            this.btn_Project.Text = "      Đề tài";
+            this.btn_Project.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Project.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Project.UseVisualStyleBackColor = false;
+            this.btn_Project.Click += new System.EventHandler(this.btn_Project_Click);
+            // 
+            // btn_Company
+            // 
+            this.btn_Company.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Company.FlatAppearance.BorderSize = 0;
+            this.btn_Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Company.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Company.ForeColor = System.Drawing.Color.White;
+            this.btn_Company.Image = global::WindowsFormsApp1.Properties.Resources.icons8_company_32;
+            this.btn_Company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Company.Location = new System.Drawing.Point(9, 180);
+            this.btn_Company.Name = "btn_Company";
+            this.btn_Company.Size = new System.Drawing.Size(291, 60);
+            this.btn_Company.TabIndex = 3;
+            this.btn_Company.Text = "      Công ty";
+            this.btn_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Company.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Company.UseVisualStyleBackColor = false;
+            this.btn_Company.Click += new System.EventHandler(this.btn_Company_Click);
+            // 
+            // btn_Teacher
+            // 
+            this.btn_Teacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Teacher.FlatAppearance.BorderSize = 0;
+            this.btn_Teacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Teacher.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Teacher.ForeColor = System.Drawing.Color.White;
+            this.btn_Teacher.Image = global::WindowsFormsApp1.Properties.Resources.icons8_teacher_32;
+            this.btn_Teacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Teacher.Location = new System.Drawing.Point(9, 120);
+            this.btn_Teacher.Name = "btn_Teacher";
+            this.btn_Teacher.Size = new System.Drawing.Size(291, 60);
+            this.btn_Teacher.TabIndex = 2;
+            this.btn_Teacher.Text = "      Giảng viên";
+            this.btn_Teacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Teacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Teacher.UseVisualStyleBackColor = false;
+            this.btn_Teacher.Click += new System.EventHandler(this.btn_Teacher_Click);
+            // 
+            // btn_Student
+            // 
+            this.btn_Student.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Student.FlatAppearance.BorderSize = 0;
+            this.btn_Student.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Student.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Student.ForeColor = System.Drawing.Color.White;
+            this.btn_Student.Image = global::WindowsFormsApp1.Properties.Resources.icons8_student_male_32;
+            this.btn_Student.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Student.Location = new System.Drawing.Point(9, 60);
+            this.btn_Student.Name = "btn_Student";
+            this.btn_Student.Size = new System.Drawing.Size(291, 60);
+            this.btn_Student.TabIndex = 1;
+            this.btn_Student.Text = "      Sinh viên";
+            this.btn_Student.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Student.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Student.UseVisualStyleBackColor = false;
+            this.btn_Student.Click += new System.EventHandler(this.btn_student_Click);
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Home.ForeColor = System.Drawing.Color.White;
+            this.btn_Home.Image = global::WindowsFormsApp1.Properties.Resources.icons8_home_32;
+            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.Location = new System.Drawing.Point(9, 0);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(291, 60);
+            this.btn_Home.TabIndex = 0;
+            this.btn_Home.Text = "      Trang chủ";
+            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
+            // btn_Menu
+            // 
+            this.btn_Menu.Image = global::WindowsFormsApp1.Properties.Resources.icons8_menu_squared_48;
+            this.btn_Menu.Location = new System.Drawing.Point(-1, 0);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(48, 48);
+            this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Menu.TabIndex = 2;
+            this.btn_Menu.TabStop = false;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Logo_STU;
+            this.pictureBox1.Location = new System.Drawing.Point(135, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // form_QuanLySinhVien
             // 
@@ -343,6 +353,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
             this.Panel_InforUser.ResumeLayout(false);
             this.Panel_InforUser.PerformLayout();
             this.panel_listMenu.ResumeLayout(false);
@@ -360,7 +371,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_listMenu;
         private System.Windows.Forms.Panel Panel_InforUser;
-        private HomeControl homeControl;
         private System.Windows.Forms.Timer sidepartTime;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox btn_Menu;
@@ -378,5 +388,7 @@
         private System.Windows.Forms.Label labChucVu;
         private System.Windows.Forms.Label txtUserName;
         private System.Windows.Forms.Label txtChucVu;
+        private System.Windows.Forms.Panel panelContainer;
+        private HomeControl homeControl;
     }
 }
