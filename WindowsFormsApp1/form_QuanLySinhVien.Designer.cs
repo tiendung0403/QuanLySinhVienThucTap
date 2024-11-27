@@ -1,0 +1,382 @@
+﻿namespace WindowsFormsApp1
+{
+    partial class form_QuanLySinhVien
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_QuanLySinhVien));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Panel_InforUser = new System.Windows.Forms.Panel();
+            this.txtChucVu = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.Label();
+            this.labChucVu = new System.Windows.Forms.Label();
+            this.labUserName = new System.Windows.Forms.Label();
+            this.panel_listMenu = new System.Windows.Forms.Panel();
+            this.panelmenubtns = new System.Windows.Forms.Panel();
+            this.sidepanel = new System.Windows.Forms.Panel();
+            this.btn_Project = new System.Windows.Forms.Button();
+            this.btn_Company = new System.Windows.Forms.Button();
+            this.btn_Teacher = new System.Windows.Forms.Button();
+            this.btn_Student = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Menu = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sidepartTime = new System.Windows.Forms.Timer(this.components);
+            this.homeControl = new WindowsFormsApp1.HomeControl();
+            this.panel1.SuspendLayout();
+            this.Panel_InforUser.SuspendLayout();
+            this.panel_listMenu.SuspendLayout();
+            this.panelmenubtns.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.homeControl);
+            this.panel1.Controls.Add(this.Panel_InforUser);
+            this.panel1.Controls.Add(this.panel_listMenu);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1392, 785);
+            this.panel1.TabIndex = 0;
+            // 
+            // Panel_InforUser
+            // 
+            this.Panel_InforUser.BackColor = System.Drawing.Color.Navy;
+            this.Panel_InforUser.Controls.Add(this.txtChucVu);
+            this.Panel_InforUser.Controls.Add(this.txtUserName);
+            this.Panel_InforUser.Controls.Add(this.labChucVu);
+            this.Panel_InforUser.Controls.Add(this.labUserName);
+            this.Panel_InforUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_InforUser.Location = new System.Drawing.Point(300, 0);
+            this.Panel_InforUser.Name = "Panel_InforUser";
+            this.Panel_InforUser.Size = new System.Drawing.Size(1092, 112);
+            this.Panel_InforUser.TabIndex = 1;
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.AutoSize = true;
+            this.txtChucVu.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtChucVu.ForeColor = System.Drawing.Color.White;
+            this.txtChucVu.Location = new System.Drawing.Point(180, 64);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(85, 20);
+            this.txtChucVu.TabIndex = 12;
+            this.txtChucVu.Text = "Chức vụ";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.AutoSize = true;
+            this.txtUserName.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtUserName.ForeColor = System.Drawing.Color.White;
+            this.txtUserName.Location = new System.Drawing.Point(180, 28);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(112, 20);
+            this.txtUserName.TabIndex = 11;
+            this.txtUserName.Text = "User Name";
+            // 
+            // labChucVu
+            // 
+            this.labChucVu.AutoSize = true;
+            this.labChucVu.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labChucVu.ForeColor = System.Drawing.Color.White;
+            this.labChucVu.Location = new System.Drawing.Point(19, 64);
+            this.labChucVu.Name = "labChucVu";
+            this.labChucVu.Size = new System.Drawing.Size(104, 20);
+            this.labChucVu.TabIndex = 10;
+            this.labChucVu.Text = "Chức vụ  :";
+            // 
+            // labUserName
+            // 
+            this.labUserName.AutoSize = true;
+            this.labUserName.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labUserName.ForeColor = System.Drawing.Color.White;
+            this.labUserName.Location = new System.Drawing.Point(19, 28);
+            this.labUserName.Name = "labUserName";
+            this.labUserName.Size = new System.Drawing.Size(131, 20);
+            this.labUserName.TabIndex = 8;
+            this.labUserName.Text = "User Name  :";
+            // 
+            // panel_listMenu
+            // 
+            this.panel_listMenu.BackColor = System.Drawing.Color.Navy;
+            this.panel_listMenu.Controls.Add(this.panelmenubtns);
+            this.panel_listMenu.Controls.Add(this.panel4);
+            this.panel_listMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_listMenu.Location = new System.Drawing.Point(0, 0);
+            this.panel_listMenu.MaximumSize = new System.Drawing.Size(300, 785);
+            this.panel_listMenu.MinimumSize = new System.Drawing.Size(60, 785);
+            this.panel_listMenu.Name = "panel_listMenu";
+            this.panel_listMenu.Size = new System.Drawing.Size(300, 785);
+            this.panel_listMenu.TabIndex = 0;
+            // 
+            // panelmenubtns
+            // 
+            this.panelmenubtns.BackColor = System.Drawing.Color.Navy;
+            this.panelmenubtns.Controls.Add(this.sidepanel);
+            this.panelmenubtns.Controls.Add(this.btn_Project);
+            this.panelmenubtns.Controls.Add(this.btn_Company);
+            this.panelmenubtns.Controls.Add(this.btn_Teacher);
+            this.panelmenubtns.Controls.Add(this.btn_Student);
+            this.panelmenubtns.Controls.Add(this.btn_Home);
+            this.panelmenubtns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelmenubtns.Location = new System.Drawing.Point(0, 182);
+            this.panelmenubtns.Name = "panelmenubtns";
+            this.panelmenubtns.Size = new System.Drawing.Size(300, 603);
+            this.panelmenubtns.TabIndex = 5;
+            // 
+            // sidepanel
+            // 
+            this.sidepanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sidepanel.BackColor = System.Drawing.Color.White;
+            this.sidepanel.Location = new System.Drawing.Point(3, -1);
+            this.sidepanel.Name = "sidepanel";
+            this.sidepanel.Size = new System.Drawing.Size(5, 60);
+            this.sidepanel.TabIndex = 2;
+            // 
+            // btn_Project
+            // 
+            this.btn_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Project.FlatAppearance.BorderSize = 0;
+            this.btn_Project.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Project.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Project.ForeColor = System.Drawing.Color.White;
+            this.btn_Project.Image = ((System.Drawing.Image)(resources.GetObject("btn_Project.Image")));
+            this.btn_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Project.Location = new System.Drawing.Point(9, 240);
+            this.btn_Project.Name = "btn_Project";
+            this.btn_Project.Size = new System.Drawing.Size(291, 60);
+            this.btn_Project.TabIndex = 4;
+            this.btn_Project.Text = "      Đề tài";
+            this.btn_Project.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Project.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Project.UseVisualStyleBackColor = false;
+            this.btn_Project.Click += new System.EventHandler(this.btn_Project_Click);
+            // 
+            // btn_Company
+            // 
+            this.btn_Company.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Company.FlatAppearance.BorderSize = 0;
+            this.btn_Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Company.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Company.ForeColor = System.Drawing.Color.White;
+            this.btn_Company.Image = ((System.Drawing.Image)(resources.GetObject("btn_Company.Image")));
+            this.btn_Company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Company.Location = new System.Drawing.Point(9, 180);
+            this.btn_Company.Name = "btn_Company";
+            this.btn_Company.Size = new System.Drawing.Size(291, 60);
+            this.btn_Company.TabIndex = 3;
+            this.btn_Company.Text = "      Công ty";
+            this.btn_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Company.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Company.UseVisualStyleBackColor = false;
+            this.btn_Company.Click += new System.EventHandler(this.btn_Company_Click);
+            // 
+            // btn_Teacher
+            // 
+            this.btn_Teacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Teacher.FlatAppearance.BorderSize = 0;
+            this.btn_Teacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Teacher.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Teacher.ForeColor = System.Drawing.Color.White;
+            this.btn_Teacher.Image = ((System.Drawing.Image)(resources.GetObject("btn_Teacher.Image")));
+            this.btn_Teacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Teacher.Location = new System.Drawing.Point(9, 120);
+            this.btn_Teacher.Name = "btn_Teacher";
+            this.btn_Teacher.Size = new System.Drawing.Size(291, 60);
+            this.btn_Teacher.TabIndex = 2;
+            this.btn_Teacher.Text = "      Giảng viên";
+            this.btn_Teacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Teacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Teacher.UseVisualStyleBackColor = false;
+            this.btn_Teacher.Click += new System.EventHandler(this.btn_Teacher_Click);
+            // 
+            // btn_Student
+            // 
+            this.btn_Student.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Student.FlatAppearance.BorderSize = 0;
+            this.btn_Student.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Student.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Student.ForeColor = System.Drawing.Color.White;
+            this.btn_Student.Image = ((System.Drawing.Image)(resources.GetObject("btn_Student.Image")));
+            this.btn_Student.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Student.Location = new System.Drawing.Point(9, 60);
+            this.btn_Student.Name = "btn_Student";
+            this.btn_Student.Size = new System.Drawing.Size(291, 60);
+            this.btn_Student.TabIndex = 1;
+            this.btn_Student.Text = "      Sinh viên";
+            this.btn_Student.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Student.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Student.UseVisualStyleBackColor = false;
+            this.btn_Student.Click += new System.EventHandler(this.btn_student_Click);
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Home.ForeColor = System.Drawing.Color.White;
+            this.btn_Home.Image = ((System.Drawing.Image)(resources.GetObject("btn_Home.Image")));
+            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.Location = new System.Drawing.Point(9, 0);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(291, 60);
+            this.btn_Home.TabIndex = 0;
+            this.btn_Home.Text = "      Trang chủ";
+            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Navy;
+            this.panel4.Controls.Add(this.btn_Menu);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(300, 182);
+            this.panel4.TabIndex = 4;
+            // 
+            // btn_Menu
+            // 
+            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
+            this.btn_Menu.Location = new System.Drawing.Point(-1, 0);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(48, 48);
+            this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Menu.TabIndex = 2;
+            this.btn_Menu.TabStop = false;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(185, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "thực tập";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(135, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(171, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sinh viên";
+            // 
+            // sidepartTime
+            // 
+            this.sidepartTime.Interval = 10;
+            this.sidepartTime.Tick += new System.EventHandler(this.sidepartTime_Tick);
+            // 
+            // homeControl
+            // 
+            this.homeControl.BackColor = System.Drawing.Color.Linen;
+            this.homeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeControl.Location = new System.Drawing.Point(300, 112);
+            this.homeControl.Name = "homeControl";
+            this.homeControl.Size = new System.Drawing.Size(1092, 673);
+            this.homeControl.TabIndex = 3;
+            // 
+            // form_QuanLySinhVien
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1392, 785);
+            this.Controls.Add(this.panel1);
+            this.Name = "form_QuanLySinhVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản Lý Sinh Viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.panel1.ResumeLayout(false);
+            this.Panel_InforUser.ResumeLayout(false);
+            this.Panel_InforUser.PerformLayout();
+            this.panel_listMenu.ResumeLayout(false);
+            this.panelmenubtns.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_listMenu;
+        private System.Windows.Forms.Panel Panel_InforUser;
+        private HomeControl homeControl;
+        private System.Windows.Forms.Timer sidepartTime;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox btn_Menu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelmenubtns;
+        private System.Windows.Forms.Panel sidepanel;
+        private System.Windows.Forms.Button btn_Project;
+        private System.Windows.Forms.Button btn_Company;
+        private System.Windows.Forms.Button btn_Teacher;
+        private System.Windows.Forms.Button btn_Student;
+        private System.Windows.Forms.Button btn_Home;
+        private System.Windows.Forms.Label labUserName;
+        private System.Windows.Forms.Label labChucVu;
+        private System.Windows.Forms.Label txtUserName;
+        private System.Windows.Forms.Label txtChucVu;
+    }
+}
