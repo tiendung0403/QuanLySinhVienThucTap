@@ -43,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sidepartTime = new System.Windows.Forms.Timer(this.components);
-            this.homeControl = new WindowsFormsApp1.HomeControl();
             this.btn_Project = new System.Windows.Forms.Button();
             this.btn_Company = new System.Windows.Forms.Button();
             this.btn_Teacher = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             this.btn_Menu = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panelContainer.SuspendLayout();
             this.Panel_InforUser.SuspendLayout();
             this.panel_listMenu.SuspendLayout();
             this.panelmenubtns.SuspendLayout();
@@ -68,15 +66,16 @@
             this.panel1.Controls.Add(this.panel_listMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1392, 785);
             this.panel1.TabIndex = 0;
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.homeControl);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(300, 112);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1092, 673);
             this.panelContainer.TabIndex = 2;
@@ -90,6 +89,7 @@
             this.Panel_InforUser.Controls.Add(this.labUserName);
             this.Panel_InforUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_InforUser.Location = new System.Drawing.Point(300, 0);
+            this.Panel_InforUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Panel_InforUser.Name = "Panel_InforUser";
             this.Panel_InforUser.Size = new System.Drawing.Size(1092, 112);
             this.Panel_InforUser.TabIndex = 1;
@@ -145,8 +145,9 @@
             this.panel_listMenu.Controls.Add(this.panel4);
             this.panel_listMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_listMenu.Location = new System.Drawing.Point(0, 0);
-            this.panel_listMenu.MaximumSize = new System.Drawing.Size(300, 785);
-            this.panel_listMenu.MinimumSize = new System.Drawing.Size(60, 785);
+            this.panel_listMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_listMenu.MaximumSize = new System.Drawing.Size(300, 0);
+            this.panel_listMenu.MinimumSize = new System.Drawing.Size(60, 0);
             this.panel_listMenu.Name = "panel_listMenu";
             this.panel_listMenu.Size = new System.Drawing.Size(300, 785);
             this.panel_listMenu.TabIndex = 0;
@@ -162,6 +163,7 @@
             this.panelmenubtns.Controls.Add(this.btn_Home);
             this.panelmenubtns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmenubtns.Location = new System.Drawing.Point(0, 182);
+            this.panelmenubtns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelmenubtns.Name = "panelmenubtns";
             this.panelmenubtns.Size = new System.Drawing.Size(300, 603);
             this.panelmenubtns.TabIndex = 5;
@@ -171,6 +173,7 @@
             this.sidepanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.sidepanel.BackColor = System.Drawing.Color.White;
             this.sidepanel.Location = new System.Drawing.Point(3, -1);
+            this.sidepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidepanel.Name = "sidepanel";
             this.sidepanel.Size = new System.Drawing.Size(5, 60);
             this.sidepanel.TabIndex = 2;
@@ -184,6 +187,7 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 182);
             this.panel4.TabIndex = 4;
@@ -193,7 +197,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(185, 35);
+            this.label2.Location = new System.Drawing.Point(185, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 3;
@@ -215,15 +219,6 @@
             this.sidepartTime.Interval = 10;
             this.sidepartTime.Tick += new System.EventHandler(this.sidepartTime_Tick);
             // 
-            // homeControl
-            // 
-            this.homeControl.BackColor = System.Drawing.Color.Linen;
-            this.homeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeControl.Location = new System.Drawing.Point(0, 0);
-            this.homeControl.Name = "homeControl";
-            this.homeControl.Size = new System.Drawing.Size(1092, 673);
-            this.homeControl.TabIndex = 0;
-            // 
             // btn_Project
             // 
             this.btn_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -234,6 +229,7 @@
             this.btn_Project.Image = global::WindowsFormsApp1.Properties.Resources.icons8_projects_32;
             this.btn_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Project.Location = new System.Drawing.Point(9, 240);
+            this.btn_Project.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Project.Name = "btn_Project";
             this.btn_Project.Size = new System.Drawing.Size(291, 60);
             this.btn_Project.TabIndex = 4;
@@ -253,6 +249,7 @@
             this.btn_Company.Image = global::WindowsFormsApp1.Properties.Resources.icons8_company_32;
             this.btn_Company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Company.Location = new System.Drawing.Point(9, 180);
+            this.btn_Company.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Company.Name = "btn_Company";
             this.btn_Company.Size = new System.Drawing.Size(291, 60);
             this.btn_Company.TabIndex = 3;
@@ -272,6 +269,7 @@
             this.btn_Teacher.Image = global::WindowsFormsApp1.Properties.Resources.icons8_teacher_32;
             this.btn_Teacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Teacher.Location = new System.Drawing.Point(9, 120);
+            this.btn_Teacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Teacher.Name = "btn_Teacher";
             this.btn_Teacher.Size = new System.Drawing.Size(291, 60);
             this.btn_Teacher.TabIndex = 2;
@@ -291,6 +289,7 @@
             this.btn_Student.Image = global::WindowsFormsApp1.Properties.Resources.icons8_student_male_32;
             this.btn_Student.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Student.Location = new System.Drawing.Point(9, 60);
+            this.btn_Student.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Student.Name = "btn_Student";
             this.btn_Student.Size = new System.Drawing.Size(291, 60);
             this.btn_Student.TabIndex = 1;
@@ -310,6 +309,7 @@
             this.btn_Home.Image = global::WindowsFormsApp1.Properties.Resources.icons8_home_32;
             this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Home.Location = new System.Drawing.Point(9, 0);
+            this.btn_Home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(291, 60);
             this.btn_Home.TabIndex = 0;
@@ -323,6 +323,7 @@
             // 
             this.btn_Menu.Image = global::WindowsFormsApp1.Properties.Resources.icons8_menu_squared_48;
             this.btn_Menu.Location = new System.Drawing.Point(-1, 0);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Menu.Name = "btn_Menu";
             this.btn_Menu.Size = new System.Drawing.Size(48, 48);
             this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -335,6 +336,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Logo_STU;
             this.pictureBox1.Location = new System.Drawing.Point(135, 64);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(168, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -347,13 +349,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 785);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_QuanLySinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
-            this.panelContainer.ResumeLayout(false);
             this.Panel_InforUser.ResumeLayout(false);
             this.Panel_InforUser.PerformLayout();
             this.panel_listMenu.ResumeLayout(false);
@@ -389,6 +391,5 @@
         private System.Windows.Forms.Label txtUserName;
         private System.Windows.Forms.Label txtChucVu;
         private System.Windows.Forms.Panel panelContainer;
-        private HomeControl homeControl;
     }
 }

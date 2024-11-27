@@ -46,25 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustumControl\HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustumControl\StudentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\StudentControl.Designer.cs">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_QuanLySinhVien.Designer.cs">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\HomeControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\HomeControl.Designer.cs">
-      <DependentUpon>HomeControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustumControl\HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustumControl\StudentControl.resx">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_QuanLySinhVien.resx">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\HomeControl.resx">
-      <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,6 +127,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-project-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-addition-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fix-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-file-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.CustumControl;
 
 namespace WindowsFormsApp1
 {
     public partial class form_QuanLySinhVien : Form
     {
-        bool sidepartExpant;
+        bool sidepartExpant = true;
         public form_QuanLySinhVien()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace WindowsFormsApp1
         {
             sidepanel.Height = btn_Student.Height;
             sidepanel.Top = btn_Student.Top;
+            addUserControl(new StudentControl());
         }
 
         private void btn_Teacher_Click(object sender, EventArgs e)
