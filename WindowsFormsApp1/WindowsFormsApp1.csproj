@@ -46,17 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustumControl\CompanyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\CompanyControl.Designer.cs">
+      <DependentUpon>CompanyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustumControl\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustumControl\HomeControl.Designer.cs">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustumControl\ProjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\ProjectControl.Designer.cs">
+      <DependentUpon>ProjectControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustumControl\StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustumControl\StudentControl.Designer.cs">
       <DependentUpon>StudentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustumControl\TeacherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\TeacherControl.Designer.cs">
+      <DependentUpon>TeacherControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustumControl\TypeProjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustumControl\TypeProjectControl.Designer.cs">
+      <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </Compile>
     <Compile Include="form_QuanLySinhVien.cs">
       <SubType>Form</SubType>
@@ -66,11 +90,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustumControl\CompanyControl.resx">
+      <DependentUpon>CompanyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustumControl\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustumControl\ProjectControl.resx">
+      <DependentUpon>ProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustumControl\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustumControl\TeacherControl.resx">
+      <DependentUpon>TeacherControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustumControl\TypeProjectControl.resx">
+      <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_QuanLySinhVien.resx">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>

@@ -50,13 +50,14 @@ namespace WindowsFormsApp1
         {
             sidepanel.Height = btn_Teacher.Height;
             sidepanel.Top = btn_Teacher.Top;
-
+            addUserControl(new TeacherControl());
         }
 
         private void btn_Company_Click(object sender, EventArgs e)
         {
             sidepanel.Height = btn_Company.Height;
             sidepanel.Top = btn_Company.Top;
+            addUserControl(new CompanyControl());
 
         }
 
@@ -64,9 +65,17 @@ namespace WindowsFormsApp1
         {
             sidepanel.Top = btn_Project.Top;
             sidepanel.Height = btn_Project.Height;
+            addUserControl(new ProjectControl());
+        }
+        private void btnTypeProject_Click(object sender, EventArgs e)
+        {
+            sidepanel.Height = btnTypeProject.Height;
+            sidepanel.Top = btnTypeProject.Top;
+            addUserControl(new TypeProjectControl());
+
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void form_QuanLySinhVien_Load(object sender, EventArgs e)
         {
 
         }
@@ -97,5 +106,6 @@ namespace WindowsFormsApp1
         {
             sidepartTime.Start();
         }
+
     }
 }

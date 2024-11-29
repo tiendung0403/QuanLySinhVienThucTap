@@ -38,18 +38,19 @@
             this.labUserName = new System.Windows.Forms.Label();
             this.panel_listMenu = new System.Windows.Forms.Panel();
             this.panelmenubtns = new System.Windows.Forms.Panel();
+            this.btnTypeProject = new System.Windows.Forms.Button();
             this.sidepanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sidepartTime = new System.Windows.Forms.Timer(this.components);
             this.btn_Project = new System.Windows.Forms.Button();
             this.btn_Company = new System.Windows.Forms.Button();
             this.btn_Teacher = new System.Windows.Forms.Button();
             this.btn_Student = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sidepartTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.Panel_InforUser.SuspendLayout();
             this.panel_listMenu.SuspendLayout();
@@ -155,6 +156,7 @@
             // panelmenubtns
             // 
             this.panelmenubtns.BackColor = System.Drawing.Color.Navy;
+            this.panelmenubtns.Controls.Add(this.btnTypeProject);
             this.panelmenubtns.Controls.Add(this.sidepanel);
             this.panelmenubtns.Controls.Add(this.btn_Project);
             this.panelmenubtns.Controls.Add(this.btn_Company);
@@ -168,6 +170,26 @@
             this.panelmenubtns.Size = new System.Drawing.Size(300, 603);
             this.panelmenubtns.TabIndex = 5;
             // 
+            // btnTypeProject
+            // 
+            this.btnTypeProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnTypeProject.FlatAppearance.BorderSize = 0;
+            this.btnTypeProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTypeProject.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTypeProject.ForeColor = System.Drawing.Color.White;
+            this.btnTypeProject.Image = global::WindowsFormsApp1.Properties.Resources.icons8_projects_32;
+            this.btnTypeProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTypeProject.Location = new System.Drawing.Point(9, 300);
+            this.btnTypeProject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTypeProject.Name = "btnTypeProject";
+            this.btnTypeProject.Size = new System.Drawing.Size(291, 60);
+            this.btnTypeProject.TabIndex = 5;
+            this.btnTypeProject.Text = "      Loại đề tài";
+            this.btnTypeProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTypeProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTypeProject.UseVisualStyleBackColor = false;
+            this.btnTypeProject.Click += new System.EventHandler(this.btnTypeProject_Click);
+            // 
             // sidepanel
             // 
             this.sidepanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -177,47 +199,6 @@
             this.sidepanel.Name = "sidepanel";
             this.sidepanel.Size = new System.Drawing.Size(5, 60);
             this.sidepanel.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Navy;
-            this.panel4.Controls.Add(this.btn_Menu);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 182);
-            this.panel4.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(185, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "thực tập";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(171, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sinh viên";
-            // 
-            // sidepartTime
-            // 
-            this.sidepartTime.Interval = 10;
-            this.sidepartTime.Tick += new System.EventHandler(this.sidepartTime_Tick);
             // 
             // btn_Project
             // 
@@ -319,6 +300,20 @@
             this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Navy;
+            this.panel4.Controls.Add(this.btn_Menu);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(300, 182);
+            this.panel4.TabIndex = 4;
+            // 
             // btn_Menu
             // 
             this.btn_Menu.Image = global::WindowsFormsApp1.Properties.Resources.icons8_menu_squared_48;
@@ -330,6 +325,17 @@
             this.btn_Menu.TabIndex = 2;
             this.btn_Menu.TabStop = false;
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(185, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "thực tập";
             // 
             // pictureBox1
             // 
@@ -343,6 +349,22 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(171, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sinh viên";
+            // 
+            // sidepartTime
+            // 
+            this.sidepartTime.Interval = 10;
+            this.sidepartTime.Tick += new System.EventHandler(this.sidepartTime_Tick);
+            // 
             // form_QuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,7 +376,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.form_QuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
             this.Panel_InforUser.ResumeLayout(false);
             this.Panel_InforUser.PerformLayout();
@@ -391,5 +413,6 @@
         private System.Windows.Forms.Label txtUserName;
         private System.Windows.Forms.Label txtChucVu;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Button btnTypeProject;
     }
 }

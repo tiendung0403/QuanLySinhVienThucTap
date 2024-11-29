@@ -34,9 +34,9 @@
             this.txtSoluongGV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDT = new System.Windows.Forms.Button();
+            this.btnCty = new System.Windows.Forms.Button();
+            this.btnSV = new System.Windows.Forms.Button();
             this.btn_GV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -111,53 +111,53 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Bảng Điều Khiển";
             // 
-            // button3
+            // btnDT
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkGreen;
-            this.button3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_project_100;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(712, 495);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(396, 179);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "   ĐỀ TÀI : ";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDT.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnDT.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDT.ForeColor = System.Drawing.Color.White;
+            this.btnDT.Image = global::WindowsFormsApp1.Properties.Resources.icons8_project_100;
+            this.btnDT.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDT.Location = new System.Drawing.Point(712, 495);
+            this.btnDT.Name = "btnDT";
+            this.btnDT.Size = new System.Drawing.Size(396, 179);
+            this.btnDT.TabIndex = 21;
+            this.btnDT.Text = "   ĐỀ TÀI : ";
+            this.btnDT.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnDT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnDT.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCty
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_company_100;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(712, 175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(396, 179);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "   CÔNG TY : ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCty.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCty.ForeColor = System.Drawing.Color.White;
+            this.btnCty.Image = global::WindowsFormsApp1.Properties.Resources.icons8_company_100;
+            this.btnCty.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCty.Location = new System.Drawing.Point(712, 175);
+            this.btnCty.Name = "btnCty";
+            this.btnCty.Size = new System.Drawing.Size(396, 179);
+            this.btnCty.TabIndex = 19;
+            this.btnCty.Text = "   CÔNG TY : ";
+            this.btnCty.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCty.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCty.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnSV
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_human_100;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(182, 495);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(396, 179);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "   SINH VIÊN : ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSV.BackColor = System.Drawing.Color.Blue;
+            this.btnSV.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSV.ForeColor = System.Drawing.Color.White;
+            this.btnSV.Image = global::WindowsFormsApp1.Properties.Resources.icons8_human_100;
+            this.btnSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSV.Location = new System.Drawing.Point(182, 495);
+            this.btnSV.Name = "btnSV";
+            this.btnSV.Size = new System.Drawing.Size(396, 179);
+            this.btnSV.TabIndex = 17;
+            this.btnSV.Text = "   SINH VIÊN : ";
+            this.btnSV.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnSV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSV.UseVisualStyleBackColor = false;
             // 
             // btn_GV
             // 
@@ -181,17 +181,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.Controls.Add(this.txtSoLuongDTAI);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDT);
             this.Controls.Add(this.txtSoLuongCTY);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCty);
             this.Controls.Add(this.txtSoLuongSV);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSV);
             this.Controls.Add(this.txtSoluongGV);
             this.Controls.Add(this.btn_GV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "HomeControl";
-            this.Size = new System.Drawing.Size(1310, 853);
+            this.Size = new System.Drawing.Size(1529, 840);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,11 +200,11 @@
         #endregion
 
         private System.Windows.Forms.Label txtSoLuongDTAI;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDT;
         private System.Windows.Forms.Label txtSoLuongCTY;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCty;
         private System.Windows.Forms.Label txtSoLuongSV;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSV;
         private System.Windows.Forms.Label txtSoluongGV;
         private System.Windows.Forms.Button btn_GV;
         private System.Windows.Forms.Label label2;
