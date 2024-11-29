@@ -17,8 +17,7 @@ namespace WindowsFormsApp1
         public form_QuanLySinhVien()
         {
             InitializeComponent();
-            sidepanel.Height = btn_Home.Height;
-            sidepanel.Top = btn_Home.Top;
+            updateSidepanel(btn_Home);
             addUserControl(new HomeControl());
 
         }
@@ -30,48 +29,59 @@ namespace WindowsFormsApp1
             userControl.BringToFront();
 
         }
+        public void updateSidepanel(Button button)
+        {
+            sidepanel.Height = button.Height;
+            sidepanel.Top = button.Top;
+
+        }
         private void btn_Home_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = btn_Home.Height;
-            sidepanel.Top = btn_Home.Top;
+            updateSidepanel(btn_Home);
             addUserControl(new HomeControl());
+            //btn_Home.ForeColor = Color.Black;
 
 
         }
 
         private void btn_student_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = btn_Student.Height;
-            sidepanel.Top = btn_Student.Top;
+            updateSidepanel(btn_Student);
             addUserControl(new StudentControl());
+            //btn_Student.ForeColor = Color.Black;
+
         }
 
         private void btn_Teacher_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = btn_Teacher.Height;
-            sidepanel.Top = btn_Teacher.Top;
+            updateSidepanel(btn_Teacher);
             addUserControl(new TeacherControl());
+           // btn_Teacher.ForeColor = Color.Black;
+
         }
 
         private void btn_Company_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = btn_Company.Height;
-            sidepanel.Top = btn_Company.Top;
+            updateSidepanel(btn_Company);
             addUserControl(new CompanyControl());
+            //btn_Company.ForeColor = Color.Black;
+
 
         }
 
         private void btn_Project_Click(object sender, EventArgs e)
         {
-            sidepanel.Top = btn_Project.Top;
-            sidepanel.Height = btn_Project.Height;
+            updateSidepanel(btn_Project);
             addUserControl(new ProjectControl());
+           // btn_Project.ForeColor = Color.Black;
+
         }
         private void btnTypeProject_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = btnTypeProject.Height;
-            sidepanel.Top = btnTypeProject.Top;
+            updateSidepanel(btnTypeProject);
             addUserControl(new TypeProjectControl());
+            //btnTypeProject.ForeColor = Color.Black;
+
 
         }
 
