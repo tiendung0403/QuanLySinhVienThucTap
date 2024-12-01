@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             updateSidepanel(btn_Home);
-            addUserControl(new HomeControl());
+            addUserControl(homeControl1);
 
         }
         public void addUserControl(UserControl userControl)
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
         private void btn_Home_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Home);
-            addUserControl(new HomeControl());
+            addUserControl(homeControl1);
             //btn_Home.ForeColor = Color.Black;
 
 
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
         private void btn_student_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Student);
-            addUserControl(new StudentControl());
+            addUserControl(studentControl1);
             //btn_Student.ForeColor = Color.Black;
 
         }
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
         private void btn_Teacher_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Teacher);
-            addUserControl(new TeacherControl());
+            addUserControl(teacherControl1);
            // btn_Teacher.ForeColor = Color.Black;
 
         }
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
         private void btn_Company_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Company);
-            addUserControl(new CompanyControl());
+            addUserControl(companyControl1);
             //btn_Company.ForeColor = Color.Black;
 
 
@@ -72,14 +72,14 @@ namespace WindowsFormsApp1
         private void btn_Project_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Project);
-            addUserControl(new ProjectControl());
+            addUserControl(projectControl1);
            // btn_Project.ForeColor = Color.Black;
 
         }
         private void btnTypeProject_Click(object sender, EventArgs e)
         {
             updateSidepanel(btnTypeProject);
-            addUserControl(new TypeProjectControl());
+            addUserControl(typeProjectControl1);
             //btnTypeProject.ForeColor = Color.Black;
 
 
