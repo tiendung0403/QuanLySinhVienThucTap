@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboMaCTY = new System.Windows.Forms.ComboBox();
             this.comboLoaiDT = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,14 +59,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDanhSachDeTai = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBThaoTac.SuspendLayout();
             this.groupB_ChucNang.SuspendLayout();
@@ -95,7 +97,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(936, 126);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 21);
+            this.label12.Size = new System.Drawing.Size(91, 20);
             this.label12.TabIndex = 33;
             this.label12.Text = "Mã công ty";
             // 
@@ -104,7 +106,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(936, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 21);
+            this.label11.Size = new System.Drawing.Size(85, 20);
             this.label11.TabIndex = 32;
             this.label11.Text = "Loại đề tài";
             // 
@@ -152,7 +154,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(542, 81);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 21);
+            this.label6.Size = new System.Drawing.Size(105, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "Ngày bắt đầu";
             // 
@@ -161,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(101, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 21);
+            this.label4.Size = new System.Drawing.Size(82, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên đề tài";
             // 
@@ -170,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(101, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 21);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã đề tài";
             // 
@@ -213,7 +215,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(542, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 36;
             this.label5.Text = "Ngày kết thúc";
             // 
@@ -440,6 +442,8 @@
             // 
             // dgvDanhSachDeTai
             // 
+            this.dgvDanhSachDeTai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDanhSachDeTai.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDanhSachDeTai.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachDeTai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachDeTai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -455,48 +459,6 @@
             this.dgvDanhSachDeTai.RowTemplate.Height = 24;
             this.dgvDanhSachDeTai.Size = new System.Drawing.Size(1406, 262);
             this.dgvDanhSachDeTai.TabIndex = 16;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
             // 
             // panel3
             // 
@@ -514,6 +476,64 @@
             // 
             this.saveFileDialog.DefaultExt = "dat";
             this.saveFileDialog.Filter = "Dat Files (*.dat)|*.dat|All Files (*.*)|*.*";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaDT";
+            this.Column1.HeaderText = "Mã ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 55;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenDT";
+            this.Column2.HeaderText = "Tên đề tài";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 96;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NgayBatDau";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column3.HeaderText = "Ngày Bắt đầu";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 118;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NgayKetThuc";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "Ngày Kết Thúc";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 124;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "LoaiDT";
+            this.Column5.HeaderText = "Loại đề ";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 84;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "MaCTy";
+            this.Column6.HeaderText = "Mã Công ty";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 103;
             // 
             // ProjectControl
             // 
@@ -571,12 +591,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DateTimePicker dateNgayKT;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

@@ -23,6 +23,7 @@ namespace WindowsFormsApp1.CustumControl
             if (txtMa.Text == "" || txtTen.Text == "") return true;
             else return false;
         }
+
         private void hienThiDanhSachNhaSanXuat(DataGridView dgv, List<DeTai> ds)
         {
             dgv.DataSource = ds.ToList();
