@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CongTy.cs" />
     <Compile Include="CustumControl\CompanyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +83,7 @@
     <Compile Include="CustumControl\TypeProjectControl.Designer.cs">
       <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeTai.cs" />
     <Compile Include="form_QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +93,8 @@
     <Compile Include="LoaiDeTai.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyCongTy.cs" />
+    <Compile Include="QuanLyDeTai.cs" />
     <Compile Include="QuanLyLoaiDeTai.cs" />
     <Compile Include="TruyCapDuLieu.cs" />
     <EmbeddedResource Include="CustumControl\CompanyControl.resx">

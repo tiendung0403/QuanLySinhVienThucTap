@@ -64,12 +64,10 @@ namespace WindowsFormsApp1.CustumControl
             saveFileDialog.DefaultExt = "dat";
             saveFileDialog.AddExtension = true;
 
-            // Kiểm tra nếu người dùng chọn tệp lưu
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
 
-                // Lưu danh sách LoaiDeTai vào tệp
                 bool result = TruyCapDuLieu.ghiFile(filePath);
                 if (result)
                 {
@@ -136,23 +134,23 @@ namespace WindowsFormsApp1.CustumControl
 
         private void btnDocFile_Click(object sender, EventArgs e)
         {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    string filePath = saveFileDialog.FileName;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
 
-            //    bool result = TruyCapDuLieu.docFile(filePath);
-            //    if (result)
-            //    {
-            //        MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bool result = TruyCapDuLieu.docFile(filePath);
+                if (result)
+                {
+                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //        quanly = new QuanLyLoaiDeTai();
-            //        hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.DanhSachLDT);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+                    quanly = new QuanLyLoaiDeTai();
+                    hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.DanhSachLDT);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)

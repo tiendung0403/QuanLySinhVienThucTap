@@ -13,10 +13,14 @@ namespace WindowsFormsApp1
     {
         private static TruyCapDuLieu instanse = null;
         private List<LoaiDeTai> dsLoaiDeTai;
+        private List<CongTy> dsCongTy;
+        private List<DeTai> dsDeTai;
 
         private TruyCapDuLieu()
         {
             dsLoaiDeTai = new List<LoaiDeTai>();
+            dsCongTy = new List<CongTy>();
+            dsDeTai = new List<DeTai>();
         }
 
         public static TruyCapDuLieu khoitao()
@@ -29,6 +33,14 @@ namespace WindowsFormsApp1
         public List<LoaiDeTai> getDanhSachLoaiDT()
         {
             return dsLoaiDeTai;
+        }
+        public List<CongTy> getDanhSachCongTy()
+        {
+            return dsCongTy;
+        }
+        public List<DeTai> getDanhSachDeTai()
+        {
+            return dsDeTai;
         }
 
         public static bool docFile(string tenFile)
