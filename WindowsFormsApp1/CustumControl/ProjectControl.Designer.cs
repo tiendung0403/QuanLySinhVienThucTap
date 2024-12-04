@@ -59,14 +59,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDanhSachDeTai = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBThaoTac.SuspendLayout();
             this.groupB_ChucNang.SuspendLayout();
@@ -459,23 +459,7 @@
             this.dgvDanhSachDeTai.RowTemplate.Height = 24;
             this.dgvDanhSachDeTai.Size = new System.Drawing.Size(1406, 262);
             this.dgvDanhSachDeTai.TabIndex = 16;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.dgvDanhSachDeTai);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 222);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1529, 618);
-            this.panel3.TabIndex = 5;
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "dat";
-            this.saveFileDialog.Filter = "Dat Files (*.dat)|*.dat|All Files (*.*)|*.*";
+            this.dgvDanhSachDeTai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachDeTai_CellClick);
             // 
             // Column1
             // 
@@ -534,6 +518,23 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Width = 103;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Controls.Add(this.dgvDanhSachDeTai);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 222);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1529, 618);
+            this.panel3.TabIndex = 5;
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "dat";
+            this.saveFileDialog.Filter = "Dat Files (*.dat)|*.dat|All Files (*.*)|*.*";
             // 
             // ProjectControl
             // 

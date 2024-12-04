@@ -22,9 +22,9 @@ namespace WindowsFormsApp1.CustumControl
         private void TypeProjectControl_Load(object sender, EventArgs e)
         {
             List<LoaiDeTai> dsNhaSanXuat = quanly.getDanhSachLoaiDT();
-            hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, dsNhaSanXuat);
+            hienThiDanhSach(dgvDanhSachLDT, dsNhaSanXuat);
         }
-        private void hienThiDanhSachNhaSanXuat(DataGridView dgv, List<LoaiDeTai> ds)
+        private void hienThiDanhSach(DataGridView dgv, List<LoaiDeTai> ds)
         {
             dgv.DataSource = ds.ToList();
             dgv.Refresh();
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.CustumControl
             {
                 LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
                 if (quanly.Them(nsx)) {
-                    hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+                    hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
                 }
                 else 
                 {
@@ -59,10 +59,6 @@ namespace WindowsFormsApp1.CustumControl
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Dat Files (*.dat)|*.dat|All Files (*.*)|*.*";
-            saveFileDialog.DefaultExt = "dat";
-            saveFileDialog.AddExtension = true;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -103,7 +99,7 @@ namespace WindowsFormsApp1.CustumControl
                 LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
                 if (quanly.Sua(nsx))
                 {
-                    hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+                    hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
                 }
                 else
                 {
@@ -124,7 +120,7 @@ namespace WindowsFormsApp1.CustumControl
             txtMa.Clear();
             txtHoten.Clear();
 
-            hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+            hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -144,7 +140,7 @@ namespace WindowsFormsApp1.CustumControl
                     MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     quanly = new QuanLyLoaiDeTai();
-                    hienThiDanhSachNhaSanXuat(dgvDanhSachLDT, quanly.DanhSachLDT);
+                    hienThiDanhSach(dgvDanhSachLDT, quanly.DanhSachLDT);
                 }
                 else
                 {

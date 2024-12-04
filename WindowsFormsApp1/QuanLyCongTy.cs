@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             this.DanhsachCTy = duLieu.getDanhSachCongTy();
         }
 
-        public List<CongTy> getDanhSachLoaiDT()
+        public List<CongTy> getDanhSachCongTy()
         {
             return this.DanhsachCTy;
         }

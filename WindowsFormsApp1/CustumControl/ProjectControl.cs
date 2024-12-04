@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.CustumControl
             else return false;
         }
 
-        private void hienThiDanhSachNhaSanXuat(DataGridView dgv, List<DeTai> ds)
+        private void hienThiDanhSach(DataGridView dgv, List<DeTai> ds)
         {
             dgv.DataSource = ds.ToList();
             dgv.Refresh();
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.CustumControl
         private void ProjectControl_Load(object sender, EventArgs e)
         {
             List<DeTai> dsDeTai = quanly.getDanhSachDeTai();
-            hienThiDanhSachNhaSanXuat(dgvDanhSachDeTai, dsDeTai);
+            hienThiDanhSach(dgvDanhSachDeTai, dsDeTai);
         }
 
         private void btnaAdd_Click(object sender, EventArgs e)
@@ -48,11 +48,11 @@ namespace WindowsFormsApp1.CustumControl
                 DeTai nsx = new DeTai(txtMa.Text, txtTen.Text, dateNgayBD.Value, dateNgayKT.Value, comboLoaiDT.Text, comboMaCTY.Text);
                 if (quanly.Them(nsx))
                 {
-                    hienThiDanhSachNhaSanXuat(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+                    hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
                 }
                 else
                 {
-                    MessageBox.Show("Loại đề tài đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đề tài đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -61,33 +61,101 @@ namespace WindowsFormsApp1.CustumControl
 
         private void btnFix_Click(object sender, EventArgs e)
         {
+            if (kiemtraRong())
+            {
+                MessageBox.Show("Vui lòng chọn hàng cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                txtMa.Enabled = false;
 
+                DeTai nsx = new DeTai(txtMa.Text, txtTen.Text, dateNgayBD.Value, dateNgayKT.Value, comboLoaiDT.Text, comboMaCTY.Text);
+                if (quanly.Sua(nsx))
+                {
+                    hienThiDanhSach(dgvDanhSachDeTai, quanly.DanhSachDeTai);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy Đề tài cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true;
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                bool result = TruyCapDuLieu.ghiFile(filePath);
+                if (result)
+                {
+                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true;
 
+            txtMa.Clear();
+            txtTen.Clear();
+
+            hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true;
 
         }
 
         private void btnReadFile_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                bool result = TruyCapDuLieu.docFile(filePath);
+                if (result)
+                {
+                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    quanly = new QuanLyDeTai();
+                    hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+                }
+                else
+                {
+                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 
+        private void dgvDanhSachDeTai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DeTai dt = quanly.Tim(dgvDanhSachDeTai.Rows[e.RowIndex].Cells[0].Value.ToString());
+                txtMa.Text = dt.MaDT;
+                txtTen.Text = dt.TenDT;
+                dateNgayBD.Value = dt.NgayBatDau;
+                dateNgayKT.Value = dt.NgayKetThuc;
+                comboLoaiDT.Text = dt.LoaiDT;
+                comboMaCTY.Text = dt.MaCTy;
+            }
+        }
     }
 }

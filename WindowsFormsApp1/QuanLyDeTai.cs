@@ -6,50 +6,50 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class QuanLyDeTai
+    internal class QuanLyDeTai
     {
-            public List<DeTai> DanhSachDeTai { get; set; }
+        public List<DeTai> DanhSachDeTai { get; set; }
 
-            public QuanLyDeTai()
+        public QuanLyDeTai()
+        {
+            TruyCapDuLieu duLieu = TruyCapDuLieu.khoitao();
+            this.DanhSachDeTai = duLieu.getDanhSachDeTai();
+        }
+
+        public List<DeTai> getDanhSachDeTai()
+        {
+            return this.DanhSachDeTai;
+        }
+
+        public DeTai Tim(string ma)
+        {
+            return DanhSachDeTai.Find(ldt => ldt.MaDT == ma);
+        }
+
+        public bool Them(DeTai a)
+        {
+            if (Tim(a.MaDT) == null)
             {
-                TruyCapDuLieu duLieu = TruyCapDuLieu.khoitao();
-                this.DanhSachDeTai = duLieu.getDanhSachDeTai();
+                DanhSachDeTai.Add(a);
+                return true;
             }
+            return false;
+        }
 
-            public List<DeTai> getDanhSachDeTai()
+        public bool Xoa(string ma)
+        {
+            var ldt = Tim(ma);
+            if (ldt != null)
             {
-                return this.DanhSachDeTai;
+                DanhSachDeTai.Remove(ldt);
+                return true;
             }
+            return false;
+        }
 
-            public DeTai Tim(string ma)
-            {
-                return DanhSachDeTai.Find(ldt => ldt.MaDT == ma);
-            }
-
-            public bool Them(DeTai a)
-            {
-                if (Tim(a.MaDT) == null)
-                {
-                    DanhSachDeTai.Add(a);
-                    return true;
-                }
-                return false;
-            }
-
-            public bool Xoa(string ma)
-            {
-                var ldt = Tim(ma);
-                if (ldt != null)
-                {
-                    DanhSachDeTai.Remove(ldt);
-                    return true;
-                }
-                return false;
-            }
-
-            public bool Sua(DeTai a)
-            {
-                DeTai ketQuaTim = Tim(a.MaDT);
+        public bool Sua(DeTai a)
+        {
+            DeTai ketQuaTim = Tim(a.MaDT);
             if (ketQuaTim != null)
             {
                 ketQuaTim.MaDT = a.MaDT;
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 ketQuaTim.MaCTy = a.MaCTy;
                 return true;
             }
-                return false;
-            }
+            return false;
         }
     }
+}
