@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -15,12 +16,14 @@ namespace WindowsFormsApp1
         private List<LoaiDeTai> dsLoaiDeTai;
         private List<CongTy> dsCongTy;
         private List<DeTai> dsDeTai;
+        private List<GiangVien> dsGiangVien;
 
         private TruyCapDuLieu()
         {
             dsLoaiDeTai = new List<LoaiDeTai>();
             dsCongTy = new List<CongTy>();
             dsDeTai = new List<DeTai>();
+            dsGiangVien = new List<GiangVien>();
         }
 
         public static TruyCapDuLieu khoitao()
@@ -42,7 +45,10 @@ namespace WindowsFormsApp1
         {
             return dsDeTai;
         }
-
+        public List<GiangVien> getDanhSachGiangVien()
+        {
+            return dsGiangVien;
+        }
         public static bool docFile(string tenFile)
         {
             try

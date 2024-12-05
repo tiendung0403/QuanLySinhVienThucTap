@@ -100,6 +100,7 @@
             this.dgvDanhsachcongty.RowTemplate.Height = 24;
             this.dgvDanhsachcongty.Size = new System.Drawing.Size(1406, 262);
             this.dgvDanhsachcongty.TabIndex = 16;
+            this.dgvDanhsachcongty.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachcongty_CellClick);
             // 
             // label2
             // 
@@ -473,6 +474,7 @@
             this.Column1.HeaderText = "Mã Công ty";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 103;
             // 
             // Column2
@@ -481,6 +483,7 @@
             this.Column2.HeaderText = "Tên công ty";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 106;
             // 
             // Column3
@@ -489,6 +492,7 @@
             this.Column3.HeaderText = "Tên viết tắt";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 101;
             // 
             // Column4
@@ -497,6 +501,7 @@
             this.Column4.HeaderText = "Địa Chỉ";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 78;
             // 
             // Column5
@@ -505,6 +510,7 @@
             this.Column5.HeaderText = "Email";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 70;
             // 
             // Column6
@@ -513,6 +519,7 @@
             this.Column6.HeaderText = "Số điện thoại";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Width = 114;
             // 
             // CompanyControl

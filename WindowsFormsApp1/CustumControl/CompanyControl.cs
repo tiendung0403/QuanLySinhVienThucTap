@@ -151,5 +151,20 @@ namespace WindowsFormsApp1.CustumControl
             }
 
         }
+
+        private void dgvDanhsachcongty_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                CongTy cty = quanly.Tim(dgvDanhsachcongty.Rows[e.RowIndex].Cells[0].Value.ToString());
+                txtMa.Text = cty.MaCongTy;
+                txtTen.Text = cty.TenCongTy;
+                txtTenVT.Text = cty.TenVietTat;
+                txtDiachi.Text = cty.DiaChi;
+                txtEmail.Text = cty.Email;
+                txtSDT.Text = cty.SoDienThoai;
+            }
+
+        }
     }
 }
