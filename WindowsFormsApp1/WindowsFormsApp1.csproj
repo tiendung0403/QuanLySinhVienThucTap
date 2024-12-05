@@ -53,6 +53,8 @@
     <Compile Include="CustumControl\CompanyControl.Designer.cs">
       <DependentUpon>CompanyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySinhVien.cs" />
+    <Compile Include="SinhVien.cs" />
     <Compile Include="GiangVien.cs" />
     <Compile Include="CustumControl\HomeControl.cs">
       <SubType>UserControl</SubType>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.CustumControl;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         private List<CongTy> dsCongTy;
         private List<DeTai> dsDeTai;
         private List<GiangVien> dsGiangVien;
+        private List<SinhVien> dsSinhVien;
 
         private TruyCapDuLieu()
         {
@@ -24,6 +26,7 @@ namespace WindowsFormsApp1
             dsCongTy = new List<CongTy>();
             dsDeTai = new List<DeTai>();
             dsGiangVien = new List<GiangVien>();
+            dsSinhVien = new List<SinhVien>();
         }
 
         public static TruyCapDuLieu khoitao()
@@ -48,6 +51,10 @@ namespace WindowsFormsApp1
         public List<GiangVien> getDanhSachGiangVien()
         {
             return dsGiangVien;
+        }
+        public List<SinhVien> getDanhSachSinhVien()
+        {
+            return dsSinhVien;
         }
         public static bool docFile(string tenFile)
         {
