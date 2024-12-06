@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using WindowsFormsApp1.BUS;
 using WindowsFormsApp1.DTO;
 
@@ -37,13 +38,49 @@ namespace WindowsFormsApp1.GUI.CustumControl
         {
             hienThiDanhSach(dgvDSSinhvien, quanly.DanhSachSV);
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private bool kiemtradiem(string s)
         {
+            try
+            {
+                double.Parse(txtDTB.Text);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtMa.Enabled = true;
+            if (kiemtradiem(txtDTB.Text))
+            {
+                try
+                {
+
+                    SinhVien nsx = new SinhVien(txtMa.Text, txtHoten.Text, txtGioitinh.Text, dateNgaySinh.Value, txtEmail.Text, txtSDT.Text, double.Parse(txtDTB.Text), txtLopHoc.Text, comboMaCty.Text, comboMaGV.Text);
+                    if (quanly.Them(nsx))
+                    {
+                        hienThiDanhSach(dgvDSSinhvien, quanly.DanhSachSV);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sinh viên đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
 
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+            }
+            else MessageBox.Show("Điểm không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
         private void btnFix_Click(object sender, EventArgs e)
         {
 

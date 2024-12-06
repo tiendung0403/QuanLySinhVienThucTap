@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1.GUI.CustumControl
+﻿using System;
+
+namespace WindowsFormsApp1.GUI.CustumControl
 {
     partial class StudentControl
     {
@@ -28,7 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,6 +69,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDSSinhvien = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +80,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBThaoTac.SuspendLayout();
@@ -457,11 +460,11 @@
             this.dateNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateNgaySinh.Location = new System.Drawing.Point(228, 161);
-            this.dateNgaySinh.MaxDate = new System.DateTime(2024, 11, 27, 0, 0, 0, 0);
+            this.dateNgaySinh.MaxDate = DateTime.Now;
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(196, 28);
             this.dateNgaySinh.TabIndex = 23;
-            this.dateNgaySinh.Value = new System.DateTime(2024, 11, 27, 0, 0, 0, 0);
+            this.dateNgaySinh.Value = DateTime.Now;
             // 
             // txtGioitinh
             // 
@@ -550,6 +553,17 @@
             this.dgvDSSinhvien.TabIndex = 16;
             this.dgvDSSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSinhvien_CellClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(498, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(355, 45);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Danh sách sinh viên";
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MaSinhVien";
@@ -557,7 +571,7 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 101;
+            this.Column1.Width = 110;
             // 
             // Column2
             // 
@@ -566,27 +580,29 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 54;
+            this.Column2.Width = 75;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "GioiTinh";
-            dataGridViewCellStyle9.Format = "dd/MM/yyyy";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column3.HeaderText = "Giới tính";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 77;
+            this.Column3.Width = 83;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "NgaySinh";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column4.HeaderText = "Ngày sinh";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 89;
+            this.Column4.Width = 96;
             // 
             // Column5
             // 
@@ -604,7 +620,7 @@
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 105;
+            this.Column6.Width = 114;
             // 
             // Column7
             // 
@@ -640,17 +656,6 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Width = 110;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(498, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(355, 45);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Danh sách sinh viên";
             // 
             // StudentControl
             // 
