@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     public class DeTai
     {
         public string MaDT { get; set; }

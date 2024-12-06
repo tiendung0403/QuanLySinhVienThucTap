@@ -7,7 +7,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.BLL;
-using WindowsFormsApp1.GUI.CustumControl;
 
 namespace WindowsFormsApp1.DAL
 {

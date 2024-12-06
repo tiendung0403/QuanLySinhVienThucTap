@@ -8,6 +8,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class QuanLyCongTy
     {
         public List<CongTy> DanhsachCTy { get; set; }

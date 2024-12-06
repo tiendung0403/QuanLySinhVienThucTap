@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class GiangVien
     {
         public string MaGiangVien { get; set; }   

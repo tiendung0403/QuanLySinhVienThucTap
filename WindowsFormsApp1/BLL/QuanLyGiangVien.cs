@@ -7,6 +7,8 @@ using WindowsFormsApp1.DAL;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class QuanLyGiangVien
     {
         public List<GiangVien> DanhsachGiangVien { get; set; }

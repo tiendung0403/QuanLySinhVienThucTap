@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class SinhVien
     {
         public string MaSinhVien { get; set; }

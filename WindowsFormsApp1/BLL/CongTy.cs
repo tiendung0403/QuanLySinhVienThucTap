@@ -2,6 +2,8 @@
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class CongTy
     {
         public string MaCongTy { get; set; }

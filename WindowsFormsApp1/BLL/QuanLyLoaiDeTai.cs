@@ -7,6 +7,8 @@ using WindowsFormsApp1.DAL;
 
 namespace WindowsFormsApp1.BLL
 {
+    [Serializable]
+
     internal class QuanLyLoaiDeTai
     {
         public List<LoaiDeTai> DanhSachLDT { get; set; }
