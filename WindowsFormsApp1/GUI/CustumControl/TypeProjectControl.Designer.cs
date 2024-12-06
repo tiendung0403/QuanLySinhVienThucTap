@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1.CustumControl
+﻿namespace WindowsFormsApp1.GUI.CustumControl
 {
     partial class TypeProjectControl
     {

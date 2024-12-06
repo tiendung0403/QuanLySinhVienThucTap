@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.CustumControl;
+using WindowsFormsApp1.GUI.CustumControl;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.GUI.MainForm
 {
     public partial class form_QuanLySinhVien : Form
     {

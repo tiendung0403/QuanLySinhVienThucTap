@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace WindowsFormsApp1.GUI.MainForm
 {
     partial class form_QuanLySinhVien
     {
@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.typeProjectControl1 = new WindowsFormsApp1.CustumControl.TypeProjectControl();
-            this.teacherControl1 = new WindowsFormsApp1.CustumControl.TeacherControl();
-            this.studentControl1 = new WindowsFormsApp1.CustumControl.StudentControl();
-            this.projectControl1 = new WindowsFormsApp1.CustumControl.ProjectControl();
-            this.homeControl1 = new WindowsFormsApp1.CustumControl.HomeControl();
-            this.companyControl1 = new WindowsFormsApp1.CustumControl.CompanyControl();
+            this.typeProjectControl1 = new WindowsFormsApp1.GUI.CustumControl.TypeProjectControl();
+            this.teacherControl1 = new WindowsFormsApp1.GUI.CustumControl.TeacherControl();
+            this.studentControl1 = new WindowsFormsApp1.GUI.CustumControl.StudentControl();
+            this.projectControl1 = new WindowsFormsApp1.GUI.CustumControl.ProjectControl();
+            this.homeControl1 = new WindowsFormsApp1.GUI.CustumControl.HomeControl();
+            this.companyControl1 = new WindowsFormsApp1.GUI.CustumControl.CompanyControl();
             this.Panel_InforUser = new System.Windows.Forms.Panel();
             this.txtChucVu = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.Label();
@@ -479,11 +479,11 @@
         private System.Windows.Forms.Label txtChucVu;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Button btnTypeProject;
-        private CustumControl.TypeProjectControl typeProjectControl1;
-        private CustumControl.TeacherControl teacherControl1;
-        private CustumControl.StudentControl studentControl1;
-        private CustumControl.ProjectControl projectControl1;
-        private CustumControl.HomeControl homeControl1;
-        private CustumControl.CompanyControl companyControl1;
+        private GUI.CustumControl.TypeProjectControl typeProjectControl1;
+        private GUI.CustumControl.TeacherControl teacherControl1;
+        private GUI.CustumControl.StudentControl studentControl1;
+        private GUI.CustumControl.ProjectControl projectControl1;
+        private GUI.CustumControl.HomeControl homeControl1;
+        private GUI.CustumControl.CompanyControl companyControl1;
     }
 }

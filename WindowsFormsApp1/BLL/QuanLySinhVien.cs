@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.DAL;
 
-namespace WindowsFormsApp1.CustumControl
+namespace WindowsFormsApp1.BLL
 {
     internal class QuanLySinhVien
     {

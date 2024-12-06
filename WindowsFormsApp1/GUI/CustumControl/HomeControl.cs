@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.CustumControl
+namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class HomeControl : UserControl
     {

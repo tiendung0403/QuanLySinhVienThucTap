@@ -46,80 +46,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CongTy.cs" />
-    <Compile Include="CustumControl\CompanyControl.cs">
+    <Compile Include="BLL\CongTy.cs" />
+    <Compile Include="GUI\CustumControl\CompanyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\CompanyControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\CompanyControl.Designer.cs">
       <DependentUpon>CompanyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySinhVien.cs" />
-    <Compile Include="SinhVien.cs" />
-    <Compile Include="GiangVien.cs" />
-    <Compile Include="CustumControl\HomeControl.cs">
+    <Compile Include="BLL\QuanLySinhVien.cs" />
+    <Compile Include="BLL\SinhVien.cs" />
+    <Compile Include="BLL\GiangVien.cs" />
+    <Compile Include="GUI\CustumControl\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\HomeControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\HomeControl.Designer.cs">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustumControl\ProjectControl.cs">
+    <Compile Include="GUI\CustumControl\ProjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\ProjectControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\ProjectControl.Designer.cs">
       <DependentUpon>ProjectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustumControl\StudentControl.cs">
+    <Compile Include="GUI\CustumControl\StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\StudentControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\StudentControl.Designer.cs">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustumControl\TeacherControl.cs">
+    <Compile Include="GUI\CustumControl\TeacherControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\TeacherControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\TeacherControl.Designer.cs">
       <DependentUpon>TeacherControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustumControl\TypeProjectControl.cs">
+    <Compile Include="GUI\CustumControl\TypeProjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustumControl\TypeProjectControl.Designer.cs">
+    <Compile Include="GUI\CustumControl\TypeProjectControl.Designer.cs">
       <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeTai.cs" />
-    <Compile Include="form_QuanLySinhVien.cs">
+    <Compile Include="BLL\DeTai.cs" />
+    <Compile Include="GUI\MainForm\form_QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_QuanLySinhVien.Designer.cs">
+    <Compile Include="GUI\MainForm\form_QuanLySinhVien.Designer.cs">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoaiDeTai.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="BLL\LoaiDeTai.cs" />
+    <Compile Include="Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyCongTy.cs" />
-    <Compile Include="QuanLyDeTai.cs" />
-    <Compile Include="QuanLyGiangVien.cs" />
-    <Compile Include="QuanLyLoaiDeTai.cs" />
-    <Compile Include="TruyCapDuLieu.cs" />
-    <EmbeddedResource Include="CustumControl\CompanyControl.resx">
+    <Compile Include="BLL\QuanLyCongTy.cs" />
+    <Compile Include="BLL\QuanLyDeTai.cs" />
+    <Compile Include="BLL\QuanLyGiangVien.cs" />
+    <Compile Include="BLL\QuanLyLoaiDeTai.cs" />
+    <Compile Include="DAL\TruyCapDuLieu.cs" />
+    <EmbeddedResource Include="GUI\CustumControl\CompanyControl.resx">
       <DependentUpon>CompanyControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustumControl\HomeControl.resx">
+    <EmbeddedResource Include="GUI\CustumControl\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustumControl\ProjectControl.resx">
+    <EmbeddedResource Include="GUI\CustumControl\ProjectControl.resx">
       <DependentUpon>ProjectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustumControl\StudentControl.resx">
+    <EmbeddedResource Include="GUI\CustumControl\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustumControl\TeacherControl.resx">
+    <EmbeddedResource Include="GUI\CustumControl\TeacherControl.resx">
       <DependentUpon>TeacherControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustumControl\TypeProjectControl.resx">
+    <EmbeddedResource Include="GUI\CustumControl\TypeProjectControl.resx">
       <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_QuanLySinhVien.resx">
+    <EmbeddedResource Include="GUI\MainForm\form_QuanLySinhVien.resx">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -198,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-print-file-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\ChildForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

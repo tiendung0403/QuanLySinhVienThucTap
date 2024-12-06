@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.CustumControl
+namespace WindowsFormsApp1.BLL
 {
     internal class SinhVien
     {

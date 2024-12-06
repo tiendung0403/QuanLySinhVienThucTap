@@ -7,35 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.BLL;
+using WindowsFormsApp1.DAL;
 
-namespace WindowsFormsApp1.CustumControl
+namespace WindowsFormsApp1.GUI.CustumControl
 {
-    public partial class ProjectControl : UserControl
+    public partial class CompanyControl : UserControl
     {
-        private QuanLyDeTai quanly;
-        public ProjectControl()
+        private QuanLyCongTy quanly;
+        public CompanyControl()
         {
+            quanly = new QuanLyCongTy();
             InitializeComponent();
-            quanly = new QuanLyDeTai();
         }
+        private void CompanyControl_Load(object sender, EventArgs e)
+        {
+            hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
+        }
+
         private bool kiemtraRong()
         {
-            if (txtMa.Text == "" || txtTen.Text == "") return true;
+            if (txtMa.Text == "" || txtTen.Text == "" || txtDiachi.Text == "") return true;
             else return false;
         }
 
-        private void hienThiDanhSach(DataGridView dgv, List<DeTai> ds)
+        private void hienThiDanhSach(DataGridView dgv, List<CongTy> ds)
         {
             dgv.DataSource = ds.ToList();
             dgv.Refresh();
         }
-        private void ProjectControl_Load(object sender, EventArgs e)
-        {
-            List<DeTai> dsDeTai = quanly.getDanhSachDeTai();
-            hienThiDanhSach(dgvDanhSachDeTai, dsDeTai);
-        }
 
-        private void btnaAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
 
@@ -45,14 +47,14 @@ namespace WindowsFormsApp1.CustumControl
             }
             else
             {
-                DeTai nsx = new DeTai(txtMa.Text, txtTen.Text, dateNgayBD.Value, dateNgayKT.Value, comboLoaiDT.Text, comboMaCTY.Text);
+                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtEmail.Text, txtSDT.Text);
                 if (quanly.Them(nsx))
                 {
-                    hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
                 }
                 else
                 {
-                    MessageBox.Show("Đề tài đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Công ty đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -69,21 +71,16 @@ namespace WindowsFormsApp1.CustumControl
             {
                 txtMa.Enabled = false;
 
-                DeTai nsx = new DeTai(txtMa.Text, txtTen.Text, dateNgayBD.Value, dateNgayKT.Value, comboLoaiDT.Text, comboMaCTY.Text);
+                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtEmail.Text, txtSDT.Text);
                 if (quanly.Sua(nsx))
                 {
-                    hienThiDanhSach(dgvDanhSachDeTai, quanly.DanhSachDeTai);
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy Đề tài cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không tìm thấy Công ty cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            txtMa.Enabled = true;
 
         }
 
@@ -106,23 +103,35 @@ namespace WindowsFormsApp1.CustumControl
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void txtClear()
+        {
+            txtMa.Clear();
+            txtTen.Clear();
+            txtTenVT.Clear();
+            txtDiachi.Clear();
+            txtEmail.Clear();
+            txtSDT.Clear();
+
+        }
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
 
-            txtMa.Clear();
-            txtTen.Clear();
+            txtClear();
+            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
 
-            hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            txtMa.Enabled = true;
 
         }
 
-        private void btnReadFile_Click(object sender, EventArgs e)
+        private void btnReadfile_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -132,9 +141,8 @@ namespace WindowsFormsApp1.CustumControl
                 if (result)
                 {
                     MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    quanly = new QuanLyDeTai();
-                    hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+                    quanly = new QuanLyCongTy();
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
                 }
                 else
                 {
@@ -144,18 +152,19 @@ namespace WindowsFormsApp1.CustumControl
 
         }
 
-        private void dgvDanhSachDeTai_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDanhsachcongty_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                DeTai dt = quanly.Tim(dgvDanhSachDeTai.Rows[e.RowIndex].Cells[0].Value.ToString());
-                txtMa.Text = dt.MaDT;
-                txtTen.Text = dt.TenDT;
-                dateNgayBD.Value = dt.NgayBatDau;
-                dateNgayKT.Value = dt.NgayKetThuc;
-                comboLoaiDT.Text = dt.LoaiDT;
-                comboMaCTY.Text = dt.MaCTy;
+                CongTy cty = quanly.Tim(dgvDanhsachcongty.Rows[e.RowIndex].Cells[0].Value.ToString());
+                txtMa.Text = cty.MaCongTy;
+                txtTen.Text = cty.TenCongTy;
+                txtTenVT.Text = cty.TenVietTat;
+                txtDiachi.Text = cty.DiaChi;
+                txtEmail.Text = cty.Email;
+                txtSDT.Text = cty.SoDienThoai;
             }
+
         }
     }
 }

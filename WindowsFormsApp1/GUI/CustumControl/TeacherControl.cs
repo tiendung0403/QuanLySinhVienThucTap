@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.BLL;
+using WindowsFormsApp1.DAL;
 
-namespace WindowsFormsApp1.CustumControl
+namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class TeacherControl : UserControl
     {
