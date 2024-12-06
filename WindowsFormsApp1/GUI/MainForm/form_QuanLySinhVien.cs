@@ -20,6 +20,18 @@ namespace WindowsFormsApp1.GUI.MainForm
             updateSidepanel(btn_Home);
             addUserControl(homeControl1);
 
+            studentControl1.ExitButtonClicked += ExitControl_btnExit_Click;
+            teacherControl1.ExitButtonClicked += ExitControl_btnExit_Click;
+            companyControl1.ExitButtonClicked += ExitControl_btnExit_Click;
+            projectControl1.ExitButtonClicked += ExitControl_btnExit_Click;
+            typeProjectControl1.ExitButtonClicked += ExitControl_btnExit_Click;
+
+        }
+
+        private void ExitControl_btnExit_Click(object sender, EventArgs e)
+        {
+            updateSidepanel(btn_Home);
+            addUserControl(homeControl1);
         }
         public void addUserControl(UserControl userControl)
         {
@@ -29,18 +41,24 @@ namespace WindowsFormsApp1.GUI.MainForm
             userControl.BringToFront();
 
         }
-        public void updateSidepanel(Button button)
+        private void updateSidepanel(Button button)
         {
             sidepanel.Height = button.Height;
             sidepanel.Top = button.Top;
 
+            foreach (Control ctrl in panelmenubtns.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.ForeColor = Color.White; 
+                }
+            }
+            button.ForeColor = Color.Black;
         }
         private void btn_Home_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Home);
             addUserControl(homeControl1);
-            //btn_Home.ForeColor = Color.Black;
-
 
         }
 
@@ -48,7 +66,6 @@ namespace WindowsFormsApp1.GUI.MainForm
         {
             updateSidepanel(btn_Student);
             addUserControl(studentControl1);
-            //btn_Student.ForeColor = Color.Black;
 
         }
 
@@ -56,7 +73,6 @@ namespace WindowsFormsApp1.GUI.MainForm
         {
             updateSidepanel(btn_Teacher);
             addUserControl(teacherControl1);
-           // btn_Teacher.ForeColor = Color.Black;
 
         }
 
@@ -64,23 +80,18 @@ namespace WindowsFormsApp1.GUI.MainForm
         {
             updateSidepanel(btn_Company);
             addUserControl(companyControl1);
-            //btn_Company.ForeColor = Color.Black;
-
-
         }
 
         private void btn_Project_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Project);
             addUserControl(projectControl1);
-           // btn_Project.ForeColor = Color.Black;
 
         }
         private void btnTypeProject_Click(object sender, EventArgs e)
         {
             updateSidepanel(btnTypeProject);
             addUserControl(typeProjectControl1);
-            //btnTypeProject.ForeColor = Color.Black;
 
 
         }

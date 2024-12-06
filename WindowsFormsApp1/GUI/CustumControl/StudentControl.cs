@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.BLL;
+using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class StudentControl : UserControl
     {
+        public event EventHandler ExitButtonClicked;
         private QuanLySinhVien quanly;
+
         public StudentControl()
         {
             quanly = new QuanLySinhVien();
@@ -23,7 +26,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void hienThiDanhSach(DataGridView dgv, List<SinhVien> ds)
         {
             dgv.DataSource = ds.ToList();
-            dgv.Refresh();
         }
         private bool kiemtraRong()
         {
@@ -33,8 +35,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void StudentControl_Load(object sender, EventArgs e)
         {
-            List<SinhVien> dsSV = quanly.DanhSachSV;
-            hienThiDanhSach(dgvDSSinhvien, dsSV);
+            hienThiDanhSach(dgvDSSinhvien, quanly.DanhSachSV);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -63,9 +64,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        public void btnExit_Click(object sender, EventArgs e)
         {
-
+            ExitButtonClicked?.Invoke(this, e);
         }
 
         private void btnReal_Click(object sender, EventArgs e)

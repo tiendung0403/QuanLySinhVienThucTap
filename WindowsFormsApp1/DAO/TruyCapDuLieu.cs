@@ -6,9 +6,9 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp1.BLL;
+using WindowsFormsApp1.DTO;
 
-namespace WindowsFormsApp1.DAL
+namespace WindowsFormsApp1.DAO
 {
     [Serializable]
     class TruyCapDuLieu
@@ -60,10 +60,10 @@ namespace WindowsFormsApp1.DAL
         {
             try
             {
-                using (FileStream fs = new FileStream(tenFile, FileMode.Open))
+                using (FileStream file = new FileStream(tenFile, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
-                    instanse = (TruyCapDuLieu)bf.Deserialize(fs);
+                    instanse = (TruyCapDuLieu)bf.Deserialize(file);
                 }
                 return true;
             }
@@ -81,10 +81,10 @@ namespace WindowsFormsApp1.DAL
         {
             try
             {
-                using (FileStream fs = new FileStream(tenFile, FileMode.Create))
+                using (FileStream file = new FileStream(tenFile, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(fs, instanse);
+                    bf.Serialize(file, instanse);
                 }
                 return true;
             }

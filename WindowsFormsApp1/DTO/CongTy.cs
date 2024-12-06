@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsFormsApp1.BLL
+namespace WindowsFormsApp1.DTO
 {
     [Serializable]
 

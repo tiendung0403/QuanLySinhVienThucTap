@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\CongTy.cs" />
+    <Compile Include="DTO\CongTy.cs" />
     <Compile Include="GUI\CustumControl\CompanyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\CustumControl\CompanyControl.Designer.cs">
       <DependentUpon>CompanyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\QuanLySinhVien.cs" />
-    <Compile Include="BLL\SinhVien.cs" />
-    <Compile Include="BLL\GiangVien.cs" />
+    <Compile Include="BUS\QuanLySinhVien.cs" />
+    <Compile Include="DTO\SinhVien.cs" />
+    <Compile Include="DTO\GiangVien.cs" />
     <Compile Include="GUI\CustumControl\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,21 +86,21 @@
     <Compile Include="GUI\CustumControl\TypeProjectControl.Designer.cs">
       <DependentUpon>TypeProjectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\DeTai.cs" />
+    <Compile Include="DTO\DeTai.cs" />
     <Compile Include="GUI\MainForm\form_QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\MainForm\form_QuanLySinhVien.Designer.cs">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\LoaiDeTai.cs" />
+    <Compile Include="DTO\LoaiDeTai.cs" />
     <Compile Include="Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BLL\QuanLyCongTy.cs" />
-    <Compile Include="BLL\QuanLyDeTai.cs" />
-    <Compile Include="BLL\QuanLyGiangVien.cs" />
-    <Compile Include="BLL\QuanLyLoaiDeTai.cs" />
-    <Compile Include="DAL\TruyCapDuLieu.cs" />
+    <Compile Include="BUS\QuanLyCongTy.cs" />
+    <Compile Include="BUS\QuanLyDeTai.cs" />
+    <Compile Include="BUS\QuanLyGiangVien.cs" />
+    <Compile Include="BUS\QuanLyLoaiDeTai.cs" />
+    <Compile Include="DAO\TruyCapDuLieu.cs" />
     <EmbeddedResource Include="GUI\CustumControl\CompanyControl.resx">
       <DependentUpon>CompanyControl.cs</DependentUpon>
     </EmbeddedResource>

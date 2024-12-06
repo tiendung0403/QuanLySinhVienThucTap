@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.BLL
+namespace WindowsFormsApp1.DTO
 {
     [Serializable]
 

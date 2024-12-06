@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.BLL;
-using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class TeacherControl : UserControl
     {
         private QuanLyGiangVien quanly;
+        public event EventHandler ExitButtonClicked;
+
         public TeacherControl()
         {
             quanly = new QuanLyGiangVien();
@@ -22,7 +25,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
         }
         private bool kiemtraRong()
         {
-            if (txtMa.Text == "" || txtTen.Text == ""||txtGioitinh.Text == ""|| txtChucvu.Text == "" || txtEmail.Text == "" || txtSDT.Text == "") 
+            if (txtMa.Text == "" || txtTen.Text == "" || txtGioitinh.Text == "" || txtChucvu.Text == "" || txtEmail.Text == "" || txtSDT.Text == "")
                 return true;
             else return false;
         }
@@ -30,13 +33,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void hienThiDanhSach(DataGridView dgv, List<GiangVien> ds)
         {
             dgv.DataSource = ds.ToList();
-            dgv.Refresh();
         }
 
         private void TeacherControl_Load(object sender, EventArgs e)
         {
-            List<GiangVien> dsGV = quanly.DanhsachGiangVien;
-            hienThiDanhSach(dgvDSGV, dsGV);
+            hienThiDanhSach(dgvDSGV, quanly.DanhsachGiangVien);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 GiangVien gv = new GiangVien(txtMa.Text, txtTen.Text, txtGioitinh.Text, dateNgaySinh.Value, txtChucvu.Text, txtEmail.Text, txtSDT.Text);
                 if (quanly.Sua(gv))
                 {
-                    hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
+                    hienThiDanhSach(dgvDSGV, quanly.DanhsachGiangVien);
                 }
                 else
                 {
@@ -128,9 +129,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
             hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
 
         }
-        private void btnExit_Click(object sender, EventArgs e)
+        public void btnExit_Click(object sender, EventArgs e)
         {
-
+            ExitButtonClicked?.Invoke(this, e);
         }
 
         private void btnReadFile_Click(object sender, EventArgs e)
@@ -145,7 +146,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
                     MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     quanly = new QuanLyGiangVien();
-                    hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
+                    hienThiDanhSach(dgvDSGV, quanly.DanhsachGiangVien);
                 }
                 else
                 {

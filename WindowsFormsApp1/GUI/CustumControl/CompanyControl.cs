@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.BLL;
-using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class CompanyControl : UserControl
     {
         private QuanLyCongTy quanly;
+        public event EventHandler ExitButtonClicked;
+
         public CompanyControl()
         {
             quanly = new QuanLyCongTy();
@@ -34,7 +37,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void hienThiDanhSach(DataGridView dgv, List<CongTy> ds)
         {
             dgv.DataSource = ds.ToList();
-            dgv.Refresh();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -103,9 +105,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        public void btnDelete_Click(object sender, EventArgs e)
         {
-
+            ExitButtonClicked?.Invoke(this, e);
         }
         private void txtClear()
         {
@@ -122,13 +124,13 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtMa.Enabled = true;
 
             txtClear();
-            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+            hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
 
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            ExitButtonClicked?.Invoke(this, e);
         }
 
         private void btnReadfile_Click(object sender, EventArgs e)

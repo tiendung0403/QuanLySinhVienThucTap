@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.BLL;
-using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class TypeProjectControl : UserControl
     {
+        public event EventHandler ExitButtonClicked;
+
         private QuanLyLoaiDeTai quanly;
         public TypeProjectControl()
         {
@@ -23,13 +26,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void TypeProjectControl_Load(object sender, EventArgs e)
         {
-            List<LoaiDeTai> dsNhaSanXuat = quanly.getDanhSachLoaiDT();
-            hienThiDanhSach(dgvDanhSachLDT, dsNhaSanXuat);
+            hienThiDanhSach(dgvDanhSachLDT, quanly.DanhSachLDT);
         }
         private void hienThiDanhSach(DataGridView dgv, List<LoaiDeTai> ds)
         {
             dgv.DataSource = ds.ToList();
-            dgv.Refresh();
         }
         private bool kiemtraRong()
         {
@@ -48,7 +49,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             {
                 LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
                 if (quanly.Them(nsx)) {
-                    hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+                    hienThiDanhSach(dgvDanhSachLDT, quanly.DanhSachLDT);
                 }
                 else 
                 {
@@ -101,7 +102,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
                 if (quanly.Sua(nsx))
                 {
-                    hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+                    hienThiDanhSach(dgvDanhSachLDT, quanly.DanhSachLDT);
                 }
                 else
                 {
@@ -127,6 +128,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            ExitButtonClicked?.Invoke(this, e);
 
         }
 

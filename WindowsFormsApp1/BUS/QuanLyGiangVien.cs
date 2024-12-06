@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
-namespace WindowsFormsApp1.BLL
+namespace WindowsFormsApp1.BUS
 {
     [Serializable]
 

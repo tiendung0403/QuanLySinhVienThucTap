@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.BLL;
-using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class ProjectControl : UserControl
     {
+        public event EventHandler ExitButtonClicked;
+
         private QuanLyDeTai quanly;
         public ProjectControl()
         {
@@ -29,12 +32,10 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void hienThiDanhSach(DataGridView dgv, List<DeTai> ds)
         {
             dgv.DataSource = ds.ToList();
-            dgv.Refresh();
         }
         private void ProjectControl_Load(object sender, EventArgs e)
         {
-            List<DeTai> dsDeTai = quanly.getDanhSachDeTai();
-            hienThiDanhSach(dgvDanhSachDeTai, dsDeTai);
+            hienThiDanhSach(dgvDanhSachDeTai, quanly.DanhSachDeTai);
         }
 
         private void btnaAdd_Click(object sender, EventArgs e)
@@ -120,8 +121,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            txtMa.Enabled = true;
-
+            ExitButtonClicked?.Invoke(this, e);
         }
 
         private void btnReadFile_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
                     MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     quanly = new QuanLyDeTai();
-                    hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+                    hienThiDanhSach(dgvDanhSachDeTai, quanly.DanhSachDeTai);
                 }
                 else
                 {

@@ -438,7 +438,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_QuanLySinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "7";
+            this.Text = "Ứng dụng quản lý sinh viên thực tập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_QuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
