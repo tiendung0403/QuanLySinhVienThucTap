@@ -150,6 +150,7 @@ namespace WindowsFormsApp1.DTO
 
         private bool KiemTraSoDienThoai(string soDienThoai)
         {
+            
             string pattern = @"^\d{10}$";
             return Regex.IsMatch(soDienThoai, pattern);
         }

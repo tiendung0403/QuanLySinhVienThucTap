@@ -29,7 +29,7 @@ namespace WindowsFormsApp1.DTO
         }
         public DateTime NgayBatDau { get => ngaybd; set
             {
-                if (value >= DateTime.Now.Date)
+                if (value > DateTime.Now.Date)
                     throw new AggregateException("Ngày bắt đầu không hợp lệ");
                 else ngaybd = value;
             }
