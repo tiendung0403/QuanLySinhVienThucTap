@@ -9,8 +9,24 @@ namespace WindowsFormsApp1.DTO
     [Serializable]
     internal class LoaiDeTai
     {
-        public string MaLoai { get; set; }
-        public string TenLoai { get; set; }
+        private string maloai;
+        private string ten;
+        public string MaLoai { get => maloai; 
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new AggregateException("Mã đang trống");
+                else maloai = value;
+            }
+        }
+        public string TenLoai { get =>ten;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new AggregateException("Tên đang trống");
+                else ten = value;
+            }
+        }
         public LoaiDeTai()
         {
             MaLoai = "";

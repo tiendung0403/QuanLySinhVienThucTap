@@ -10,10 +10,39 @@ namespace WindowsFormsApp1.DTO
 
     public class DeTai
     {
-        public string MaDT { get; set; }
-        public string TenDT { get; set; }
-        public DateTime NgayBatDau { get; set; }
-        public DateTime NgayKetThuc { get; set; }
+        private string ma,ten;
+        private DateTime ngaybd, ngaykt;
+
+        public string MaDT { get => ma; set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new AggregateException("Mã đang trống");
+                else ma = value;
+            } 
+        }
+        public string TenDT { get => ten; set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new AggregateException("Tên đang trống");
+                else ten = value;
+            }
+        }
+        public DateTime NgayBatDau { get => ngaybd; set
+            {
+                if (value >= DateTime.Now.Date)
+                    throw new AggregateException("Ngày bắt đầu không hợp lệ");
+                else ngaybd = value;
+            }
+        }
+        public DateTime NgayKetThuc { get => ngaykt; set
+            {
+                if (value >= DateTime.Now.Date)
+                    throw new AggregateException("Ngày Kết thúc không hợp lệ");
+                else if (value < NgayBatDau)
+                    throw new AggregateException("Ngày kết thúc đang nhỏ hơn ngày bắt đầu");
+                else ngaykt = value;
+            }
+        }
         public string LoaiDT { get; set; }
         public string MaCTy { get; set; }
 
