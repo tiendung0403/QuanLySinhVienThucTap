@@ -21,8 +21,8 @@ namespace WindowsFormsApp1.DTO
             get => masinhvien;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Mã không được để trống.");
+                if (!KiemTra.KiemTraChuoi(value))
+                    throw new ArgumentException("Mã không hợp lệ.");
                 masinhvien = value;
             }
         }
@@ -33,8 +33,8 @@ namespace WindowsFormsApp1.DTO
             get => hoten;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Tên không được trống");
+                if (!KiemTra.KiemTraChuoi(value))
+                    throw new ArgumentException("Tên không hợp lệ");
                 hoten = value;
             }
         }
@@ -45,8 +45,8 @@ namespace WindowsFormsApp1.DTO
             get => gioitinh;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Giới tính không được trống");
+                if (!KiemTra.KiemTraChuoi(value))
+                    throw new ArgumentException("Giới tính không hợp lệ");
                 gioitinh = value;
             }
         }
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1.DTO
             get => email;
             set
             {
-                if (!KiemTraEmail(value))
+                if (!KiemTra.KiemTraEmail(value))
                     throw new ArgumentException("Email không hợp lệ.");
                 email = value;
             }
@@ -81,25 +81,13 @@ namespace WindowsFormsApp1.DTO
             get => soDienThoai;
             set
             {
-                if (!KiemTraSoDienThoai(value))
-                    throw new ArgumentException("Số điện thoại không hợp lệ.");
+                if (!KiemTra.KiemTraSoDienThoai(value))
+                    throw new ArgumentException("Số điện thoại có 10 chữ số không hợp lệ.");
                 soDienThoai = value;
             }
         }
 
         private double dtb;
-        private bool kiemtraDiem(string s)
-        {
-            try
-            {
-                double.Parse(s);
-                return true;
-            }
-            catch(Exception)
-            {
-                return false;
-            }
-        }
 
         public double DiemTrungBinh
         {
@@ -141,19 +129,33 @@ namespace WindowsFormsApp1.DTO
             MaCongTy = maCongTy;
             MaGiangVien = maGiangVien;
         }
-
-        private bool KiemTraEmail(string email)
+        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, string email, string soDienThoai, string diemTrungBinh, string lop, string maCongTy, string maGiangVien)
         {
-            string pattern = @"^[a-zA-Z0-9]+([._%+-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$";
-            return Regex.IsMatch(email, pattern);
+            MaSinhVien = maSinhVien;
+            HoTen = hoTen;
+            GioiTinh = gioiTinh;
+            NgaySinh = ngaySinh;
+            Email = email;
+            SoDienThoai = soDienThoai;
+            DiemTrungBinh =  kiemtraDiem(diemTrungBinh);
+            Lop = lop;
+            MaCongTy = maCongTy;
+            MaGiangVien = maGiangVien;
         }
 
-        private bool KiemTraSoDienThoai(string soDienThoai)
+        private double kiemtraDiem(string s)
         {
-            
-            string pattern = @"^\d{10}$";
-            return Regex.IsMatch(soDienThoai, pattern);
+            try
+            {
+                double.Parse(s);
+                return double.Parse(s);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
+
 
     }
 }

@@ -14,16 +14,16 @@ namespace WindowsFormsApp1.DTO
         public string MaLoai { get => maloai; 
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new AggregateException("Mã đang trống");
+                if (!KiemTra.KiemTraChuoi(value))
+                    throw new AggregateException("Mã không hợp lệ");
                 else maloai = value;
             }
         }
-        public string TenLoai { get =>ten;
+        public string TenLoai { get => ten;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new AggregateException("Tên đang trống");
+                if (!KiemTra.KiemTraChuoi(value))
+                    throw new AggregateException("Tên không hợp lệ");
                 else ten = value;
             }
         }

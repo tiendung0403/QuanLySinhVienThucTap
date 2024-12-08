@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.DTO
 {
+
     internal class KiemTra
     {
         public static bool KiemTraSoDienThoai(string soDienThoai)
@@ -23,14 +24,14 @@ namespace WindowsFormsApp1.DTO
         {
             if (string.IsNullOrWhiteSpace(chuoi))
                 return false;
-            string pattern = @"^[a-zA-Z]";
+            string pattern = @"^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẮẰẲẴẶÂẤẦẨẪẬÊẾỀỂỄỆÒÓÔÕƠỜỞỠỢÚỨỪỬỰÝýÿ\s]";
             return Regex.IsMatch(chuoi, pattern);
         }
         public static bool KiemTraDiaChi(string chuoi)
         {
             if (string.IsNullOrWhiteSpace(chuoi))
                 return false;
-            string pattern = @"^[a-zA-Z0-9/-.,]";
+            string pattern = @"^[a-zA-Z0-9/\.,ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẮẰẲẴẶÂẤẦẨẪẬÊẾỀỂỄỆÒÓÔÕƠỜỞỠỢÚỨỪỬỰÝýÿ\s]";
             return Regex.IsMatch(chuoi, pattern);
 
         }

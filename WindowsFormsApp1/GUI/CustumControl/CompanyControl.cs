@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
 using WindowsFormsApp1.DAO;
@@ -17,80 +12,72 @@ namespace WindowsFormsApp1.GUI.CustumControl
     {
         private QuanLyCongTy quanly;
         public event EventHandler ExitButtonClicked;
+        string filePath = "datasystem.bin";
 
         public CompanyControl()
         {
-            quanly = new QuanLyCongTy();
             InitializeComponent();
         }
         private void CompanyControl_Load(object sender, EventArgs e)
         {
-            hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
+            TruyCapDuLieu.docFile(filePath);
+            quanly = new QuanLyCongTy();
+            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
         }
 
-        private bool kiemtraRong()
-        {
-            if (txtMa.Text == "" || txtTen.Text == "" || txtDiachi.Text == "") return true;
-            else return false;
-        }
 
         private void hienThiDanhSach(DataGridView dgv, List<CongTy> ds)
         {
             dgv.DataSource = ds.ToList();
+            dgv.Refresh();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
 
-            if (kiemtraRong())
+            try
             {
-                MessageBox.Show("Không được để trống ô nhập thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtEmail.Text, txtSDT.Text);
+                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtSDT.Text, txtEmail.Text);
                 if (quanly.Them(nsx))
                 {
-                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+                    TruyCapDuLieu.ghiFile(filePath);
+
                 }
                 else
-                {
                     MessageBox.Show("Công ty đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
 
         private void btnFix_Click(object sender, EventArgs e)
         {
-            if (kiemtraRong())
+            txtMa.Enabled = false;
+            try
             {
-                MessageBox.Show("Vui lòng chọn hàng cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                txtMa.Enabled = false;
-
-                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtEmail.Text, txtSDT.Text);
+                CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text,txtSDT.Text, txtEmail.Text);
                 if (quanly.Sua(nsx))
-                {
-                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy Công ty cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+                TruyCapDuLieu.ghiFile(filePath);
 
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message+" vui lòng nhập thông tin hoặc click chọn vào hàng cần sửa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            TruyCapDuLieu.khoitao();
             {
-                string filePath = saveFileDialog.FileName;
+                //saveFileDialog.FileName;
 
                 bool result = TruyCapDuLieu.ghiFile(filePath);
                 if (result)
@@ -107,7 +94,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         public void btnDelete_Click(object sender, EventArgs e)
         {
-            ExitButtonClicked?.Invoke(this, e);
+            TruyCapDuLieu.ghiFile(filePath);
+
         }
         private void txtClear()
         {
@@ -124,7 +112,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtMa.Enabled = true;
 
             txtClear();
-            hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
+            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
 
         }
 
@@ -135,16 +123,17 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void btnReadfile_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            TruyCapDuLieu.khoitao();
             {
-                string filePath = saveFileDialog.FileName;
+                //saveFileDialog.FileName;
 
                 bool result = TruyCapDuLieu.docFile(filePath);
                 if (result)
                 {
                     MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     quanly = new QuanLyCongTy();
-                    hienThiDanhSach(dgvDanhsachcongty, quanly.DanhsachCTy);
+                    hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
                 }
                 else
                 {

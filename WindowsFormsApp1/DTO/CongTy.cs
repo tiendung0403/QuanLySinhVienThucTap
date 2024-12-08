@@ -43,13 +43,13 @@ namespace WindowsFormsApp1.DTO
             {
                 if (!KiemTra.KiemTraSoDienThoai(value))
                     throw new AggregateException("Số điện thoại phải có 10 số");
-                else ten = value;
+                else sdt = value;
             }
         }
         public string Email {
             get => email; set
             {
-                if (KiemTra.KiemTraEmail(value))
+                if (!KiemTra.KiemTraEmail(value))
                     throw new AggregateException("Email không hợp lệ");
                 else email = value;
             }

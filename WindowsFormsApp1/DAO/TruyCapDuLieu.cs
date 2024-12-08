@@ -65,11 +65,11 @@ namespace WindowsFormsApp1.DAO
                     BinaryFormatter bf = new BinaryFormatter();
                     instanse = (TruyCapDuLieu)bf.Deserialize(file);
                 }
+                //FileStream fs = new FileStream(tenFile,FileMode.Open);
+                //BinaryFormatter bf = new BinaryFormatter();
+                //instanse = (TruyCapDuLieu)bf.Deserialize(fs);
+                //fs.Close();
                 return true;
-            }
-            catch (IOException)
-            {
-                return false;
             }
             catch (Exception)
             {
@@ -86,11 +86,11 @@ namespace WindowsFormsApp1.DAO
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(file, instanse);
                 }
+                //FileStream fs = new FileStream(tenFile, FileMode.Create);
+                //BinaryFormatter bf = new BinaryFormatter();
+                //bf.Serialize(fs, instanse);
+                //fs.Close();
                 return true;
-            }
-            catch (IOException)
-            {
-                return false;
             }
             catch (Exception)
             {

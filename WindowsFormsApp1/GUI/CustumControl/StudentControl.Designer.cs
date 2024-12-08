@@ -30,8 +30,10 @@ namespace WindowsFormsApp1.GUI.CustumControl
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -460,11 +462,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.dateNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateNgaySinh.Location = new System.Drawing.Point(228, 161);
-            this.dateNgaySinh.MaxDate = DateTime.Now;
+            this.dateNgaySinh.MaxDate = new System.DateTime(2024, 12, 7, 22, 32, 16, 566);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(196, 28);
             this.dateNgaySinh.TabIndex = 23;
-            this.dateNgaySinh.Value = DateTime.Now;
+            this.dateNgaySinh.Value = new System.DateTime(2024, 12, 7, 22, 32, 16, 566);
             // 
             // txtGioitinh
             // 
@@ -533,6 +535,14 @@ namespace WindowsFormsApp1.GUI.CustumControl
             // 
             this.dgvDSSinhvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDSSinhvien.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSSinhvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSSinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSinhvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -545,6 +555,14 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column8,
             this.Column9,
             this.Column10});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSSinhvien.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSSinhvien.Location = new System.Drawing.Point(76, 60);
             this.dgvDSSinhvien.Name = "dgvDSSinhvien";
             this.dgvDSSinhvien.RowHeadersWidth = 51;
@@ -571,7 +589,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 110;
+            this.Column1.Width = 120;
             // 
             // Column2
             // 
@@ -580,29 +598,29 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 75;
+            this.Column2.Width = 61;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "GioiTinh";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "Giới tính";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 83;
+            this.Column3.Width = 69;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "NgaySinh";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column4.HeaderText = "Ngày sinh";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 96;
+            this.Column4.Width = 101;
             // 
             // Column5
             // 
@@ -611,7 +629,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 70;
+            this.Column5.Width = 79;
             // 
             // Column6
             // 
@@ -620,7 +638,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 114;
+            this.Column6.Width = 121;
             // 
             // Column7
             // 
@@ -629,15 +647,16 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 94;
+            this.Column7.Width = 114;
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "Lop";
             this.Column8.HeaderText = "Lớp";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 59;
+            this.Column8.Width = 68;
             // 
             // Column9
             // 
@@ -646,7 +665,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 84;
+            this.Column9.Width = 98;
             // 
             // Column10
             // 
@@ -655,7 +674,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            this.Column10.Width = 110;
+            this.Column10.Width = 128;
             // 
             // StudentControl
             // 
