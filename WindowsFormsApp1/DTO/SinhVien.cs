@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace WindowsFormsApp1.DTO
 {

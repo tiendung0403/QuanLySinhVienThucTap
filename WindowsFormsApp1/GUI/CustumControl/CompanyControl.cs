@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
-using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
@@ -12,16 +11,14 @@ namespace WindowsFormsApp1.GUI.CustumControl
     {
         private QuanLyCongTy quanly;
         public event EventHandler ExitButtonClicked;
-        string filePath = "datasystem.bin";
 
         public CompanyControl()
-        {
+        {            
+            quanly = new QuanLyCongTy();
             InitializeComponent();
         }
         private void CompanyControl_Load(object sender, EventArgs e)
         {
-            TruyCapDuLieu.docFile(filePath);
-            quanly = new QuanLyCongTy();
             hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
         }
 
@@ -35,15 +32,12 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
-
             try
             {
                 CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text, txtSDT.Text, txtEmail.Text);
                 if (quanly.Them(nsx))
                 {
                     hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
-                    TruyCapDuLieu.ghiFile(filePath);
-
                 }
                 else
                     MessageBox.Show("Công ty đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,7 +57,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 CongTy nsx = new CongTy(txtMa.Text, txtTen.Text, txtTenVT.Text, txtDiachi.Text,txtSDT.Text, txtEmail.Text);
                 if (quanly.Sua(nsx))
                     hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
-                TruyCapDuLieu.ghiFile(filePath);
 
             }
             catch (Exception err)
@@ -72,29 +65,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.ghiFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         public void btnDelete_Click(object sender, EventArgs e)
         {
-            TruyCapDuLieu.ghiFile(filePath);
 
         }
         private void txtClear()
@@ -119,28 +92,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void btnExit_Click(object sender, EventArgs e)
         {
             ExitButtonClicked?.Invoke(this, e);
-        }
-
-        private void btnReadfile_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.docFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    quanly = new QuanLyCongTy();
-                    hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
-                }
-                else
-                {
-                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
         }
 
         private void dgvDanhsachcongty_CellClick(object sender, DataGridViewCellEventArgs e)

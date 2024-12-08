@@ -38,10 +38,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
-            this.btnReal = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -71,7 +69,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDSSinhvien = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +79,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBThaoTac.SuspendLayout();
@@ -126,10 +124,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnReal);
             this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
-            this.groupBThaoTac.Controls.Add(this.btnSave);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
             this.groupBThaoTac.Controls.Add(this.btnAdd);
@@ -142,25 +138,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.groupBThaoTac.TabStop = false;
             this.groupBThaoTac.Text = "Thao tác";
             // 
-            // btnReal
-            // 
-            this.btnReal.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnReal.FlatAppearance.BorderSize = 0;
-            this.btnReal.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnReal.Image = global::WindowsFormsApp1.Properties.Resources.icons8_print_file_32;
-            this.btnReal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReal.Location = new System.Drawing.Point(967, 21);
-            this.btnReal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReal.Name = "btnReal";
-            this.btnReal.Size = new System.Drawing.Size(148, 48);
-            this.btnReal.TabIndex = 6;
-            this.btnReal.Text = "   Đọc File";
-            this.btnReal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReal.UseVisualStyleBackColor = false;
-            this.btnReal.Click += new System.EventHandler(this.btnReal_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.MintCream;
@@ -169,7 +146,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(818, 21);
+            this.btnExit.Location = new System.Drawing.Point(817, 21);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(126, 48);
@@ -188,7 +165,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = global::WindowsFormsApp1.Properties.Resources.icons8_reset_32;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(669, 21);
+            this.btnReset.Location = new System.Drawing.Point(631, 21);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(126, 48);
@@ -199,25 +176,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Lime;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Image = global::WindowsFormsApp1.Properties.Resources.icons8_save_32;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(520, 21);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 48);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "  Ghi";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
@@ -225,7 +183,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btnDelete.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDelete.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_32;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(371, 21);
+            this.btnDelete.Location = new System.Drawing.Point(445, 21);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 48);
@@ -243,7 +201,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btnFix.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFix.Image = global::WindowsFormsApp1.Properties.Resources.icons8_fix_32;
             this.btnFix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFix.Location = new System.Drawing.Point(222, 21);
+            this.btnFix.Location = new System.Drawing.Point(259, 21);
             this.btnFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(126, 48);
@@ -571,17 +529,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.dgvDSSinhvien.TabIndex = 16;
             this.dgvDSSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSinhvien_CellClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(498, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(355, 45);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Danh sách sinh viên";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MaSinhVien";
@@ -676,6 +623,17 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.Column10.ReadOnly = true;
             this.Column10.Width = 128;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(498, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(355, 45);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Danh sách sinh viên";
+            // 
             // StudentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -715,10 +673,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnReal;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDSSinhvien;

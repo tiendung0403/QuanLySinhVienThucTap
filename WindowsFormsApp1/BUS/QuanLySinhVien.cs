@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -12,14 +9,17 @@ namespace WindowsFormsApp1.BUS
 
     internal class QuanLySinhVien
     {
-        public List<SinhVien> DanhSachSV { get; set; }
+        private List<SinhVien> DanhSachSV;
 
         public QuanLySinhVien()
         {
             TruyCapDuLieu duLieu = TruyCapDuLieu.khoitao();
             this.DanhSachSV = duLieu.getDanhSachSinhVien();
         }
-
+        public QuanLySinhVien(List<SinhVien> ds)
+        {
+            this.DanhSachSV = ds;
+        }
         public List<SinhVien> getDanhSachSinhVien()
         {
             return this.DanhSachSV;
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1.BUS
         {
             if (Tim(a.MaSinhVien) == null)
             {
-                DanhSachSV.Add(a);
+                this.DanhSachSV.Add(a);
                 return true;
             }
             return false;
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1.BUS
             var sv = Tim(ma);
             if (sv != null)
             {
-                DanhSachSV.Remove(sv);
+                this.DanhSachSV.Remove(sv); 
                 return true;
             }
             return false;

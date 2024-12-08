@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp1.BUS
 {
@@ -13,7 +9,7 @@ namespace WindowsFormsApp1.BUS
 
     internal class QuanLyCongTy
     {
-        public List<CongTy> DanhsachCTy { get; set; }
+        private List<CongTy> DanhsachCTy;
 
         public QuanLyCongTy()
         {
@@ -28,14 +24,14 @@ namespace WindowsFormsApp1.BUS
 
         public CongTy Tim(string ma)
         {
-            return DanhsachCTy.Find(cty => cty.MaCongTy == ma);
+            return this.DanhsachCTy.Find(cty => cty.MaCongTy == ma);
         }
 
         public bool Them(CongTy a)
         {
             if (Tim(a.MaCongTy) == null)
             {
-                DanhsachCTy.Add(a);
+                this.DanhsachCTy.Add(a);
                 return true;
             }
             return false;
@@ -46,7 +42,7 @@ namespace WindowsFormsApp1.BUS
             var cty = Tim(ma);
             if (cty != null)
             {
-                DanhsachCTy.Remove(cty);
+                this.DanhsachCTy.Remove(cty);
                 return true;
             }
             return false;

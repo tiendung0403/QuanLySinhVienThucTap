@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
-using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
@@ -12,10 +11,10 @@ namespace WindowsFormsApp1.GUI.CustumControl
     {
         public event EventHandler ExitButtonClicked;
         private QuanLySinhVien quanly;
-        string filePath = "datasystem.bin";
 
         public StudentControl()
         {
+            quanly = new QuanLySinhVien();
             InitializeComponent();
         }
 
@@ -29,12 +28,12 @@ namespace WindowsFormsApp1.GUI.CustumControl
             QuanLyGiangVien gv = new QuanLyGiangVien();
             comboMaGV.Items.Clear();
             comboMaCty.Items.Clear();
-            foreach (GiangVien a in gv.DanhsachGiangVien)
+            foreach (GiangVien a in gv.getDanhSachGV())
             {
                 comboMaGV.Items.Add(a.MaGiangVien);
             }
             QuanLyCongTy cty = new QuanLyCongTy();
-            foreach (CongTy a in cty.DanhsachCTy)
+            foreach (CongTy a in cty.getDanhSachCongTy())
             {
                 comboMaCty.Items.Add(a.TenVietTat);
             }
@@ -42,10 +41,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void StudentControl_Load(object sender, EventArgs e)
         {
-            TruyCapDuLieu.docFile(filePath);
-            quanly = new QuanLySinhVien();
             LoadData();
-            hienThiDanhSach(dgvDSSinhvien, quanly.DanhSachSV);
+            hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -56,8 +53,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 if (quanly.Them(sv))
                 {
                     hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
-                    TruyCapDuLieu.ghiFile(filePath);
-
                 }
                 else
                 {
@@ -79,7 +74,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 if (quanly.Sua(sv))
                 {
                     hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
-                    TruyCapDuLieu.ghiFile(filePath);
                 }
             }
             catch (Exception err)
@@ -97,7 +91,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 sv.MaSinhVien = txtMa.Text;
                 quanly.Xoa(sv.MaSinhVien);
                 hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
-                TruyCapDuLieu.ghiFile(filePath);
             }
             catch (Exception err)
             {
@@ -105,25 +98,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.ghiFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -142,28 +116,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             ExitButtonClicked?.Invoke(this, e);
         }
 
-        private void btnReal_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.docFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    quanly = new QuanLySinhVien();
-                    hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
-                }
-                else
-                {
-                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         private void dgvDSSinhvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {

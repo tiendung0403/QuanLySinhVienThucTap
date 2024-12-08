@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -12,7 +9,7 @@ namespace WindowsFormsApp1.BUS
 
     internal class QuanLyLoaiDeTai
     {
-        public List<LoaiDeTai> DanhSachLDT { get; set; }
+        private List<LoaiDeTai> DanhSachLDT;
 
         public QuanLyLoaiDeTai()
         {
@@ -27,14 +24,14 @@ namespace WindowsFormsApp1.BUS
 
         public LoaiDeTai Tim(string ma)
         {
-            return DanhSachLDT.Find(ldt => ldt.MaLoai == ma);
+            return this.DanhSachLDT.Find(ldt => ldt.MaLoai == ma);
         }
 
         public bool Them(LoaiDeTai a)
         {
             if (Tim(a.MaLoai) == null)
             {
-                DanhSachLDT.Add(a);
+                this.DanhSachLDT.Add(a);
                 return true;
             }
             return false;
@@ -45,7 +42,7 @@ namespace WindowsFormsApp1.BUS
             var ldt = Tim(ma);
             if (ldt != null) 
             {
-                DanhSachLDT.Remove(ldt);
+                this.DanhSachLDT.Remove(ldt);
                 return true;
             }
             return false; 

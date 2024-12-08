@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
-using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
@@ -17,9 +11,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
     {
         private QuanLyGiangVien quanly;
         public event EventHandler ExitButtonClicked;
-        string filePath = "datasystem.bin";
         public TeacherControl()
         {
+            quanly = new QuanLyGiangVien();
             InitializeComponent();
         }
 
@@ -31,8 +25,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void TeacherControl_Load(object sender, EventArgs e)
         {
-            TruyCapDuLieu.docFile(filePath);
-            quanly = new QuanLyGiangVien();
             hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
         }
 
@@ -45,7 +37,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 if (quanly.Them(gv))
                 {
                     hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
-                    TruyCapDuLieu.ghiFile(filePath);
 
                 }
                 else
@@ -69,7 +60,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                     if (quanly.Sua(gv))
                     {
                         hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
-                        TruyCapDuLieu.ghiFile(filePath);
 
                     }
                 }
@@ -83,29 +73,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            TruyCapDuLieu.ghiFile(filePath);
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.ghiFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
         private void txtClear()
         {
             txtMa.Clear();
@@ -113,44 +83,19 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtChucvu.Clear();
             txtEmail.Clear();
             txtSDT.Clear();
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
-
             txtClear();
             hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
-
         }
         public void btnExit_Click(object sender, EventArgs e)
         {
             ExitButtonClicked?.Invoke(this, e);
         }
 
-        private void btnReadFile_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.docFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    quanly = new QuanLyGiangVien();
-                    hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
-                }
-                else
-                {
-                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         private void dgvDSGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {

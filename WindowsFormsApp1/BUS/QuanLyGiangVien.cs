@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -12,7 +9,7 @@ namespace WindowsFormsApp1.BUS
 
     internal class QuanLyGiangVien
     {
-        public List<GiangVien> DanhsachGiangVien { get; set; }
+        private List<GiangVien> DanhsachGiangVien;
 
         public QuanLyGiangVien()
         {
@@ -27,14 +24,14 @@ namespace WindowsFormsApp1.BUS
 
         public GiangVien Tim(string ma)
         {
-            return DanhsachGiangVien.Find(gv => gv.MaGiangVien == ma);
+            return this.DanhsachGiangVien.Find(gv => gv.MaGiangVien == ma);
         }
 
         public bool Them(GiangVien a)
         {
             if (Tim(a.MaGiangVien) == null)
             {
-                DanhsachGiangVien.Add(a);
+                this.DanhsachGiangVien.Add(a);
                 return true;
             }
             return false;
@@ -45,7 +42,7 @@ namespace WindowsFormsApp1.BUS
             var cty = Tim(ma);
             if (cty != null)
             {
-                DanhsachGiangVien.Remove(cty);
+                this.DanhsachGiangVien.Remove(cty);
                 return true;
             }
             return false;

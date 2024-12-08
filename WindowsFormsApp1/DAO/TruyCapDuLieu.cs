@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.DAO
@@ -65,10 +61,6 @@ namespace WindowsFormsApp1.DAO
                     BinaryFormatter bf = new BinaryFormatter();
                     instanse = (TruyCapDuLieu)bf.Deserialize(file);
                 }
-                //FileStream fs = new FileStream(tenFile,FileMode.Open);
-                //BinaryFormatter bf = new BinaryFormatter();
-                //instanse = (TruyCapDuLieu)bf.Deserialize(fs);
-                //fs.Close();
                 return true;
             }
             catch (Exception)
@@ -86,10 +78,6 @@ namespace WindowsFormsApp1.DAO
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(file, instanse);
                 }
-                //FileStream fs = new FileStream(tenFile, FileMode.Create);
-                //BinaryFormatter bf = new BinaryFormatter();
-                //bf.Serialize(fs, instanse);
-                //fs.Close();
                 return true;
             }
             catch (Exception)

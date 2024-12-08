@@ -58,10 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
-            this.btnReadfile = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -370,10 +368,8 @@
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnReadfile);
             this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
-            this.groupBThaoTac.Controls.Add(this.btnSave);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
             this.groupBThaoTac.Controls.Add(this.btnAdd);
@@ -386,25 +382,6 @@
             this.groupBThaoTac.TabStop = false;
             this.groupBThaoTac.Text = "Thao tác";
             // 
-            // btnReadfile
-            // 
-            this.btnReadfile.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnReadfile.FlatAppearance.BorderSize = 0;
-            this.btnReadfile.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReadfile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnReadfile.Image = global::WindowsFormsApp1.Properties.Resources.icons8_print_file_32;
-            this.btnReadfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadfile.Location = new System.Drawing.Point(967, 21);
-            this.btnReadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReadfile.Name = "btnReadfile";
-            this.btnReadfile.Size = new System.Drawing.Size(148, 48);
-            this.btnReadfile.TabIndex = 6;
-            this.btnReadfile.Text = "   Đọc File";
-            this.btnReadfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReadfile.UseVisualStyleBackColor = false;
-            this.btnReadfile.Click += new System.EventHandler(this.btnReadfile_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.MintCream;
@@ -413,7 +390,7 @@
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(818, 21);
+            this.btnExit.Location = new System.Drawing.Point(817, 17);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(126, 48);
@@ -432,7 +409,7 @@
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = global::WindowsFormsApp1.Properties.Resources.icons8_reset_32;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(669, 21);
+            this.btnReset.Location = new System.Drawing.Point(631, 17);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(126, 48);
@@ -443,25 +420,6 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Lime;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Image = global::WindowsFormsApp1.Properties.Resources.icons8_save_32;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(520, 21);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 48);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "  Ghi";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
@@ -469,7 +427,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDelete.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_32;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(371, 21);
+            this.btnDelete.Location = new System.Drawing.Point(445, 17);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 48);
@@ -487,7 +445,7 @@
             this.btnFix.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFix.Image = global::WindowsFormsApp1.Properties.Resources.icons8_fix_32;
             this.btnFix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFix.Location = new System.Drawing.Point(222, 21);
+            this.btnFix.Location = new System.Drawing.Point(259, 17);
             this.btnFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(126, 48);
@@ -505,7 +463,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.Image = global::WindowsFormsApp1.Properties.Resources.icons8_addition_32__1_;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(73, 21);
+            this.btnAdd.Location = new System.Drawing.Point(73, 17);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 48);
@@ -596,10 +554,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBThaoTac;
-        private System.Windows.Forms.Button btnReadfile;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnAdd;

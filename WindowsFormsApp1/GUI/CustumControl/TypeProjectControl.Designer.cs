@@ -35,8 +35,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDocFile = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoten = new System.Windows.Forms.TextBox();
@@ -87,7 +85,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDelete.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_32;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(371, 21);
+            this.btnDelete.Location = new System.Drawing.Point(445, 21);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 48);
@@ -105,7 +103,7 @@
             this.btnFix.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFix.Image = global::WindowsFormsApp1.Properties.Resources.icons8_fix_32;
             this.btnFix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFix.Location = new System.Drawing.Point(222, 21);
+            this.btnFix.Location = new System.Drawing.Point(259, 21);
             this.btnFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(126, 48);
@@ -124,7 +122,7 @@
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = global::WindowsFormsApp1.Properties.Resources.icons8_reset_32;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(669, 21);
+            this.btnReset.Location = new System.Drawing.Point(631, 21);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(126, 48);
@@ -135,44 +133,6 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Lime;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Image = global::WindowsFormsApp1.Properties.Resources.icons8_save_32;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(520, 21);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 48);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "  Ghi";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDocFile
-            // 
-            this.btnDocFile.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDocFile.FlatAppearance.BorderSize = 0;
-            this.btnDocFile.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDocFile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDocFile.Image = global::WindowsFormsApp1.Properties.Resources.icons8_print_file_32;
-            this.btnDocFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocFile.Location = new System.Drawing.Point(967, 21);
-            this.btnDocFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDocFile.Name = "btnDocFile";
-            this.btnDocFile.Size = new System.Drawing.Size(148, 48);
-            this.btnDocFile.TabIndex = 6;
-            this.btnDocFile.Text = "   Đọc File";
-            this.btnDocFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocFile.UseVisualStyleBackColor = false;
-            this.btnDocFile.Click += new System.EventHandler(this.btnDocFile_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.MintCream;
@@ -181,7 +141,7 @@
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(818, 21);
+            this.btnExit.Location = new System.Drawing.Point(817, 21);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(126, 48);
@@ -355,10 +315,8 @@
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnDocFile);
             this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
-            this.groupBThaoTac.Controls.Add(this.btnSave);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
             this.groupBThaoTac.Controls.Add(this.btnAdd);
@@ -453,8 +411,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnDocFile;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoten;

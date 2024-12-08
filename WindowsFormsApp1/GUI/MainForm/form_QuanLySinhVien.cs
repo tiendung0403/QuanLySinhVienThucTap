@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.GUI.CustumControl;
 
 namespace WindowsFormsApp1.GUI.MainForm
@@ -14,11 +9,12 @@ namespace WindowsFormsApp1.GUI.MainForm
     public partial class form_QuanLySinhVien : Form
     {
         bool sidepartExpant = true;
+        string filePath = "datasystem.bin";
         public form_QuanLySinhVien()
         {
             InitializeComponent();
             updateSidepanel(btn_Home);
-            addUserControl(homeControl1);
+            addUserControl(new HomeControl());
 
             studentControl1.ExitButtonClicked += ExitControl_btnExit_Click;
             teacherControl1.ExitButtonClicked += ExitControl_btnExit_Click;
@@ -31,7 +27,7 @@ namespace WindowsFormsApp1.GUI.MainForm
         private void ExitControl_btnExit_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Home);
-            addUserControl(homeControl1);
+            addUserControl(new HomeControl());
         }
         public void addUserControl(UserControl userControl)
         {
@@ -50,7 +46,7 @@ namespace WindowsFormsApp1.GUI.MainForm
             {
                 if (ctrl is Button btn)
                 {
-                    btn.ForeColor = Color.White; 
+                    btn.ForeColor = Color.White;
                 }
             }
             button.ForeColor = Color.Black;
@@ -58,47 +54,45 @@ namespace WindowsFormsApp1.GUI.MainForm
         private void btn_Home_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Home);
-            addUserControl(homeControl1);
+            addUserControl(new HomeControl());
 
         }
 
         private void btn_student_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Student);
-            addUserControl(studentControl1);
+            addUserControl(new StudentControl());
 
         }
 
         private void btn_Teacher_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Teacher);
-            addUserControl(teacherControl1);
+            addUserControl(new TeacherControl());
 
         }
 
         private void btn_Company_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Company);
-            addUserControl(companyControl1);
+            addUserControl(new CompanyControl());
         }
 
         private void btn_Project_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Project);
-            addUserControl(projectControl1);
+            addUserControl(new ProjectControl());
 
         }
         private void btnTypeProject_Click(object sender, EventArgs e)
         {
             updateSidepanel(btnTypeProject);
-            addUserControl(typeProjectControl1);
-
-
+            addUserControl(new TypeProjectControl());
         }
 
         private void form_QuanLySinhVien_Load(object sender, EventArgs e)
         {
-
+            TruyCapDuLieu.docFile(filePath);
         }
 
         private void sidepartTime_Tick(object sender, EventArgs e)
@@ -128,5 +122,32 @@ namespace WindowsFormsApp1.GUI.MainForm
             sidepartTime.Start();
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+                bool result = TruyCapDuLieu.ghiFile(filePath);
+                if (result)
+                {
+                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+        }
+
+        private void btnDocFile_Click(object sender, EventArgs e)
+        {
+
+            bool result = TruyCapDuLieu.docFile(filePath);
+            if (result)
+            {
+                MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

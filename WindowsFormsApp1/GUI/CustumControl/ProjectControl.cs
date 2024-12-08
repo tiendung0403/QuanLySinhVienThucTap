@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
-using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI.CustumControl
@@ -18,9 +12,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
         public event EventHandler ExitButtonClicked;
 
         private QuanLyDeTai quanly;
-        string filePath = "datasystem.bin";
         public ProjectControl()
-        {            
+        {               
+            quanly = new QuanLyDeTai();
             InitializeComponent();
         }
 
@@ -31,8 +25,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         }
         private void ProjectControl_Load(object sender, EventArgs e)
         {
-            TruyCapDuLieu.docFile(filePath);            
-            quanly = new QuanLyDeTai();
             LoadData();
             hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
         }
@@ -42,12 +34,12 @@ namespace WindowsFormsApp1.GUI.CustumControl
             QuanLyLoaiDeTai ldt = new QuanLyLoaiDeTai();
             comboLoaiDT.Items.Clear();
             comboMaCTY.Items.Clear();
-            foreach(LoaiDeTai a in ldt.DanhSachLDT)
+            foreach(LoaiDeTai a in ldt.getDanhSachLoaiDT())
             {
                 comboLoaiDT.Items.Add(a.TenLoai);
             }
             QuanLyCongTy cty = new QuanLyCongTy();
-            foreach (CongTy a in cty.DanhsachCTy)
+            foreach (CongTy a in cty.getDanhSachCongTy())
             {
                 comboMaCTY.Items.Add(a.TenVietTat);
             }
@@ -61,7 +53,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 if (quanly.Them(nsx))
                 {
                     hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
-                    TruyCapDuLieu.ghiFile(filePath);
                 }
                 else
                     MessageBox.Show("Đề tài đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,7 +73,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 if (quanly.Sua(nsx))
                 {
                     hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
-                    TruyCapDuLieu.ghiFile(filePath);
                 }
                 else
                     MessageBox.Show("Không tìm thấy Đề tài cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -96,29 +86,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void btnDelete_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
-            TruyCapDuLieu.ghiFile(filePath);
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.ghiFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Đã xảy ra lỗi khi lưu tệp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -133,29 +103,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void btnExit_Click(object sender, EventArgs e)
         {
             ExitButtonClicked?.Invoke(this, e);
-        }
-
-        private void btnReadFile_Click(object sender, EventArgs e)
-        {
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            TruyCapDuLieu.khoitao();
-            {
-                //saveFileDialog.FileName;
-
-                bool result = TruyCapDuLieu.docFile(filePath);
-                if (result)
-                {
-                    MessageBox.Show("Dữ liệu đã được tải thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    quanly = new QuanLyDeTai();
-                    hienThiDanhSach(dgvDanhSachDeTai, quanly.DanhSachDeTai);
-                }
-                else
-                {
-                    MessageBox.Show("Không thể đọc tệp dữ liệu hoặc tệp không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
         }
 
         private void dgvDanhSachDeTai_CellClick(object sender, DataGridViewCellEventArgs e)
