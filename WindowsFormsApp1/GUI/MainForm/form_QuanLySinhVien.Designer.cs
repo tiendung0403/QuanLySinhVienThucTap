@@ -53,14 +53,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sidepartTime = new System.Windows.Forms.Timer(this.components);
-            this.companyControl1 = new WindowsFormsApp1.GUI.CustumControl.CompanyControl();
-            this.homeControl1 = new WindowsFormsApp1.GUI.CustumControl.HomeControl();
-            this.projectControl1 = new WindowsFormsApp1.GUI.CustumControl.ProjectControl();
-            this.studentControl1 = new WindowsFormsApp1.GUI.CustumControl.StudentControl();
-            this.teacherControl1 = new WindowsFormsApp1.GUI.CustumControl.TeacherControl();
-            this.typeProjectControl1 = new WindowsFormsApp1.GUI.CustumControl.TypeProjectControl();
             this.panel1.SuspendLayout();
-            this.panelContainer.SuspendLayout();
             this.Panel_InforUser.SuspendLayout();
             this.panel_listMenu.SuspendLayout();
             this.panelmenubtns.SuspendLayout();
@@ -83,12 +76,6 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.typeProjectControl1);
-            this.panelContainer.Controls.Add(this.teacherControl1);
-            this.panelContainer.Controls.Add(this.studentControl1);
-            this.panelContainer.Controls.Add(this.projectControl1);
-            this.panelContainer.Controls.Add(this.homeControl1);
-            this.panelContainer.Controls.Add(this.companyControl1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(300, 112);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -205,7 +192,7 @@
             this.panel_listMenu.MaximumSize = new System.Drawing.Size(300, 0);
             this.panel_listMenu.MinimumSize = new System.Drawing.Size(60, 0);
             this.panel_listMenu.Name = "panel_listMenu";
-            this.panel_listMenu.Size = new System.Drawing.Size(300, 785);
+            this.panel_listMenu.Size = new System.Drawing.Size(300, 0);
             this.panel_listMenu.TabIndex = 0;
             // 
             // panelmenubtns
@@ -420,57 +407,6 @@
             this.sidepartTime.Interval = 10;
             this.sidepartTime.Tick += new System.EventHandler(this.sidepartTime_Tick);
             // 
-            // companyControl1
-            // 
-            this.companyControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.companyControl1.Location = new System.Drawing.Point(0, 0);
-            this.companyControl1.Name = "companyControl1";
-            this.companyControl1.Size = new System.Drawing.Size(1092, 673);
-            this.companyControl1.TabIndex = 0;
-            // 
-            // homeControl1
-            // 
-            this.homeControl1.BackColor = System.Drawing.Color.Linen;
-            this.homeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeControl1.Location = new System.Drawing.Point(0, 0);
-            this.homeControl1.Name = "homeControl1";
-            this.homeControl1.Size = new System.Drawing.Size(1092, 673);
-            this.homeControl1.TabIndex = 1;
-            // 
-            // projectControl1
-            // 
-            this.projectControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.projectControl1.Location = new System.Drawing.Point(0, 0);
-            this.projectControl1.Name = "projectControl1";
-            this.projectControl1.Size = new System.Drawing.Size(1092, 673);
-            this.projectControl1.TabIndex = 2;
-            // 
-            // studentControl1
-            // 
-            this.studentControl1.BackColor = System.Drawing.Color.Linen;
-            this.studentControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentControl1.Location = new System.Drawing.Point(0, 0);
-            this.studentControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.studentControl1.Name = "studentControl1";
-            this.studentControl1.Size = new System.Drawing.Size(1092, 673);
-            this.studentControl1.TabIndex = 3;
-            // 
-            // teacherControl1
-            // 
-            this.teacherControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teacherControl1.Location = new System.Drawing.Point(0, 0);
-            this.teacherControl1.Name = "teacherControl1";
-            this.teacherControl1.Size = new System.Drawing.Size(1092, 673);
-            this.teacherControl1.TabIndex = 4;
-            // 
-            // typeProjectControl1
-            // 
-            this.typeProjectControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.typeProjectControl1.Location = new System.Drawing.Point(0, 0);
-            this.typeProjectControl1.Name = "typeProjectControl1";
-            this.typeProjectControl1.Size = new System.Drawing.Size(1092, 673);
-            this.typeProjectControl1.TabIndex = 5;
-            // 
             // form_QuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -484,7 +420,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_QuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
-            this.panelContainer.ResumeLayout(false);
             this.Panel_InforUser.ResumeLayout(false);
             this.Panel_InforUser.PerformLayout();
             this.panel_listMenu.ResumeLayout(false);
@@ -523,11 +458,5 @@
         private System.Windows.Forms.Button btnTypeProject;
         private System.Windows.Forms.Button btnDocFile;
         private System.Windows.Forms.Button btnSave;
-        private CustumControl.TypeProjectControl typeProjectControl1;
-        private CustumControl.TeacherControl teacherControl1;
-        private CustumControl.StudentControl studentControl1;
-        private CustumControl.ProjectControl projectControl1;
-        private CustumControl.HomeControl homeControl1;
-        private CustumControl.CompanyControl companyControl1;
     }
 }

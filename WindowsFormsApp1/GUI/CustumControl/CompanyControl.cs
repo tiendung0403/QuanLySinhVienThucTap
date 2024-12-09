@@ -10,7 +10,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
     public partial class CompanyControl : UserControl
     {
         private QuanLyCongTy quanly;
-        public event EventHandler ExitButtonClicked;
 
         public CompanyControl()
         {            
@@ -68,6 +67,10 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         public void btnDelete_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true;
+            quanly.Xoa(txtMa.Text);
+            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+
 
         }
         private void txtClear()
@@ -89,11 +92,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            ExitButtonClicked?.Invoke(this, e);
-        }
-
         private void dgvDanhsachcongty_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -107,6 +105,13 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 txtSDT.Text = cty.SoDienThoai;
             }
 
+        }
+
+        private void txtTimkiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimkiem.Text;
+            List<CongTy> ketQua = quanly.TimKiem(tuKhoa); 
+            hienThiDanhSach(dgvDanhsachcongty, ketQua);
         }
     }
 }

@@ -32,10 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoten = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
@@ -47,7 +45,7 @@
             this.dgvDanhSachLDT = new System.Windows.Forms.DataGridView();
             this.h = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
             this.groupB_ChucNang = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -78,24 +76,6 @@
             this.btn_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Search.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_32;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(445, 21);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(126, 48);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "  Xóa";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnFix
             // 
             this.btnFix.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -103,7 +83,7 @@
             this.btnFix.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFix.Image = global::WindowsFormsApp1.Properties.Resources.icons8_fix_32;
             this.btnFix.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFix.Location = new System.Drawing.Point(259, 21);
+            this.btnFix.Location = new System.Drawing.Point(359, 17);
             this.btnFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(126, 48);
@@ -122,7 +102,7 @@
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = global::WindowsFormsApp1.Properties.Resources.icons8_reset_32;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(631, 21);
+            this.btnReset.Location = new System.Drawing.Point(535, 17);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(126, 48);
@@ -132,25 +112,6 @@
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.MintCream;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(817, 21);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(126, 48);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "  Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label2
             // 
@@ -170,7 +131,6 @@
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(302, 141);
             this.txtHoten.TabIndex = 21;
-            this.txtHoten.Text = "Lập trình jnjcnjcncnasc";
             // 
             // txtMa
             // 
@@ -196,7 +156,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.Image = global::WindowsFormsApp1.Properties.Resources.icons8_addition_32__1_;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(73, 21);
+            this.btnAdd.Location = new System.Drawing.Point(178, 17);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 48);
@@ -301,23 +261,21 @@
             this.i.ReadOnly = true;
             this.i.Width = 102;
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(17, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Tag = "";
-            this.textBox1.Text = "search";
+            this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.Location = new System.Drawing.Point(17, 28);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(259, 30);
+            this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.Tag = "";
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
-            this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
             this.groupBThaoTac.Controls.Add(this.btnAdd);
             this.groupBThaoTac.Location = new System.Drawing.Point(3, 82);
@@ -332,7 +290,7 @@
             // groupB_ChucNang
             // 
             this.groupB_ChucNang.Controls.Add(this.btn_Search);
-            this.groupB_ChucNang.Controls.Add(this.textBox1);
+            this.groupB_ChucNang.Controls.Add(this.txtTimKiem);
             this.groupB_ChucNang.Location = new System.Drawing.Point(3, 4);
             this.groupB_ChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupB_ChucNang.Name = "groupB_ChucNang";
@@ -408,10 +366,8 @@
 
         #endregion
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoten;
         private System.Windows.Forms.TextBox txtMa;
@@ -421,7 +377,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvDanhSachLDT;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBThaoTac;
         private System.Windows.Forms.GroupBox groupB_ChucNang;
         private System.Windows.Forms.Panel panel2;

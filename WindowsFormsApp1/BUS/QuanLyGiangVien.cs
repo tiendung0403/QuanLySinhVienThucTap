@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -39,10 +41,18 @@ namespace WindowsFormsApp1.BUS
 
         public bool Xoa(string ma)
         {
-            var cty = Tim(ma);
-            if (cty != null)
+            var gv = Tim(ma);
+            if (gv != null)
             {
-                this.DanhsachGiangVien.Remove(cty);
+                QuanLySinhVien dssv = new QuanLySinhVien();
+                foreach (SinhVien a in dssv.getDanhSachSinhVien())
+                {
+                    if(a.MaGiangVien == gv.MaGiangVien)
+                    {
+                        a.MaGiangVien = "";
+                    }
+                }
+                this.DanhsachGiangVien.Remove(gv);
                 return true;
             }
             return false;
@@ -53,7 +63,6 @@ namespace WindowsFormsApp1.BUS
             GiangVien ketQuaTim = Tim(a.MaGiangVien);
             if (ketQuaTim != null)
             {
-                ketQuaTim.MaGiangVien = a.MaGiangVien;
                 ketQuaTim.HoTen = a.HoTen;
                 ketQuaTim.GioiTinh = a.GioiTinh;
                 ketQuaTim.NgaySinh = a.NgaySinh;
@@ -64,6 +73,12 @@ namespace WindowsFormsApp1.BUS
             }
             return false;
         }
+        public List<GiangVien> TimKiem(string s)
+        {
+            return this.DanhsachGiangVien.Where(gv => gv.MaGiangVien.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 || 
+            gv.HoTen.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+
 
     }
 }

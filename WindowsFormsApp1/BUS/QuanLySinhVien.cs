@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -69,5 +70,36 @@ namespace WindowsFormsApp1.BUS
             }
             return false;
         }
+
+        public List<SinhVien> TimKiem(string s)
+        {
+            return this.DanhSachSV.Where(sv => sv.HoTen.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            sv.MaSinhVien.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0 ||
+            sv.MaGiangVien.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+        public void SapXepTheoTenGoc(bool tangDan = true)
+        {
+            if (tangDan)
+            {
+                DanhSachSV.Sort((sv1, sv2) => sv1.HoTen.CompareTo(sv2.HoTen)); // Tăng dần
+            }
+            else
+            {
+                DanhSachSV.Sort((sv1, sv2) => sv2.HoTen.CompareTo(sv1.HoTen)); // Giảm dần
+            }
+        }
+
+        public void SapXepTheoDiemGoc(bool tangDan = true)
+        {
+            if (tangDan)
+            {
+                DanhSachSV.Sort((sv1, sv2) => sv1.DiemTrungBinh.CompareTo(sv2.DiemTrungBinh)); // Tăng dần
+            }
+            else
+            {
+                DanhSachSV.Sort((sv1, sv2) => sv2.DiemTrungBinh.CompareTo(sv1.DiemTrungBinh)); // Giảm dần
+            }
+        }
+
     }
 }

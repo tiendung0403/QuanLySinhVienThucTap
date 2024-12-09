@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
@@ -98,9 +97,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(936, 126);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 20);
+            this.label12.Size = new System.Drawing.Size(96, 20);
             this.label12.TabIndex = 33;
-            this.label12.Text = "Tên viết tắt";
+            this.label12.Text = "Tên công ty";
             // 
             // label11
             // 
@@ -140,7 +139,6 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(237, 131);
             this.txtTen.TabIndex = 21;
-            this.txtTen.Text = "Ứng dụng njndncdjcndjnd";
             // 
             // txtMa
             // 
@@ -230,11 +228,10 @@
             this.txtTimkiem.Size = new System.Drawing.Size(259, 30);
             this.txtTimkiem.TabIndex = 0;
             this.txtTimkiem.Tag = "";
-            this.txtTimkiem.Text = "search";
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
@@ -247,25 +244,6 @@
             this.groupBThaoTac.TabIndex = 2;
             this.groupBThaoTac.TabStop = false;
             this.groupBThaoTac.Text = "Thao tác";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.MintCream;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(817, 21);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(126, 48);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "  Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReset
             // 
@@ -489,11 +467,11 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "LoaiDT";
-            this.Column5.HeaderText = "Loại đề ";
+            this.Column5.HeaderText = "Loại đề tài";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 70;
+            this.Column5.Width = 90;
             // 
             // Column6
             // 
@@ -552,7 +530,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateNgayBD;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFix;

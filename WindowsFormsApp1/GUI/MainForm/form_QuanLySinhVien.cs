@@ -15,20 +15,8 @@ namespace WindowsFormsApp1.GUI.MainForm
             InitializeComponent();
             updateSidepanel(btn_Home);
             addUserControl(new HomeControl());
-
-            studentControl1.ExitButtonClicked += ExitControl_btnExit_Click;
-            teacherControl1.ExitButtonClicked += ExitControl_btnExit_Click;
-            companyControl1.ExitButtonClicked += ExitControl_btnExit_Click;
-            projectControl1.ExitButtonClicked += ExitControl_btnExit_Click;
-            typeProjectControl1.ExitButtonClicked += ExitControl_btnExit_Click;
-
         }
 
-        private void ExitControl_btnExit_Click(object sender, EventArgs e)
-        {
-            updateSidepanel(btn_Home);
-            addUserControl(new HomeControl());
-        }
         public void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -55,14 +43,12 @@ namespace WindowsFormsApp1.GUI.MainForm
         {
             updateSidepanel(btn_Home);
             addUserControl(new HomeControl());
-
         }
 
         private void btn_student_Click(object sender, EventArgs e)
         {
             updateSidepanel(btn_Student);
             addUserControl(new StudentControl());
-
         }
 
         private void btn_Teacher_Click(object sender, EventArgs e)

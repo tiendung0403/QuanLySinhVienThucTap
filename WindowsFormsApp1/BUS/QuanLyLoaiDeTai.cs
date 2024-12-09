@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -10,7 +11,6 @@ namespace WindowsFormsApp1.BUS
     internal class QuanLyLoaiDeTai
     {
         private List<LoaiDeTai> DanhSachLDT;
-
         public QuanLyLoaiDeTai()
         {
             TruyCapDuLieu duLieu = TruyCapDuLieu.khoitao();
@@ -37,27 +37,34 @@ namespace WindowsFormsApp1.BUS
             return false;
         }
 
-        public bool Xoa(string ma)
-        {
-            var ldt = Tim(ma);
-            if (ldt != null) 
-            {
-                this.DanhSachLDT.Remove(ldt);
-                return true;
-            }
-            return false; 
-        }
 
         public bool Sua(LoaiDeTai a)
         {
             LoaiDeTai ketQuaTim = Tim(a.MaLoai);
             if (ketQuaTim != null)
             {
-                ketQuaTim.MaLoai = a.MaLoai;
+
+                TruyCapDuLieu duLieu = TruyCapDuLieu.khoitao();
+                List<DeTai> dsdt = duLieu.getDanhSachDeTai();
+
+                foreach (DeTai dt in dsdt)
+                {
+                    if (dt.LoaiDT == ketQuaTim.TenLoai)
+                    {
+                        dt.LoaiDT = a.TenLoai;
+                    }
+                }
                 ketQuaTim.TenLoai = a.TenLoai;
+
                 return true;
             }
-            return false; 
+            return false;
         }
+        public List<LoaiDeTai> TimKiem(string s)
+        {
+            return DanhSachLDT.Where(ldt => ldt.MaLoai.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            ldt.TenLoai.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+
     }
 }

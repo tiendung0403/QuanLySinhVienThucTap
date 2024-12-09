@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -9,7 +10,7 @@ namespace WindowsFormsApp1.BUS
 
     internal class QuanLyDeTai
     {
-        private List<DeTai> DanhSachDeTai;
+        public List<DeTai> DanhSachDeTai;
 
         public QuanLyDeTai()
         {
@@ -24,7 +25,7 @@ namespace WindowsFormsApp1.BUS
 
         public DeTai Tim(string ma)
         {
-            return this.DanhSachDeTai.Find(ldt => ldt.MaDT == ma);
+            return this.DanhSachDeTai.Find(dt => dt.MaDT == ma);
         }
 
         public bool Them(DeTai a)
@@ -53,7 +54,6 @@ namespace WindowsFormsApp1.BUS
             DeTai ketQuaTim = Tim(a.MaDT);
             if (ketQuaTim != null)
             {
-                ketQuaTim.MaDT = a.MaDT;
                 ketQuaTim.TenDT = a.TenDT;
                 ketQuaTim.NgayBatDau = a.NgayBatDau;
                 ketQuaTim.NgayKetThuc = a.NgayKetThuc;
@@ -63,5 +63,13 @@ namespace WindowsFormsApp1.BUS
             }
             return false;
         }
+        public List<DeTai> TimKiem(string s)
+        {
+            return DanhSachDeTai.Where(dt => dt.TenDT.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            dt.LoaiDT.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            dt.MaCTy.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            dt.MaDT.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+
     }
 }

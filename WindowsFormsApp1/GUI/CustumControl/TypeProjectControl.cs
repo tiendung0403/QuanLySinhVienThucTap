@@ -9,7 +9,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class TypeProjectControl : UserControl
     {
-        public event EventHandler ExitButtonClicked;
         private QuanLyLoaiDeTai quanly; 
 
         public TypeProjectControl()
@@ -71,11 +70,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 MessageBox.Show(err.Message+", vui lòng nhập đầy đủ thông tin hoặc click chọn vào hàng cần sửa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            txtMa.Enabled = true;
-
-        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -86,9 +80,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
             hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            ExitButtonClicked?.Invoke(this, e);
+            string tuKhoa = txtTimKiem.Text;
+            List<LoaiDeTai> ketQua = quanly.TimKiem(tuKhoa);
+            hienThiDanhSach(dgvDanhSachLDT, ketQua);
         }
     }
 }

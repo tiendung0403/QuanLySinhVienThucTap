@@ -9,7 +9,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class StudentControl : UserControl
     {
-        public event EventHandler ExitButtonClicked;
         private QuanLySinhVien quanly;
 
         public StudentControl()
@@ -23,25 +22,22 @@ namespace WindowsFormsApp1.GUI.CustumControl
             dgv.DataSource = ds.ToList();
             dgv.Refresh();
         }
-        private void LoadData()
+        private void LoadDataCboCongTy(ComboBox cb,List<CongTy> ds)
         {
-            QuanLyGiangVien gv = new QuanLyGiangVien();
-            comboMaGV.Items.Clear();
-            comboMaCty.Items.Clear();
-            foreach (GiangVien a in gv.getDanhSachGV())
-            {
-                comboMaGV.Items.Add(a.MaGiangVien);
-            }
-            QuanLyCongTy cty = new QuanLyCongTy();
-            foreach (CongTy a in cty.getDanhSachCongTy())
-            {
-                comboMaCty.Items.Add(a.TenVietTat);
-            }
+            cb.DisplayMember = "TenVietTat";
+            cb.DataSource = ds;
         }
+        private void LoadDataCboGiangVien(ComboBox cb, List<GiangVien> ds)
+        {
+            cb.DisplayMember = "MaGiangVien";
+            cb.DataSource = ds;
+        }
+
 
         private void StudentControl_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadDataCboCongTy(comboMaCty, new QuanLyCongTy().getDanhSachCongTy());
+            LoadDataCboGiangVien(comboMaGV, new QuanLyGiangVien().getDanhSachGV());
             hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
         }
         private void btnAdd_Click(object sender, EventArgs e)
@@ -107,15 +103,10 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtSDT.Clear(); ;
             txtDTB.Clear();
             txtLopHoc.Clear();
-            LoadData();
+            LoadDataCboCongTy(comboMaCty, new QuanLyCongTy().getDanhSachCongTy());
+            LoadDataCboGiangVien(comboMaGV, new QuanLyGiangVien().getDanhSachGV());
             hienThiDanhSach(dgvDSSinhvien, quanly.getDanhSachSinhVien());
         }
-
-        public void btnExit_Click(object sender, EventArgs e)
-        {
-            ExitButtonClicked?.Invoke(this, e);
-        }
-
 
         private void dgvDSSinhvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -135,6 +126,13 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 comboMaGV.Text = sv.MaGiangVien;
             }
 
+        }
+
+        private void txtTimkiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimkiem.Text;
+            List<SinhVien> ketQua = quanly.TimKiem(tuKhoa);
+            hienThiDanhSach(dgvDSSinhvien, ketQua);
         }
     }
 }

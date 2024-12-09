@@ -38,7 +38,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
@@ -124,7 +123,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
@@ -137,25 +135,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.groupBThaoTac.TabIndex = 2;
             this.groupBThaoTac.TabStop = false;
             this.groupBThaoTac.Text = "Thao tác";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.MintCream;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(817, 21);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(126, 48);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "  Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReset
             // 
@@ -248,7 +227,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.btn_Search.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_Search.Image = global::WindowsFormsApp1.Properties.Resources.icons8_search_32;
             this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Search.Location = new System.Drawing.Point(316, 19);
+            this.btn_Search.Location = new System.Drawing.Point(301, 19);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(155, 46);
@@ -268,7 +247,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtTimkiem.Size = new System.Drawing.Size(259, 30);
             this.txtTimkiem.TabIndex = 0;
             this.txtTimkiem.Tag = "";
-            this.txtTimkiem.Text = "search";
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             // 
             // panel3
             // 
@@ -353,7 +332,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtLopHoc.Name = "txtLopHoc";
             this.txtLopHoc.Size = new System.Drawing.Size(196, 28);
             this.txtLopHoc.TabIndex = 31;
-            this.txtLopHoc.Text = "D22_TH15";
             // 
             // txtDTB
             // 
@@ -361,7 +339,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtDTB.Name = "txtDTB";
             this.txtDTB.Size = new System.Drawing.Size(196, 28);
             this.txtDTB.TabIndex = 30;
-            this.txtDTB.Text = "2.9";
             // 
             // txtSDT
             // 
@@ -369,7 +346,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(196, 28);
             this.txtSDT.TabIndex = 29;
-            this.txtSDT.Text = "0374290089";
             // 
             // txtEmail
             // 
@@ -377,7 +353,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 28);
             this.txtEmail.TabIndex = 28;
-            this.txtEmail.Text = "aloalo9843@gmail.com";
             // 
             // label7
             // 
@@ -443,7 +418,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(196, 28);
             this.txtHoten.TabIndex = 21;
-            this.txtHoten.Text = "Đặng Tiên Dũng";
             // 
             // txtMa
             // 
@@ -674,7 +648,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDSSinhvien;

@@ -9,9 +9,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
 {
     public partial class ProjectControl : UserControl
     {
-        public event EventHandler ExitButtonClicked;
 
         private QuanLyDeTai quanly;
+       
         public ProjectControl()
         {               
             quanly = new QuanLyDeTai();
@@ -25,25 +25,21 @@ namespace WindowsFormsApp1.GUI.CustumControl
         }
         private void ProjectControl_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadDataCboCongTy(comboMaCTY,new QuanLyCongTy().getDanhSachCongTy());
+            LoadDataCboLoaiDT(comboLoaiDT, new QuanLyLoaiDeTai().getDanhSachLoaiDT());
             hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
         }
-
-        private void LoadData()
+        private void LoadDataCboCongTy(ComboBox cb, List<CongTy> ds)
         {
-            QuanLyLoaiDeTai ldt = new QuanLyLoaiDeTai();
-            comboLoaiDT.Items.Clear();
-            comboMaCTY.Items.Clear();
-            foreach(LoaiDeTai a in ldt.getDanhSachLoaiDT())
-            {
-                comboLoaiDT.Items.Add(a.TenLoai);
-            }
-            QuanLyCongTy cty = new QuanLyCongTy();
-            foreach (CongTy a in cty.getDanhSachCongTy())
-            {
-                comboMaCTY.Items.Add(a.TenVietTat);
-            }
+            cb.DisplayMember = "TenVietTat";
+            cb.DataSource = ds;
         }
+        private void LoadDataCboLoaiDT(ComboBox cb, List<LoaiDeTai> ds)
+        {
+            cb.DisplayMember = "TenLoai";
+            cb.DataSource = ds;
+        }
+
         private void btnaAdd_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
@@ -86,6 +82,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void btnDelete_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
+            quanly.Xoa(txtMa.Text);
+            hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
+
 
         }
 
@@ -96,13 +95,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
             txtMa.Clear();
             txtTen.Clear();
-            LoadData();
+            LoadDataCboCongTy(comboMaCTY, new QuanLyCongTy().getDanhSachCongTy());
+            LoadDataCboLoaiDT(comboLoaiDT, new QuanLyLoaiDeTai().getDanhSachLoaiDT());
             hienThiDanhSach(dgvDanhSachDeTai, quanly.getDanhSachDeTai());
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            ExitButtonClicked?.Invoke(this, e);
         }
 
         private void dgvDanhSachDeTai_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,6 +112,13 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 comboLoaiDT.Text = dt.LoaiDT;
                 comboMaCTY.Text = dt.MaCTy;
             }
+        }
+
+        private void txtTimkiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimkiem.Text;
+            List<DeTai> ketQua = quanly.TimKiem(tuKhoa);
+            hienThiDanhSach(dgvDanhSachDeTai, ketQua);
         }
     }
 }

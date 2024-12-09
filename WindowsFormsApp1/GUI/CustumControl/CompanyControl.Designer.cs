@@ -58,7 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnFix = new System.Windows.Forms.Button();
@@ -81,7 +80,6 @@
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(196, 28);
             this.txtTenVT.TabIndex = 36;
-            this.txtTenVT.Text = "FPT";
             // 
             // dgvDanhsachcongty
             // 
@@ -198,7 +196,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(196, 28);
             this.txtSDT.TabIndex = 30;
-            this.txtSDT.Text = "0374290089";
             // 
             // groupBox1
             // 
@@ -229,7 +226,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 28);
             this.txtEmail.TabIndex = 29;
-            this.txtEmail.Text = "aloalo9843@gmail.com";
             // 
             // txtDiachi
             // 
@@ -237,7 +233,6 @@
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(196, 28);
             this.txtDiachi.TabIndex = 28;
-            this.txtDiachi.Text = "Hà Nội";
             // 
             // label8
             // 
@@ -272,7 +267,6 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(196, 28);
             this.txtTen.TabIndex = 21;
-            this.txtTen.Text = "Công ty abc";
             // 
             // txtMa
             // 
@@ -331,7 +325,7 @@
             this.txtTimkiem.Size = new System.Drawing.Size(259, 30);
             this.txtTimkiem.TabIndex = 0;
             this.txtTimkiem.Tag = "";
-            this.txtTimkiem.Text = "search";
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             // 
             // panel1
             // 
@@ -368,7 +362,6 @@
             // 
             // groupBThaoTac
             // 
-            this.groupBThaoTac.Controls.Add(this.btnExit);
             this.groupBThaoTac.Controls.Add(this.btnReset);
             this.groupBThaoTac.Controls.Add(this.btnDelete);
             this.groupBThaoTac.Controls.Add(this.btnFix);
@@ -381,25 +374,6 @@
             this.groupBThaoTac.TabIndex = 2;
             this.groupBThaoTac.TabStop = false;
             this.groupBThaoTac.Text = "Thao tác";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.MintCream;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExit.Image = global::WindowsFormsApp1.Properties.Resources.icons8_exit_321;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(817, 17);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(126, 48);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "  Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReset
             // 
@@ -554,7 +528,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBThaoTac;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFix;

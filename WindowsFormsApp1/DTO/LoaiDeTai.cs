@@ -25,8 +25,6 @@ namespace WindowsFormsApp1.DTO
         }
         public LoaiDeTai()
         {
-            MaLoai = "";
-            TenLoai = "";
         }
         public LoaiDeTai(string maLoai, string tenLoai )
         {

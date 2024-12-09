@@ -10,11 +10,11 @@ namespace WindowsFormsApp1.DAO
     class TruyCapDuLieu
     {
         private static TruyCapDuLieu instanse = null;
-        private List<LoaiDeTai> dsLoaiDeTai;
-        private List<CongTy> dsCongTy;
-        private List<DeTai> dsDeTai;
-        private List<GiangVien> dsGiangVien;
-        private List<SinhVien> dsSinhVien;
+        private  List<LoaiDeTai> dsLoaiDeTai;
+        private  List<CongTy> dsCongTy;
+        private  List<DeTai> dsDeTai;
+        private  List<GiangVien> dsGiangVien;
+        private  List<SinhVien> dsSinhVien;
 
         private TruyCapDuLieu()
         {

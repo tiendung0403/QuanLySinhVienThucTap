@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -53,7 +54,6 @@ namespace WindowsFormsApp1.BUS
             CongTy ketQuaTim = Tim(a.MaCongTy); 
             if (ketQuaTim != null)
             {
-                ketQuaTim.MaCongTy = a.MaCongTy;
                 ketQuaTim.TenCongTy = a.TenCongTy;
                 ketQuaTim.TenVietTat = a.TenVietTat;
                 ketQuaTim.DiaChi = a.DiaChi;
@@ -62,6 +62,12 @@ namespace WindowsFormsApp1.BUS
                 return true; 
             }
             return false;
+        }
+        public List<CongTy> TimKiem(string s)
+        {
+            return DanhsachCTy.Where(cty => cty.TenVietTat.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            cty.TenCongTy.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            cty.MaCongTy.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
     }
 }

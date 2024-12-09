@@ -10,7 +10,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
     public partial class TeacherControl : UserControl
     {
         private QuanLyGiangVien quanly;
-        public event EventHandler ExitButtonClicked;
         public TeacherControl()
         {
             quanly = new QuanLyGiangVien();
@@ -73,6 +72,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true;
+            quanly.Xoa(txtMa.Text);
+            MessageBox.Show("Những Sinh viên do giáo viên " +txtTen.Text + " quản lý sẽ không còn mã giáo viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
+
 
         }
 
@@ -91,11 +95,6 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtClear();
             hienThiDanhSach(dgvDSGV, quanly.getDanhSachGV());
         }
-        public void btnExit_Click(object sender, EventArgs e)
-        {
-            ExitButtonClicked?.Invoke(this, e);
-        }
-
 
         private void dgvDSGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,6 +110,13 @@ namespace WindowsFormsApp1.GUI.CustumControl
                 txtSDT.Text = gv.SoDienThoai;
             }
 
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text;
+            List<GiangVien> ketQua = quanly.TimKiem(tuKhoa);
+            hienThiDanhSach(dgvDSGV, ketQua);
         }
     }
 }
