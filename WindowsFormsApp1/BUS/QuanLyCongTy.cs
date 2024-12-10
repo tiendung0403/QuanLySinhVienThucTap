@@ -43,6 +43,15 @@ namespace WindowsFormsApp1.BUS
             var cty = Tim(ma);
             if (cty != null)
             {
+                QuanLySinhVien dssv = new QuanLySinhVien();
+                foreach (SinhVien a in dssv.getDanhSachSinhVien())
+                {
+                    if (a.MaCongTy == cty.TenVietTat)
+                    {
+                        a.MaCongTy = "";
+                    }
+                }
+
                 this.DanhsachCTy.Remove(cty);
                 return true;
             }
@@ -54,6 +63,15 @@ namespace WindowsFormsApp1.BUS
             CongTy ketQuaTim = Tim(a.MaCongTy); 
             if (ketQuaTim != null)
             {
+                QuanLySinhVien dssv = new QuanLySinhVien();
+                foreach (SinhVien sv in dssv.getDanhSachSinhVien())
+                {
+                    if (sv.MaCongTy == ketQuaTim.TenVietTat)
+                    {
+                        sv.MaCongTy = a.TenVietTat;
+                    }
+                }
+
                 ketQuaTim.TenCongTy = a.TenCongTy;
                 ketQuaTim.TenVietTat = a.TenVietTat;
                 ketQuaTim.DiaChi = a.DiaChi;
