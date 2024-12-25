@@ -18,18 +18,22 @@ namespace WindowsFormsApp1.DTO
         public string TenLoai { get => ten;
             set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new AggregateException("Tên không hợp lệ");
                 else ten = value;
             }
         }
+        public string Khoa { get; set; }
+        public DateTime NgayThem { get; set; }
         public LoaiDeTai()
         {
         }
-        public LoaiDeTai(string maLoai, string tenLoai )
+        public LoaiDeTai(string maLoai,string khoa, string tenLoai,DateTime ngayThem )
         {
             MaLoai = maLoai;
+            Khoa = khoa;
             TenLoai = tenLoai;
+            NgayThem = ngayThem;
         }
     }
 }

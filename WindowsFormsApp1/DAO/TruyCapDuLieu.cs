@@ -15,7 +15,10 @@ namespace WindowsFormsApp1.DAO
         private  List<DeTai> dsDeTai;
         private  List<GiangVien> dsGiangVien;
         private  List<SinhVien> dsSinhVien;
-
+        private List<DanhGiaDeTai> dsDanhGiaTai;
+        private List<KetQua> dsKetQua;
+        private List<Khoa> dsKhoa;
+        private List<User> dsUser;
         private TruyCapDuLieu()
         {
             dsLoaiDeTai = new List<LoaiDeTai>();
@@ -23,6 +26,10 @@ namespace WindowsFormsApp1.DAO
             dsDeTai = new List<DeTai>();
             dsGiangVien = new List<GiangVien>();
             dsSinhVien = new List<SinhVien>();
+            dsDanhGiaTai = new List<DanhGiaDeTai>();
+            dsKetQua = new List<KetQua>();
+            dsKhoa = new List<Khoa>();
+            dsUser = new List<User>();
         }
 
         public static TruyCapDuLieu khoitao()
@@ -52,6 +59,27 @@ namespace WindowsFormsApp1.DAO
         {
             return dsSinhVien;
         }
+        public List<DanhGiaDeTai> getDanhSachDanhGia()
+        {
+            return dsDanhGiaTai;
+        }
+
+        public List<KetQua> getDanhSachKetQua()
+        {
+            return dsKetQua;
+        }
+        public List<Khoa> getDanhSachKhoa()
+        {
+            return dsKhoa;
+        }
+
+        public List<User> getDanhSachUser()
+        {
+            return dsUser;
+        }
+
+
+
         public static bool docFile(string tenFile)
         {
             try

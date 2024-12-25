@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
+using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
+using WindowsFormsApp1.GUI.MainForm;
 
 namespace WindowsFormsApp1.GUI.CustumControl
 {
@@ -24,7 +26,15 @@ namespace WindowsFormsApp1.GUI.CustumControl
 
         private void hienThiDanhSach(DataGridView dgv, List<CongTy> ds)
         {
+            dgv.AutoGenerateColumns = false;
             dgv.DataSource = ds.ToList();
+            dgvSoLuongTT.Rows.Clear();
+            foreach (CongTy ct in quanly.getDanhSachCongTy())
+            {
+                dgvSoLuongTT.Rows.Add(ct.MaCongTy,ct.TenVietTat, ct.SoLuongTT);
+               
+            }
+
             dgv.Refresh();
         }
 
@@ -68,11 +78,20 @@ namespace WindowsFormsApp1.GUI.CustumControl
         public void btnDelete_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
-            quanly.Xoa(txtMa.Text);
-            hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+            CongTy a = quanly.Tim(txtMa.Text);
+            if (a.SoLuongTT > 0)
+            {
+                MessageBox.Show("Công ty đang có sinh viên không được xóa");
+            }
+            else
+            {
+                quanly.Xoa(txtMa.Text);
 
-
+                hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
+            }
+            
         }
+
         private void txtClear()
         {
             txtMa.Clear();
@@ -83,6 +102,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtSDT.Clear();
 
         }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
@@ -91,15 +111,17 @@ namespace WindowsFormsApp1.GUI.CustumControl
             hienThiDanhSach(dgvDanhsachcongty, quanly.getDanhSachCongTy());
 
         }
-
+        string getCodect = null;
         private void dgvDanhsachcongty_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 CongTy cty = quanly.Tim(dgvDanhsachcongty.Rows[e.RowIndex].Cells[0].Value.ToString());
+            
                 txtMa.Text = cty.MaCongTy;
                 txtTen.Text = cty.TenCongTy;
                 txtTenVT.Text = cty.TenVietTat;
+                this.getCodect = cty.TenVietTat;
                 txtDiachi.Text = cty.DiaChi;
                 txtEmail.Text = cty.Email;
                 txtSDT.Text = cty.SoDienThoai;
@@ -112,6 +134,18 @@ namespace WindowsFormsApp1.GUI.CustumControl
             string tuKhoa = txtTimkiem.Text;
             List<CongTy> ketQua = quanly.TimKiem(tuKhoa); 
             hienThiDanhSach(dgvDanhsachcongty, ketQua);
+        }
+
+        private void btnDetailResult_Click(object sender, EventArgs e)
+        {
+            string ma = getCodect;
+            if(string.IsNullOrEmpty(ma))
+            {
+                MessageBox.Show("Vui lòng chọn công ty cần xem chi tiết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmDetailCompany frmDetailCompany = new frmDetailCompany(ma);
+            frmDetailCompany.ShowDialog();
         }
     }
 }

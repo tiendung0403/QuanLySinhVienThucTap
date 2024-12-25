@@ -51,10 +51,12 @@ namespace WindowsFormsApp1.BUS
                 {
                     if (dt.LoaiDT == ketQuaTim.TenLoai)
                     {
-                        dt.LoaiDT = a.TenLoai;
+                        dt.LoaiDT = a.TenLoai;      
                     }
                 }
                 ketQuaTim.TenLoai = a.TenLoai;
+                ketQuaTim.Khoa = a.Khoa;
+                ketQuaTim.NgayThem = a.NgayThem;
 
                 return true;
             }
@@ -65,6 +67,13 @@ namespace WindowsFormsApp1.BUS
             return DanhSachLDT.Where(ldt => ldt.MaLoai.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
             ldt.TenLoai.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
+
+        public List<LoaiDeTai> TimDStheoKhoa(string khoa)
+        {
+            return DanhSachLDT.Where(ldt => ldt.Khoa == khoa).ToList();
+        }
+
+        
 
     }
 }

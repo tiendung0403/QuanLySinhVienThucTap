@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Design;
 using System.Linq;
+using System.Security.AccessControl;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
@@ -23,6 +25,10 @@ namespace WindowsFormsApp1.BUS
         {
             return this.DanhsachGiangVien;
         }
+        public int DemGV()
+        {
+            return this.DanhsachGiangVien.Count;
+        }
 
         public GiangVien Tim(string ma)
         {
@@ -39,20 +45,12 @@ namespace WindowsFormsApp1.BUS
             return false;
         }
 
-        public bool Xoa(string ma)
+        public bool xoa(string ma)
         {
-            var gv = Tim(ma);
-            if (gv != null)
+           GiangVien sv=Tim(ma);
+            if (sv != null)
             {
-                QuanLySinhVien dssv = new QuanLySinhVien();
-                foreach (SinhVien a in dssv.getDanhSachSinhVien())
-                {
-                    if(a.MaGiangVien == gv.MaGiangVien)
-                    {
-                        a.MaGiangVien = "";
-                    }
-                }
-                this.DanhsachGiangVien.Remove(gv);
+                this.DanhsachGiangVien.Remove(sv);
                 return true;
             }
             return false;
@@ -69,6 +67,7 @@ namespace WindowsFormsApp1.BUS
                 ketQuaTim.ChucVu = a.ChucVu;
                 ketQuaTim.Email = a.Email;
                 ketQuaTim.SoDienThoai = a.SoDienThoai;
+                ketQuaTim.Khoa=a.Khoa;
                 return true;
             }
             return false;
@@ -79,6 +78,46 @@ namespace WindowsFormsApp1.BUS
             gv.HoTen.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
 
+        public List<GiangVien> TimDsTheoKhoa(string khoa)
+        {
+            List<GiangVien> ds = new List<GiangVien>();
+            foreach (GiangVien giangVien in DanhsachGiangVien)
+            {
+                if (giangVien.Khoa == khoa)
+                {
+                    ds.Add(giangVien);
+                }
+            }
+            return ds;
+        }
+
+        public List<GiangVien> TimDsTheoTrangThai(TrangThai trangthai)
+        {
+            List<GiangVien> ds = new List<GiangVien>();
+            foreach (GiangVien giangVien in DanhsachGiangVien)
+            {
+                if (giangVien.TrangThai == trangthai)
+                {
+                    ds.Add(giangVien);
+                }
+            }
+            return ds;
+        }
+
+        public bool ThayTheGV(string maGVold,string maGVnew)
+        {
+            GiangVien gvNew = Tim(maGVnew);
+            QuanLyDeTai dt= new QuanLyDeTai();
+            foreach (DeTai detai in dt.getDanhSachDeTai())
+            {
+                if (detai.GiaoVien.MaGiangVien == maGVold)
+                {
+                    detai.GiaoVien = gvNew;
+                    return true;
+                }
+            }
+            return false;
+        }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using WindowsFormsApp1.BUS;
 
 namespace WindowsFormsApp1.DTO
 {
@@ -12,12 +13,12 @@ namespace WindowsFormsApp1.DTO
             {
                 if (!KiemTra.KiemTraChuoi(value))
                     throw new AggregateException("Mã không hợp lệ");
-                ma = value;
+                else ma = value;
             }
         }
         public string TenCongTy { get  => ten; set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new AggregateException("Tên không hợp lệ");
                 else ten = value;
             }
@@ -25,7 +26,7 @@ namespace WindowsFormsApp1.DTO
         public string TenVietTat {
             get => tenVT; set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new AggregateException("Tên Viết tắt không hợp lệ");
                 else tenVT = value;
             }
@@ -49,10 +50,21 @@ namespace WindowsFormsApp1.DTO
         public string Email {
             get => email; set
             {
-                if (!KiemTra.KiemTraEmail(value))
+                if (!KiemTra.IsEmail(value))
                     throw new AggregateException("Email không hợp lệ");
                 else email = value;
             }
+        }
+        public int SoLuongTT { get { return TinhSLTT(); } }
+        public int TinhSLTT()
+        {
+            int SoLuongTT = 0;  
+            foreach (DeTai dt in new QuanLyDeTai().getDanhSachDeTai())
+            {
+                if(dt.MaCTy == TenVietTat)
+                    SoLuongTT++;
+            }
+            return SoLuongTT;
         }
 
         public CongTy()

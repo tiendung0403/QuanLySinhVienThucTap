@@ -33,8 +33,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.112.1.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,8 +82,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\QuanLyDanhGia.cs" />
+    <Compile Include="BUS\QuanLyKetQua.cs" />
+    <Compile Include="BUS\QuanLyKhoa.cs" />
+    <Compile Include="BUS\QuanLyUser.cs" />
     <Compile Include="DTO\CongTy.cs" />
+    <Compile Include="DTO\DanhGiaDeTai.cs" />
+    <Compile Include="DTO\KetQua.cs" />
+    <Compile Include="DTO\Khoa.cs" />
     <Compile Include="DTO\KiemTra.cs" />
+    <Compile Include="DTO\PushMail.cs" />
+    <Compile Include="DTO\RC4.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="GUI\CustumControl\AccountUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustumControl\AccountUserControl.Designer.cs">
+      <DependentUpon>AccountUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CustumControl\CompanyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -57,6 +109,12 @@
     <Compile Include="BUS\QuanLySinhVien.cs" />
     <Compile Include="DTO\SinhVien.cs" />
     <Compile Include="DTO\GiangVien.cs" />
+    <Compile Include="GUI\CustumControl\DepartmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustumControl\DepartmentControl.Designer.cs">
+      <DependentUpon>DepartmentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CustumControl\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,6 +126,18 @@
     </Compile>
     <Compile Include="GUI\CustumControl\ProjectControl.Designer.cs">
       <DependentUpon>ProjectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CustumControl\ResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustumControl\ResultControl.Designer.cs">
+      <DependentUpon>ResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CustumControl\ResultProjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustumControl\ResultProjectControl.Designer.cs">
+      <DependentUpon>ResultProjectControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CustumControl\StudentControl.cs">
       <SubType>UserControl</SubType>
@@ -95,6 +165,36 @@
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\LoaiDeTai.cs" />
+    <Compile Include="GUI\MainForm\frmDetailCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmDetailCompany.Designer.cs">
+      <DependentUpon>frmDetailCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmDetailStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmDetailStudent.Designer.cs">
+      <DependentUpon>frmDetailStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmDetailTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmDetailTeacher.Designer.cs">
+      <DependentUpon>frmDetailTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\frmSign.Designer.cs">
+      <DependentUpon>frmSign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BUS\QuanLyCongTy.cs" />
@@ -102,14 +202,26 @@
     <Compile Include="BUS\QuanLyGiangVien.cs" />
     <Compile Include="BUS\QuanLyLoaiDeTai.cs" />
     <Compile Include="DAO\TruyCapDuLieu.cs" />
+    <EmbeddedResource Include="GUI\CustumControl\AccountUserControl.resx">
+      <DependentUpon>AccountUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CustumControl\CompanyControl.resx">
       <DependentUpon>CompanyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CustumControl\DepartmentControl.resx">
+      <DependentUpon>DepartmentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CustumControl\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CustumControl\ProjectControl.resx">
       <DependentUpon>ProjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CustumControl\ResultControl.resx">
+      <DependentUpon>ResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CustumControl\ResultProjectControl.resx">
+      <DependentUpon>ResultProjectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CustumControl\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
@@ -123,6 +235,21 @@
     <EmbeddedResource Include="GUI\MainForm\form_QuanLySinhVien.resx">
       <DependentUpon>form_QuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\frmDetailCompany.resx">
+      <DependentUpon>frmDetailCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\frmDetailStudent.resx">
+      <DependentUpon>frmDetailStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\frmDetailTeacher.resx">
+      <DependentUpon>frmDetailTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\frmSign.resx">
+      <DependentUpon>frmSign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,6 +260,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,6 +330,45 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\ChildForms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-circle-chart-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-result-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-diversity-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-department-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-department-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eyes-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

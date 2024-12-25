@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
         private void TypeProjectControl_Load(object sender, EventArgs e)
         {
             hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
+            DisplayComBox(new QuanLyKhoa().getDanhSachKhoa());
         }
         private void hienThiDanhSach(DataGridView dgv, List<LoaiDeTai> ds)
         {
@@ -27,12 +28,23 @@ namespace WindowsFormsApp1.GUI.CustumControl
             dgv.Refresh();
         }
 
+        private void DisplayComBox(List<Khoa> ds)
+        {
+            var distinctLoaiDT = ds.Select(ldt => ldt.MaKhoa).Distinct().ToList();
+            cmboKhoa.DataSource = distinctLoaiDT;
+            cmboKhoa.DisplayMember = "MaKhoa";
+           
+            cmboLocKhoa.DataSource = distinctLoaiDT;
+            cmboLocKhoa.DisplayMember = "MaKhoa"; 
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtMa.Enabled = true;
+
             try
             {
-                LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
+                LoaiDeTai nsx = new LoaiDeTai(txtMa.Text,cmboKhoa.Text, txtTenloai.Text,dtpNgayThem.Value);
                 if (quanly.Them(nsx))
                 {
                     hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
@@ -52,7 +64,9 @@ namespace WindowsFormsApp1.GUI.CustumControl
             {
                 LoaiDeTai ldt = quanly.Tim(dgvDanhSachLDT.Rows[e.RowIndex].Cells[0].Value.ToString());
                 txtMa.Text = ldt.MaLoai;
-                txtHoten.Text = ldt.TenLoai;
+                txtTenloai.Text = ldt.TenLoai;
+                cmboKhoa.Text = ldt.Khoa;
+                dtpNgayThem.Value = ldt.NgayThem;
             }
         }
 
@@ -61,7 +75,7 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtMa.Enabled = false;
             try
             {
-                LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, txtHoten.Text);
+                LoaiDeTai nsx = new LoaiDeTai(txtMa.Text, cmboKhoa.Text,txtTenloai.Text, dtpNgayThem.Value);
                 if (quanly.Sua(nsx))
                     hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
             }
@@ -76,7 +90,8 @@ namespace WindowsFormsApp1.GUI.CustumControl
             txtMa.Enabled = true;
 
             txtMa.Clear();
-            txtHoten.Clear();
+            txtTenloai.Clear();
+           
             hienThiDanhSach(dgvDanhSachLDT, quanly.getDanhSachLoaiDT());
         }
 
@@ -85,6 +100,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
             string tuKhoa = txtTimKiem.Text;
             List<LoaiDeTai> ketQua = quanly.TimKiem(tuKhoa);
             hienThiDanhSach(dgvDanhSachLDT, ketQua);
+        }
+
+        private void btnSearch_Khoa_Click(object sender, EventArgs e)
+        {
+            hienThiDanhSach(dgvDanhSachLDT, quanly.TimDStheoKhoa(cmboLocKhoa.Text));
         }
     }
 }

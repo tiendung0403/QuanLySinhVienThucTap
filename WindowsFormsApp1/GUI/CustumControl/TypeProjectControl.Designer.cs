@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1.GUI.CustumControl
+﻿using System;
+
+namespace WindowsFormsApp1.GUI.CustumControl
 {
     partial class TypeProjectControl
     {
@@ -35,16 +37,25 @@
             this.btnFix = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtHoten = new System.Windows.Forms.TextBox();
+            this.txtTenloai = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpNgayThem = new System.Windows.Forms.DateTimePicker();
+            this.cmboKhoa = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearch_Khoa = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmboLocKhoa = new System.Windows.Forms.ComboBox();
             this.dgvDanhSachLDT = new System.Windows.Forms.DataGridView();
             this.h = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBThaoTac = new System.Windows.Forms.GroupBox();
             this.groupB_ChucNang = new System.Windows.Forms.GroupBox();
@@ -124,26 +135,25 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Danh sách loại đề tài";
             // 
-            // txtHoten
+            // txtTenloai
             // 
-            this.txtHoten.Location = new System.Drawing.Point(613, 48);
-            this.txtHoten.Multiline = true;
-            this.txtHoten.Name = "txtHoten";
-            this.txtHoten.Size = new System.Drawing.Size(302, 141);
-            this.txtHoten.TabIndex = 21;
+            this.txtTenloai.Location = new System.Drawing.Point(508, 58);
+            this.txtTenloai.Multiline = true;
+            this.txtTenloai.Name = "txtTenloai";
+            this.txtTenloai.Size = new System.Drawing.Size(302, 141);
+            this.txtTenloai.TabIndex = 21;
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(228, 97);
+            this.txtMa.Location = new System.Drawing.Point(155, 61);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(196, 28);
             this.txtMa.TabIndex = 20;
-            this.txtMa.Text = "L1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(505, 48);
+            this.label4.Location = new System.Drawing.Point(422, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 1;
@@ -170,22 +180,62 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.txtHoten);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.dtpNgayThem);
+            this.groupBox1.Controls.Add(this.cmboKhoa);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtTenloai);
             this.groupBox1.Controls.Add(this.txtMa);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(266, 354);
+            this.groupBox1.Location = new System.Drawing.Point(207, 353);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(996, 223);
+            this.groupBox1.Size = new System.Drawing.Size(911, 223);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin loại đề tài";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(41, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Ngày thêm";
+            // 
+            // dtpNgayThem
+            // 
+            this.dtpNgayThem.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayThem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayThem.Location = new System.Drawing.Point(151, 161);
+            this.dtpNgayThem.MaxDate = new System.DateTime(2024, 12, 25, 11, 14, 30, 408);
+            this.dtpNgayThem.Name = "dtpNgayThem";
+            this.dtpNgayThem.Size = new System.Drawing.Size(200, 28);
+            this.dtpNgayThem.TabIndex = 24;
+            // 
+            // cmboKhoa
+            // 
+            this.cmboKhoa.FormattingEnabled = true;
+            this.cmboKhoa.Location = new System.Drawing.Point(155, 110);
+            this.cmboKhoa.Name = "cmboKhoa";
+            this.cmboKhoa.Size = new System.Drawing.Size(196, 28);
+            this.cmboKhoa.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Chọn khoa";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 100);
+            this.label3.Location = new System.Drawing.Point(41, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 0;
@@ -194,6 +244,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.btnSearch_Khoa);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.cmboLocKhoa);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dgvDanhSachLDT);
             this.panel3.Controls.Add(this.label2);
@@ -202,6 +255,41 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1529, 618);
             this.panel3.TabIndex = 5;
+            // 
+            // btnSearch_Khoa
+            // 
+            this.btnSearch_Khoa.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSearch_Khoa.Image = global::WindowsFormsApp1.Properties.Resources.icons8_search_32;
+            this.btnSearch_Khoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch_Khoa.Location = new System.Drawing.Point(1358, 171);
+            this.btnSearch_Khoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch_Khoa.Name = "btnSearch_Khoa";
+            this.btnSearch_Khoa.Size = new System.Drawing.Size(155, 46);
+            this.btnSearch_Khoa.TabIndex = 38;
+            this.btnSearch_Khoa.Text = "Tìm Kiếm";
+            this.btnSearch_Khoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch_Khoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch_Khoa.UseVisualStyleBackColor = true;
+            this.btnSearch_Khoa.Click += new System.EventHandler(this.btnSearch_Khoa_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F);
+            this.label8.Location = new System.Drawing.Point(1146, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 26);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Lọc theo khoa";
+            // 
+            // cmboLocKhoa
+            // 
+            this.cmboLocKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboLocKhoa.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
+            this.cmboLocKhoa.Location = new System.Drawing.Point(1151, 176);
+            this.cmboLocKhoa.Name = "cmboLocKhoa";
+            this.cmboLocKhoa.Size = new System.Drawing.Size(160, 43);
+            this.cmboLocKhoa.TabIndex = 36;
             // 
             // dgvDanhSachLDT
             // 
@@ -218,7 +306,9 @@
             this.dgvDanhSachLDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachLDT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.h,
-            this.i});
+            this.Khoa,
+            this.NgayThem,
+            this.TenLoai});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -250,16 +340,34 @@
             this.h.MinimumWidth = 6;
             this.h.Name = "h";
             this.h.ReadOnly = true;
-            this.h.Width = 97;
+            this.h.Width = 64;
             // 
-            // i
+            // Khoa
             // 
-            this.i.DataPropertyName = "TenLoai";
-            this.i.HeaderText = "Tên loại ";
-            this.i.MinimumWidth = 6;
-            this.i.Name = "i";
-            this.i.ReadOnly = true;
-            this.i.Width = 102;
+            this.Khoa.DataPropertyName = "Khoa";
+            this.Khoa.HeaderText = "Khoa";
+            this.Khoa.MinimumWidth = 6;
+            this.Khoa.Name = "Khoa";
+            this.Khoa.ReadOnly = true;
+            this.Khoa.Width = 77;
+            // 
+            // NgayThem
+            // 
+            this.NgayThem.DataPropertyName = "NgayThem";
+            this.NgayThem.HeaderText = "Ngày thêm đề tài";
+            this.NgayThem.MinimumWidth = 6;
+            this.NgayThem.Name = "NgayThem";
+            this.NgayThem.ReadOnly = true;
+            this.NgayThem.Width = 132;
+            // 
+            // TenLoai
+            // 
+            this.TenLoai.DataPropertyName = "TenLoai";
+            this.TenLoai.HeaderText = "Tên loại ";
+            this.TenLoai.MinimumWidth = 6;
+            this.TenLoai.Name = "TenLoai";
+            this.TenLoai.ReadOnly = true;
+            this.TenLoai.Width = 67;
             // 
             // txtTimKiem
             // 
@@ -369,7 +477,7 @@
         private System.Windows.Forms.Button btnFix;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtHoten;
+        private System.Windows.Forms.TextBox txtTenloai;
         private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
@@ -383,8 +491,17 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn h;
-        private System.Windows.Forms.DataGridViewTextBoxColumn i;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpNgayThem;
+        private System.Windows.Forms.ComboBox cmboKhoa;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSearch_Khoa;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmboLocKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn h;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Khoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoai;
     }
 }

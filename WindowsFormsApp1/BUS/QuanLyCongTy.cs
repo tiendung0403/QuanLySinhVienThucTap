@@ -22,10 +22,17 @@ namespace WindowsFormsApp1.BUS
         {
             return this.DanhsachCTy;
         }
-
+        public int DemCT()
+        {
+            return this.DanhsachCTy.Count;
+        }
         public CongTy Tim(string ma)
         {
             return this.DanhsachCTy.Find(cty => cty.MaCongTy == ma);
+        }
+        public CongTy TimTenVT(string tenVT)
+        {
+            return this.DanhsachCTy.Find(cty =>cty.TenVietTat== tenVT);
         }
 
         public bool Them(CongTy a)
@@ -42,16 +49,7 @@ namespace WindowsFormsApp1.BUS
         {
             var cty = Tim(ma);
             if (cty != null)
-            {
-                QuanLySinhVien dssv = new QuanLySinhVien();
-                foreach (SinhVien a in dssv.getDanhSachSinhVien())
-                {
-                    if (a.MaCongTy == cty.TenVietTat)
-                    {
-                        a.MaCongTy = "";
-                    }
-                }
-
+            {            
                 this.DanhsachCTy.Remove(cty);
                 return true;
             }
@@ -63,15 +61,6 @@ namespace WindowsFormsApp1.BUS
             CongTy ketQuaTim = Tim(a.MaCongTy); 
             if (ketQuaTim != null)
             {
-                QuanLySinhVien dssv = new QuanLySinhVien();
-                foreach (SinhVien sv in dssv.getDanhSachSinhVien())
-                {
-                    if (sv.MaCongTy == ketQuaTim.TenVietTat)
-                    {
-                        sv.MaCongTy = a.TenVietTat;
-                    }
-                }
-
                 ketQuaTim.TenCongTy = a.TenCongTy;
                 ketQuaTim.TenVietTat = a.TenVietTat;
                 ketQuaTim.DiaChi = a.DiaChi;
@@ -87,5 +76,8 @@ namespace WindowsFormsApp1.BUS
             cty.TenCongTy.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
             cty.MaCongTy.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
+
+
+        
     }
 }

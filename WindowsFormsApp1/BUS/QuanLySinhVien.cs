@@ -21,9 +21,15 @@ namespace WindowsFormsApp1.BUS
         {
             this.DanhSachSV = ds;
         }
+
         public List<SinhVien> getDanhSachSinhVien()
         {
             return this.DanhSachSV;
+        }
+
+        public int DemSV()
+        {
+            return this.DanhSachSV.Count;
         }
 
         public SinhVien Tim(string ma)
@@ -46,7 +52,7 @@ namespace WindowsFormsApp1.BUS
             var sv = Tim(ma);
             if (sv != null)
             {
-                this.DanhSachSV.Remove(sv); 
+                this.DanhSachSV.Remove(sv);
                 return true;
             }
             return false;
@@ -64,19 +70,46 @@ namespace WindowsFormsApp1.BUS
                 ketQuaTim.SoDienThoai = a.SoDienThoai;
                 ketQuaTim.DiemTrungBinh = a.DiemTrungBinh;
                 ketQuaTim.Lop = a.Lop;
-                ketQuaTim.MaCongTy = a.MaCongTy;
-                ketQuaTim.MaGiangVien = a.MaGiangVien;
+                ketQuaTim.Lop2 = a.Lop2;
                 return true;
             }
             return false;
         }
 
+        public List<SinhVien> TimDsTheoLop(string lop)
+        {
+            List<SinhVien> ds = new List<SinhVien>();
+            foreach (SinhVien sv in this.DanhSachSV)
+            {
+                if (sv.Lop == lop)
+                {
+                    ds.Add(sv);
+                }
+            }
+            return ds;
+        }
+
+        public List<SinhVien> TimDsTheoKhoa(string Khoa)
+        {
+            List<SinhVien> ds = new List<SinhVien>();
+            foreach (SinhVien sv in this.DanhSachSV)
+            {
+                if (sv.Lop2 == Khoa)
+                {
+                    ds.Add(sv);
+                }
+            }
+            return ds;
+        }
+
+
+
         public List<SinhVien> TimKiem(string s)
         {
             return this.DanhSachSV.Where(sv => sv.HoTen.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
-            sv.MaSinhVien.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0 ||
-            sv.MaGiangVien.IndexOf(s,StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            sv.MaSinhVien.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
+
         public void SapXepTheoTenGoc(bool tangDan = true)
         {
             if (tangDan)
@@ -101,5 +134,29 @@ namespace WindowsFormsApp1.BUS
             }
         }
 
+
+        public List<SinhVien> TimDStheoTT(int codeIndex)
+        {
+            List<SinhVien> listResult = new List<SinhVien>();
+
+            foreach (SinhVien sv in this.DanhSachSV)
+            {
+                if (codeIndex == 0 && sv.TrangThaiSV == TrangThaiSV.ChuaThucTap)
+                {
+                    listResult.Add(sv);
+                }
+                if (codeIndex == 1 && sv.TrangThaiSV == TrangThaiSV.DangThucTap)
+                {
+                    listResult.Add(sv);
+                }
+                if (codeIndex == 2 && sv.TrangThaiSV == TrangThaiSV.KetThuc)
+                {
+                    listResult.Add(sv);
+                }
+            }
+            return listResult;
+        }
+
+        
     }
 }

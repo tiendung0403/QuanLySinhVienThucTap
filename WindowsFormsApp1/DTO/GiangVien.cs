@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Security.Cryptography;
+using WindowsFormsApp1.BUS;
 
 namespace WindowsFormsApp1.DTO
 {
+    public enum TrangThai
+    {
+        DangDay,NghiDay
+        
+    }
     [Serializable]
 
-    internal class GiangVien
+    public class GiangVien
     {
         private string ma, ten, gioitinh, chucvu, email, sdt;
         private DateTime ngaysinh;
@@ -24,7 +31,7 @@ namespace WindowsFormsApp1.DTO
             get => ten;
             set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new ArgumentException("Tên không hợp lệ");
                 ten = value;
             }
@@ -32,13 +39,9 @@ namespace WindowsFormsApp1.DTO
         public string GioiTinh
         {
             get => gioitinh;
-            set
-            {
-                if (!KiemTra.KiemTraChuoi(value))
-                    throw new ArgumentException("Giới tính không hợp lệ");
-                gioitinh = value;
-            }
-        }    
+            set => gioitinh = value;
+        }
+        
         public DateTime NgaySinh
         {
             get => ngaysinh;
@@ -54,21 +57,23 @@ namespace WindowsFormsApp1.DTO
             get => chucvu;
             set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new ArgumentException("Chức vụ không hợp lệ");
                 chucvu = value;
             }
         }
+
         public string Email
         {
             get => email;
             set
             {
-                if (!KiemTra.KiemTraEmail(value))
+                if (!KiemTra.IsEmail(value))
                     throw new ArgumentException("Email không hợp lệ");
                 email = value;
             }
         }
+
         public string SoDienThoai
         {
             get => sdt;
@@ -80,9 +85,34 @@ namespace WindowsFormsApp1.DTO
             }
         }
 
-        public GiangVien() { }
+        public string Khoa { get; set; }
+        
+        public TrangThai TrangThai { get { return TinhTT(); } }
 
-        public GiangVien(string maGiangVien, string hoTen, string gioiTinh, DateTime ngaySinh, string chucVu, string email, string soDienThoai)
+        public TrangThai TinhTT()
+        {
+            QuanLyDeTai deTai = new QuanLyDeTai();
+            foreach (DeTai dt in deTai.getDanhSachDeTai())
+            {
+                if (dt.GiaoVien != null && dt.GiaoVien.MaGiangVien == MaGiangVien && dt.SinhVien.TrangThaiSV != TrangThaiSV.KetThuc)
+                {
+                    return TrangThai.DangDay;
+                }
+            }
+            return TrangThai.NghiDay;
+        }
+
+            public GiangVien() {
+            MaGiangVien ="";
+            HoTen = "";
+            GioiTinh = "";
+            NgaySinh = DateTime.Now;
+            ChucVu = "";
+            Email = "";
+            SoDienThoai = "";
+        }
+
+        public GiangVien(string maGiangVien, string hoTen, string gioiTinh, DateTime ngaySinh, string chucVu, string email, string soDienThoai,string khoa)
         {
             MaGiangVien = maGiangVien;
             HoTen = hoTen;
@@ -91,6 +121,7 @@ namespace WindowsFormsApp1.DTO
             ChucVu = chucVu;
             Email = email;
             SoDienThoai = soDienThoai;
+            Khoa = khoa;
         }
     }
 }

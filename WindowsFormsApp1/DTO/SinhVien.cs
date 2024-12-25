@@ -1,10 +1,19 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms.DataVisualization.Charting;
+using WindowsFormsApp1.BUS;
 
 namespace WindowsFormsApp1.DTO
 {
+    
+    public enum TrangThaiSV
+    {
+        ChuaThucTap,
+        DangThucTap,
+        KetThuc
+    }
     [Serializable]
-
-    internal class SinhVien
+    public class SinhVien
     {
         private string masinhvien;
         public string MaSinhVien
@@ -24,7 +33,7 @@ namespace WindowsFormsApp1.DTO
             get => hoten;
             set
             {
-                if (!KiemTra.KiemTraChuoi(value))
+                if (!KiemTra.KiemTraTen(value))
                     throw new ArgumentException("Tên không hợp lệ");
                 hoten = value;
             }
@@ -34,12 +43,7 @@ namespace WindowsFormsApp1.DTO
         public string GioiTinh
         {
             get => gioitinh;
-            set
-            {
-                if (!KiemTra.KiemTraChuoi(value))
-                    throw new ArgumentException("Giới tính không hợp lệ");
-                gioitinh = value;
-            }
+            set => gioitinh = value;  
         }
 
         private DateTime ngaysinh;
@@ -60,7 +64,7 @@ namespace WindowsFormsApp1.DTO
             get => email;
             set
             {
-                if (!KiemTra.KiemTraEmail(value))
+                if (!KiemTra.IsEmail(value))
                     throw new ArgumentException("Email không hợp lệ.");
                 email = value;
             }
@@ -101,13 +105,33 @@ namespace WindowsFormsApp1.DTO
                 lop = value;
             }
         }
-        public string MaCongTy { get; set; }
-        public string MaGiangVien { get; set; }
+
+        private string lop2;
+        public string Lop2 //khoa
+        {
+            get => lop2;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Khoa không được trống");
+                lop2 = value;
+            }
+        }
 
 
-        public SinhVien() { }
+        public SinhVien() {
+            MaSinhVien = "";
+            HoTen = "";
+            GioiTinh = "";
+            NgaySinh = DateTime.Now;
+            Email = "";
+            SoDienThoai = "";
+            DiemTrungBinh = 0;
+            Lop = "";
+            Lop2 = "";
+        }
 
-        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, string email, string soDienThoai, double diemTrungBinh, string lop, string maCongTy, string maGiangVien)
+        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, string email, string soDienThoai, double diemTrungBinh, string lop, string lop2)
         {
             MaSinhVien = maSinhVien;
             HoTen = hoTen;
@@ -117,10 +141,10 @@ namespace WindowsFormsApp1.DTO
             SoDienThoai = soDienThoai;
             DiemTrungBinh = diemTrungBinh;
             Lop = lop;
-            MaCongTy = maCongTy;
-            MaGiangVien = maGiangVien;
+            Lop2 = lop2;
         }
-        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, string email, string soDienThoai, string diemTrungBinh, string lop, string maCongTy, string maGiangVien)
+
+        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, string email, string soDienThoai, string diemTrungBinh, string lop, string lop2)
         {
             MaSinhVien = maSinhVien;
             HoTen = hoTen;
@@ -128,10 +152,9 @@ namespace WindowsFormsApp1.DTO
             NgaySinh = ngaySinh;
             Email = email;
             SoDienThoai = soDienThoai;
-            DiemTrungBinh =  kiemtraDiem(diemTrungBinh);
+            DiemTrungBinh = kiemtraDiem(diemTrungBinh);
             Lop = lop;
-            MaCongTy = maCongTy;
-            MaGiangVien = maGiangVien;
+            Lop2 = lop2;
         }
 
         private double kiemtraDiem(string s)
@@ -147,7 +170,21 @@ namespace WindowsFormsApp1.DTO
             }
         }
 
+        public TrangThaiSV TrangThaiSV { get { return TinhTT(); } }
 
+        public TrangThaiSV TinhTT() {
+            foreach (DeTai dt in new QuanLyDeTai().getDanhSachDeTai())
+            {
+                if (dt.SinhVien.MaSinhVien == this.masinhvien && dt.TrangThai == "Kết thúc")
+                {
+                    return TrangThaiSV.KetThuc;
+                } else if (dt.SinhVien.MaSinhVien == this.masinhvien && dt.TrangThai == "Bắt đầu")
+                {
+                    return TrangThaiSV.DangThucTap;
+                }
+            }
+            return TrangThaiSV.ChuaThucTap;
+        }
     }
 }
 

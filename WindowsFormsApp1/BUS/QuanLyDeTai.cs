@@ -23,6 +23,11 @@ namespace WindowsFormsApp1.BUS
             return this.DanhSachDeTai;
         }
 
+        public int DemDT()
+        {
+            return this.DanhSachDeTai.Count;
+        }
+
         public DeTai Tim(string ma)
         {
             return this.DanhSachDeTai.Find(dt => dt.MaDT == ma);
@@ -55,10 +60,13 @@ namespace WindowsFormsApp1.BUS
             if (ketQuaTim != null)
             {
                 ketQuaTim.TenDT = a.TenDT;
+                ketQuaTim.SinhVien = a.SinhVien;
                 ketQuaTim.NgayBatDau = a.NgayBatDau;
                 ketQuaTim.NgayKetThuc = a.NgayKetThuc;
                 ketQuaTim.LoaiDT = a.LoaiDT;
                 ketQuaTim.MaCTy = a.MaCTy;
+                ketQuaTim.GiaoVien = a.GiaoVien;
+                
                 return true;
             }
             return false;
@@ -70,6 +78,32 @@ namespace WindowsFormsApp1.BUS
             dt.MaCTy.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0 ||
             dt.MaDT.IndexOf(s, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
+
+        public DeTai TimDTtheoMaSV(string maSV)
+        {
+            foreach (DeTai dt in this.DanhSachDeTai)
+            {
+                if (dt.SinhVien.MaSinhVien == maSV)
+                {
+                    return dt;
+                }
+            }
+            return null;
+        }
+
+
+        public KetQua TimKQtheoMaDT(string maDT)
+        {
+            foreach(KetQua kt in new QuanLyKetQua().getDanhSachKetQua())
+            {
+                if (kt.DeTai.MaDT == maDT)
+                {
+                    return kt;
+                }
+            }
+            return null;
+        }
+        
 
     }
 }

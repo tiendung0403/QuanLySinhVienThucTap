@@ -14,7 +14,7 @@ namespace WindowsFormsApp1.Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_QuanLySinhVien());
+            Application.Run(new frmLogin());
         }
     }
 }
