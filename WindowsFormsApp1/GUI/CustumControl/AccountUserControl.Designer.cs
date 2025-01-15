@@ -73,6 +73,7 @@
             // 
             // txtPass
             // 
+            this.txtPass.Enabled = false;
             this.txtPass.Font = new System.Drawing.Font("Times New Roman", 14.8F);
             this.txtPass.Location = new System.Drawing.Point(170, 276);
             this.txtPass.Name = "txtPass";
@@ -91,6 +92,7 @@
             // 
             // txtUser
             // 
+            this.txtUser.Enabled = false;
             this.txtUser.Font = new System.Drawing.Font("Times New Roman", 14.8F);
             this.txtUser.Location = new System.Drawing.Point(170, 155);
             this.txtUser.Name = "txtUser";

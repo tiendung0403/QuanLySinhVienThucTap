@@ -694,11 +694,11 @@ namespace WindowsFormsApp1.GUI.CustumControl
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Kết quản thực tập";
+            this.Column7.HeaderText = "Kết quả thực tập";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 162;
+            this.Column7.Width = 151;
             // 
             // StudentControl
             // 
